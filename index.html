@@ -161,7 +161,8 @@ button{font:inherit;cursor:pointer}
 .chips button[aria-pressed="true"]{outline:3px solid var(--negro);outline-offset:2px}
 .stage{min-height:420px;display:flex;align-items:center;justify-content:center;padding:48px;transition:background .25s;border:2px solid var(--negro);position:relative}
 .stage img{max-height:300px;max-width:min(520px,100%);width:auto;height:auto}
-.stage .tag{position:absolute;left:0;bottom:0;padding:10px 14px;font-size:14px;background:var(--blanco);color:var(--negro);border-top:2px solid var(--negro);border-right:2px solid var(--negro);max-width:calc(100% - 20px)}
+.stage.izq{justify-content:flex-start;padding-left:clamp(32px,9%,96px)}
+.tag{padding:10px 14px;font-size:14px;border:2px solid var(--negro);border-top:0;min-height:44px}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--negro);border:2px solid var(--negro);margin-top:32px}
 .facts div{background:var(--blanco);padding:18px 16px;min-width:0}
 .facts b{display:block;font-family:var(--display);font-weight:800;font-size:40px;line-height:1}
@@ -595,7 +596,7 @@ footer img{height:34px}
         <p class="muted" style="font-size:14px">Prueba un fondo y mira qué versión toca.</p>
       </div>
       <div>
-        <div class="stage" id="stage"><img id="stage-img" alt=""><div class="tag" id="stage-tag"></div></div>
+        <div class="stage" id="stage"><img id="stage-img" alt=""></div><div class="tag" id="stage-tag"></div>
       </div>
     </div>
     <div class="facts">
@@ -990,7 +991,7 @@ let piece='escudo', bg=BGS[2];
 const chips=$('#chips');
 BGS.forEach(b=>{ const x=document.createElement('button'); x.type='button'; x.style.background=b.c; x.setAttribute('aria-label','Fondo '+b.id); x.setAttribute('aria-pressed', b===bg); x.onclick=()=>{bg=b; chips.querySelectorAll('button').forEach(y=>y.setAttribute('aria-pressed', y===x)); stage();}; chips.appendChild(x); });
 $('#seg-piece').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; piece=b.dataset.p; $('#seg-piece').querySelectorAll('button').forEach(y=>y.setAttribute('aria-pressed', y===b)); stage(); });
-function stage(){ const k=PIECES[piece]+'-'+bg.v; $('#stage').style.background=bg.c; const im=$('#stage-img'); im.src=uri(k); im.alt=A[k].label; $('#stage-tag').textContent=bg.note; }
+function stage(){ const k=PIECES[piece]+'-'+bg.v; $('#stage').style.background=bg.c; $('#stage').classList.toggle('izq',piece==='escudo'); const im=$('#stage-img'); im.src=uri(k); im.alt=A[k].label; $('#stage-tag').textContent=bg.note; }
 stage();
 
 
