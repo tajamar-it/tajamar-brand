@@ -809,10 +809,11 @@ footer img{height:34px}
             <option>Club Deportivo Tajamar</option>
             <option>Fundación Tajamar</option>
             <option>Alumni Tajamar</option>
-            <option>AMPA Tajamar</option>
+            <option>Tajamar</option>
           </select></label>
           <label>Imagen de tu área<select id="sg-img"><option value="">Solo escudo</option></select></label>
           <p class="muted" id="sg-note" style="font-size:12.5px;margin:-4px 0 10px" hidden>Las imágenes de Fundación solo pueden usarse con la vertical Fundación Tajamar.</p>
+          <p class="muted" id="sg-solo" style="font-size:12.5px;margin:-4px 0 10px" hidden>Solo «Tajamar» dice poco de quién escribe. Si encaja alguna vertical, mejor elige esa; si no, adelante.</p>
           <label>Extensión (opcional)<input id="sg-x" inputmode="numeric" placeholder="123"></label>
           <label>Móvil (opcional)<input id="sg-m" inputmode="tel" placeholder="600 000 000"></label>
           <label>Correo<input id="sg-mail" placeholder="nombre@tajamar.es"></label>
@@ -1098,6 +1099,7 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
     [...img.options].forEach(o=>{ if(/fundacion/.test(o.value)) o.disabled=!fund; });
     if(!fund && /fundacion/.test(img.value)) img.value='';
     note.hidden=fund;
+    document.getElementById('sg-solo').hidden=vert.value!=='Tajamar';
   }
   const draw=()=>{reglas(); out.innerHTML=html();};
   ['sg-n','sg-c','sg-a','sg-x','sg-m','sg-mail','sg-img','sg-v'].forEach(id=>{ const e=document.getElementById(id); e.addEventListener('input',draw); e.addEventListener('change',draw); });
