@@ -335,7 +335,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-alumni.jpg",
    "thumb": "plantillas/firmas/firma-alumni.thumb.jpg",
    "fmt": "JPG",
-   "kb": 31,
+   "kb": 15,
    "asset": true
   },
   {
@@ -345,7 +345,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-bachillerato.jpg",
    "thumb": "plantillas/firmas/firma-bachillerato.thumb.jpg",
    "fmt": "JPG",
-   "kb": 29,
+   "kb": 14,
    "asset": true
   },
   {
@@ -355,7 +355,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-club-deportivo.jpg",
    "thumb": "plantillas/firmas/firma-club-deportivo.thumb.jpg",
    "fmt": "JPG",
-   "kb": 30,
+   "kb": 14,
    "asset": true
   },
   {
@@ -365,7 +365,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-fp.jpg",
    "thumb": "plantillas/firmas/firma-fp.thumb.jpg",
    "fmt": "JPG",
-   "kb": 27,
+   "kb": 13,
    "asset": true
   },
   {
@@ -375,7 +375,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-fundacion.jpg",
    "thumb": "plantillas/firmas/firma-fundacion.thumb.jpg",
    "fmt": "JPG",
-   "kb": 24,
+   "kb": 11,
    "asset": true
   },
   {
@@ -385,7 +385,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-fundacion-sin-dibujo.jpg",
    "thumb": "plantillas/firmas/firma-fundacion-sin-dibujo.thumb.jpg",
    "fmt": "JPG",
-   "kb": 17,
+   "kb": 6,
    "asset": true
   },
   {
@@ -395,7 +395,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-infantil.jpg",
    "thumb": "plantillas/firmas/firma-infantil.thumb.jpg",
    "fmt": "JPG",
-   "kb": 27,
+   "kb": 14,
    "asset": true
   },
   {
@@ -405,7 +405,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-primaria.jpg",
    "thumb": "plantillas/firmas/firma-primaria.thumb.jpg",
    "fmt": "JPG",
-   "kb": 29,
+   "kb": 11,
    "asset": true
   },
   {
@@ -415,7 +415,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-secundaria.jpg",
    "thumb": "plantillas/firmas/firma-secundaria.thumb.jpg",
    "fmt": "JPG",
-   "kb": 26,
+   "kb": 13,
    "asset": true
   },
   {
@@ -425,7 +425,7 @@ window.PLANTILLAS = {
    "file": "plantillas/firmas/firma-secretaria.jpg",
    "thumb": "plantillas/firmas/firma-secretaria.thumb.jpg",
    "fmt": "JPG",
-   "kb": 34,
+   "kb": 11,
    "asset": true
   },
   {

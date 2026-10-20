@@ -94,6 +94,16 @@ def copiar_anonimizado(src, dst, reglas):
         raise SystemExit(f"No se pudo anonimizar {src}: {falta}")
 
 
+def recortar_blanco(src, dst, margen=2):
+    """Quita el margen blanco sobrante de las imágenes de firma (no toca el dibujo)."""
+    from PIL import ImageOps
+    im = Image.open(src).convert("RGB")
+    bb = ImageOps.invert(im.convert("L")).point(lambda v: 255 if v > 12 else 0).getbbox()
+    if bb:
+        im = im.crop((max(bb[0] - margen, 0), max(bb[1] - margen, 0), min(bb[2] + margen, im.width), min(bb[3] + margen, im.height)))
+    im.save(dst, quality=92)
+
+
 def office_to_pdf(src, tmpdir):
     ext = os.path.splitext(src)[1].lower()
     tmp_in = os.path.join(tmpdir, "in" + ext)
@@ -123,6 +133,8 @@ def main():
             dst = os.path.join(OUT, cat, slug + ext)
             if slug in ANONIMIZAR:
                 copiar_anonimizado(src, dst, ANONIMIZAR[slug])
+            elif cat == "firmas" and ext == ".jpg":
+                recortar_blanco(src, dst)
             else:
                 shutil.copyfile(src, dst)
             thumb = os.path.join(OUT, cat, slug + ".thumb.jpg")
