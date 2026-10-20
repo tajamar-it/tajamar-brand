@@ -289,7 +289,11 @@ Todos están en https://brand.tajamar.es/#descargas:
   - tajamar-fp-professional-education
   - tajamar-educacion-infantil-horizontal, tajamar-educacion-infantil-vertical
   - tajamar-libresypunto-blanco
+  - tajamar-fp-professional-education-blanco
+  - tajamar-fundacion-vertical-negro, tajamar-fundacion-vertical-blanco, tajamar-fundacion-horizontal-negro, tajamar-fundacion-horizontal-blanco
+  - tajamar-revista-puente-negro (firma de cabecera de Revista Puente)
   - tajamar-escudo-libre-boli, tajamar-escudo-libre-brochazo (escudo libre spray: solo en PNG)
+  - Escudos libres en blanco, solo en PNG: tajamar-escudo-libre-boli-blanco, tajamar-escudo-libre-brochazo-blanco, tajamar-escudo-libre-spray-blanco
 - Tokens de diseño (JSON): https://brand.tajamar.es/descargas/tajamar-tokens.json
 - Paleta (CSV): https://brand.tajamar.es/descargas/tajamar-paleta.csv
 
