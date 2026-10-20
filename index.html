@@ -127,7 +127,7 @@ button{font:inherit;cursor:pointer}
 .voz .lead{color:#dfe3ef}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.18);margin-bottom:56px}
 .quotes figure{margin:0;background:var(--cielo-1);padding:28px 22px}
-.quotes figure:last-child:nth-child(3n+2){grid-column:span 2}
+@media (min-width:901px){.quotes figure:last-child:nth-child(3n+2){grid-column:span 2}}
 .quotes blockquote{margin:0;font-family:var(--display);font-size:clamp(26px,2.8vw,34px);line-height:1.08}
 .quotes figcaption{margin-top:12px;font-size:13px;color:#b9c1d9}
 .voz-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,64px)}
@@ -189,7 +189,7 @@ button{font:inherit;cursor:pointer}
 .brick .v{font-size:12px;line-height:1.45;font-variant-numeric:tabular-nums}
 .brick .aa{font-family:var(--arq);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;opacity:.85}
 .brick:hover{transform:translateY(-2px)}
-@media (max-width:860px){.gama{grid-template-columns:1fr}.bricks{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}}
+@media (max-width:860px){.gama{grid-template-columns:1fr}.bricks{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(min(120px,100%),1fr))}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--negro);color:var(--blanco);padding:12px 18px;font-weight:700;font-size:14px;z-index:40;border-radius:2px}
 .colnote{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:36px}
 .colnote div{min-width:0}
@@ -263,7 +263,7 @@ button{font:inherit;cursor:pointer}
 .dgroup{margin-bottom:44px}
 .dgroup h3{font-family:var(--arq);font-weight:600;font-size:20px;margin-bottom:6px}
 .dgroup > p{color:#bdbdbd;font-size:14px;margin-bottom:16px;max-width:70ch}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:14px}
 .dcard{background:#141414;border:1px solid #2a2a2a;display:flex;flex-direction:column;min-width:0;border-radius:2px}
 .dcard .pv{height:150px;display:flex;align-items:center;justify-content:center;padding:18px}
 .dcard .pv img{max-height:110px;max-width:100%}
@@ -324,11 +324,12 @@ button{font:inherit;cursor:pointer}
 .oklist li::before{content:"\2713";position:absolute;left:0;top:-.05em;font-weight:800;font-size:18px;color:var(--verde-3)}
 
 /* Arquitectura: niveles y FP */
-.niveles{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--negro);border:2px solid var(--negro);margin-bottom:32px}
+.niveles{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--negro);border:2px solid var(--negro);margin-bottom:32px}
 .niveles div{background:var(--blanco);padding:18px 16px;display:grid;gap:6px;align-content:start;min-width:0;font-size:14px}
 .niveles .lvl{font-family:var(--arq);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-60)}
 .niveles b{font-family:var(--arq);font-weight:600;font-size:18px;line-height:1.2}
-@media (max-width:900px){.niveles{grid-template-columns:1fr 1fr}}
+@media (max-width:1100px){.niveles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.niveles{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.niveles{grid-template-columns:1fr}}
 .fpbox{margin-top:32px;display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(20px,4vw,48px);align-items:center;border:2px solid var(--negro);padding:clamp(18px,3vw,32px)}
 .fpbox .ims{display:grid;gap:16px;justify-items:center}
@@ -357,7 +358,7 @@ button{font:inherit;cursor:pointer}
 /* Aplicaciones */
 .apps-group{margin-top:44px}
 .apps-group > h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,40px);margin-bottom:16px}
-.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px}
 .app{border:2px solid var(--negro);padding:18px 18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
 .app h4{margin:0;font-family:var(--arq);font-weight:600;font-size:19px}
 .app .fmt{font-family:var(--arq);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-60)}
@@ -402,7 +403,7 @@ button{font:inherit;cursor:pointer}
 .repo-group{margin-top:40px}
 .repo-group > h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,38px);margin-bottom:6px}
 .repo-group > p{font-size:15px;color:var(--gris-60);max-width:75ch;margin-bottom:16px}
-.repo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.repo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr));gap:16px}
 .rcard{border:2px solid var(--negro);display:flex;flex-direction:column;min-width:0;background:var(--blanco)}
 .rcard[hidden]{display:none}
 .rthumb{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;background:var(--gris-10);padding:10px;border-bottom:2px solid var(--negro)}
@@ -696,7 +697,7 @@ footer img{height:52px;width:auto;margin-right:28px}
       <dl><dt>ITC Franklin Gothic</dt><dd>Arquitectura de marca: descriptores de área en Medium; Fundación en Demi.</dd><dt>Web</dt><dd>Libre Franklin, como aproximación.</dd></dl>
     </div>
     <div class="spec">
-      <div><img id="tipo-lsp" alt="libresypunto" style="height:clamp(48px,7vw,88px);width:auto;filter:invert(1)"></div>
+      <div><img id="tipo-lsp" alt="libresypunto" style="height:clamp(40px,7vw,88px);width:auto;max-width:100%;filter:invert(1)"></div>
       <dl><dt>libresypunto</dt><dd>Siempre en Rockwell, minúsculas y todo junto. Funciona como un logotipo: usa el archivo oficial y no cambies su composición.</dd><dt>Hashtag</dt><dd>#libresypunto</dd></dl>
     </div>
   </div>
@@ -712,7 +713,8 @@ footer img{height:52px;width:auto;margin-right:28px}
     <div class="niveles">
       <div><span class="lvl">0 · Marca única</span><b>Tajamar</b><span>Escudo y logotipo. Excepcionalmente, isologo o versión vertical.</span></div>
       <div><span class="lvl">1 · Institucional</span><b>Fundación Tajamar</b><span>Extensión de la marca con firma propia. Sus proyectos (Juventud, Jornadas Humanísticas…) van en texto.</span></div>
-      <div><span class="lvl">2 · Institucional y comercial</span><b>Colegio Tajamar</b><span>Educación Infantil, Educación General (Primaria, Secundaria, Bachillerato) y FP. Sus subáreas, en texto.</span></div>
+      <div><span class="lvl">2 · Institucional y comercial</span><b>Colegio Tajamar</b><span>Infantil, Primaria, Secundaria y Bachillerato. Sus subáreas, en texto.</span></div>
+      <div><span class="lvl">2 · Institucional y comercial</span><b>Tajamar FP + Professional Education</b><span>No es Colegio, nunca. Emite siempre «Tajamar», con el descriptor FP aparte.</span></div>
       <div><span class="lvl">Áreas</span><b>Club Deportivo · Alumni · AMPA</b><span>Marca Tajamar más el nombre del área en texto, nunca logotipado.</span></div>
     </div>
     <div class="arq-grid" id="arq"></div>
@@ -1140,7 +1142,7 @@ const ARQ=[
   {pv:'fp', h:'FP + Professional Education', t:'Descriptor oficial sobre pastilla negra en portadas y piezas destacadas; en el resto, negro o blanco sobre foto o color. Nunca en color y nunca junto al logotipo: emite siempre Tajamar (escudo y logotipo, o isologo). Productos como IMPRE o PREDI, en Avenir Black y nunca logotipados.', pill:'Archivo oficial'},
   {pv:'infantil', h:'Educación Infantil', t:'La única área que puede firmar bajo el logotipo, con «Educación Infantil» en Franklin Gothic, también con las versiones especiales. Mejor sobre color o foto. Admite ilustraciones y piezas más divertidas.', pill:'Archivo oficial'},
   {pv:'fund', h:'Fundación Tajamar', t:'No usa el logotipo: escudo y «Fundación Tajamar» en Franklin Gothic Demi, vertical (bajo el escudo) u horizontal (a la derecha). Comunicación más formal, con fotos reales. Proyectos como Jornadas Humanísticas: nombre en Franklin Gothic Medium y titular en Avenir.', pill:'Archivo oficial'},
-  {pv:'logo', h:'Colegio Tajamar', t:'Marca Tajamar. Educación General (Primaria, Secundaria, Bachillerato) firma solo con la marca.', pill:'Archivo oficial'},
+  {pv:'logo', h:'Colegio Tajamar', t:'Marca Tajamar. Infantil, Primaria, Secundaria y Bachillerato firman como Colegio Tajamar. FP no es Colegio: firma como Tajamar.', pill:'Archivo oficial'},
   {pv:'formula', name:'Alumni Tajamar', h:'Alumni Tajamar', t:'Misma fórmula de área. Prefiere las gamas más nobles: tierras y oscuros.', pill:'Esquema'},
 ];
 ARQ.forEach(a=>{

@@ -199,10 +199,11 @@ Tajamar es una marca única: toda la organización se presenta bajo ella y sus �
 |---|---|---|
 | 0 · Marca única | Tajamar | Escudo y logotipo. Excepcionalmente, isologo o versión vertical. |
 | 1 · Institucional | Fundación Tajamar | Extensión de la marca con firma propia. Sus proyectos (Juventud, Jornadas Humanísticas…) van en texto. |
-| 2 · Institucional y comercial | Colegio Tajamar | Educación Infantil, Educación General (Primaria, Secundaria, Bachillerato) y FP. Sus subáreas, en texto. |
+| 2 · Institucional y comercial | Colegio Tajamar | Infantil, Primaria, Secundaria y Bachillerato. Sus subáreas, en texto. |
+| 2 · Institucional y comercial | Tajamar FP + Professional Education | FP no es Colegio, nunca: emite siempre «Tajamar», con el descriptor FP aparte. |
 | Áreas | Club Deportivo, Alumni, AMPA | Marca Tajamar más el nombre del área en texto, nunca logotipado. |
 
-- **Colegio Tajamar:** es la marca Tajamar. Educación General firma solo con la marca.
+- **Colegio Tajamar:** es la marca Tajamar. Infantil, Primaria, Secundaria y Bachillerato firman como Colegio Tajamar. FP no es Colegio, nunca: firma como «Tajamar» con su descriptor.
 - **Club Deportivo, Alumni y Escuela de Música:** usan la fórmula de área. El escudo va arriba a la izquierda y el descriptor a su derecha, separado y alineado con la parte superior del escudo, en Franklin Gothic Medium negro. El logotipo firma en otro lugar de la pieza (contraportada, abajo a la derecha). Los productos, como «500 km», en Rockwell. Alumni prefiere las gamas más nobles: tierras y oscuros.
 - **FP + Professional Education:** descriptor oficial en ITC Franklin Gothic Medium, con un «+» dibujado a medida con la base constructiva del escudo; la pastilla deja 2X a los lados y 1,5X arriba y abajo. Sobre pastilla negra en portadas y piezas destacadas; en el resto, negro o blanco sobre foto o color. Nunca en color y nunca junto al logotipo: emite siempre Tajamar (escudo y logotipo, o isologo). Look propio, más adulto y profesional, con el negro como base. Subáreas: Gráfica, Logística, Informática y Deportiva; cada una puede tomar un color. Productos como IMPRE o PREDI, en Avenir Black y nunca logotipados.
 - **Educación Infantil:** es la única área que puede firmar bajo el logotipo, con «Educación Infantil» en Franklin Gothic, también con las versiones especiales. Queda mejor sobre color o foto. Admite ilustraciones y piezas más divertidas.
