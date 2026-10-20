@@ -1,5 +1,9 @@
 # Marca Tajamar: guía para agentes
 
+<!-- version -->
+> **Versión 1.0 · 20 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.0, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
+<!-- /version -->
+
 Esta es la versión en texto del manual de marca de Tajamar, publicado en https://brand.tajamar.es. Sirve para que un asistente o agente de IA escriba, diseñe o revise piezas de Tajamar. Si algo no está aquí, no lo inventes: indica que hay que consultarlo con la Dirección o el Departamento de Comunicación.
 
 ## Qué es Tajamar

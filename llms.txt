@@ -1,17 +1,20 @@
 # Marca Tajamar
 
-> Manual de marca de Tajamar (Colegio, FP + Professional Education, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
+> Manual de marca de Tajamar (Colegio, Tajamar FP, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
+
+Versión vigente: 1.0 (2026-10-20). Usa siempre la última: compruébala en https://brand.tajamar.es/descargas/version.json antes de usar una copia guardada. Las versiones de https://brand.tajamar.es/descargas/archivo/ son históricas.
 
 ## Para agentes
 
+- [Versión vigente](https://brand.tajamar.es/descargas/version.json): número, fecha y huella SHA-256 de cada archivo
 - [Guía de marca en Markdown](https://brand.tajamar.es/descargas/tajamar-marca.md): todas las reglas en texto, lista para usar como contexto
 - [Tokens de diseño](https://brand.tajamar.es/descargas/tajamar-tokens.json): colores (HEX, RGB, Pantone, CMYK, uso como texto) y fuentes, en formato W3C Design Tokens
 - [Skill para Claude](https://brand.tajamar.es/descargas/tajamar-marca-skill.zip): SKILL.md con la guía, los tokens y los logos
+- [Historial de versiones](https://brand.tajamar.es/CAMBIOS.md)
 
 ## Archivos
 
 - [Plantillas](https://brand.tajamar.es/#plantillas): cartas, presentación, carteles, examen, Secretaría y firmas de correo (catálogo en https://brand.tajamar.es/plantillas/plantillas.js)
-
 - [Kit de marca](https://brand.tajamar.es/descargas/tajamar-kit-de-marca.zip): logos en SVG y PNG de 2000 px
 - [Paleta](https://brand.tajamar.es/descargas/tajamar-paleta.csv): CSV con separador ;
 - Logos sueltos: https://brand.tajamar.es/logos/svg/<nombre>.svg y https://brand.tajamar.es/logos/png/<nombre>.png

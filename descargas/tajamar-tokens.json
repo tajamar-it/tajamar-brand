@@ -1,5 +1,11 @@
 {
-  "$description": "Tokens de marca Tajamar. Reglas completas: https://brand.tajamar.es/descargas/tajamar-marca.md",
+  "$description": "Tokens de marca Tajamar · versión 1.0 (2026-10-20). Usa siempre la última: https://brand.tajamar.es/descargas/version.json. Reglas completas: https://brand.tajamar.es/descargas/tajamar-marca.md",
+  "$extensions": {
+    "tajamar": {
+      "version": "1.0",
+      "fecha": "2026-10-20"
+    }
+  },
   "color": {
     "negro": {
       "negro": {
