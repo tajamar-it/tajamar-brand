@@ -15,6 +15,19 @@
           }
         }
       },
+      "gris-90": {
+        "$type": "color",
+        "$value": "#1A1A1A",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "26, 26, 26",
+            "pantone": null,
+            "cmyk": "K90",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
       "gris-80": {
         "$type": "color",
         "$value": "#333333",
@@ -23,6 +36,19 @@
             "rgb": "51, 51, 51",
             "pantone": null,
             "cmyk": "K80",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-70": {
+        "$type": "color",
+        "$value": "#4D4D4D",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "77, 77, 77",
+            "pantone": null,
+            "cmyk": "K70",
             "textoSobreBlanco": true,
             "textoEncima": "#FFFFFF"
           }
@@ -41,6 +67,19 @@
           }
         }
       },
+      "gris-50": {
+        "$type": "color",
+        "$value": "#808080",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "128, 128, 128",
+            "pantone": null,
+            "cmyk": "K50",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
       "gris-40": {
         "$type": "color",
         "$value": "#999999",
@@ -49,6 +88,19 @@
             "rgb": "153, 153, 153",
             "pantone": null,
             "cmyk": "K40",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "gris-30": {
+        "$type": "color",
+        "$value": "#B3B3B3",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "179, 179, 179",
+            "pantone": null,
+            "cmyk": "K30",
             "textoSobreBlanco": false,
             "textoEncima": "#000000"
           }
