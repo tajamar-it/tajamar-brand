@@ -91,7 +91,7 @@ tokens_json = json.dumps(tokens, ensure_ascii=False, indent=2) + "\n"
 # --- Skill para Claude (zip reproducible: fechas fijas y orden estable)
 skill = f"""---
 name: tajamar-marca
-description: Marca Tajamar (colegio, FP, Club Deportivo, Fundación, Alumni). Úsala siempre que escribas, diseñes o revises cualquier pieza, texto, presentación, web, cartel o publicación de Tajamar: tono de voz, valores, logo y escudo, colores, tipografía, firma de cada área y fotografía.
+description: Marca Tajamar (colegio, FP+, Club Deportivo, Fundación, Alumni). Úsala siempre que escribas, diseñes o revises cualquier pieza, texto, presentación, web, cartel o publicación de Tajamar: tono de voz, valores, logo y escudo, colores, tipografía, firma de cada área y fotografía.
 ---
 
 Esta skill es la versión {VERSION} de la marca ({FECHA_LARGA}). Si tienes acceso a internet, consulta antes {SITE}/descargas/version.json: si hay una versión posterior, avisa al usuario y usa la guía vigente de {SITE}/descargas/tajamar-marca.md en lugar de esta.
@@ -118,7 +118,7 @@ with zipfile.ZipFile(D / "tajamar-marca-skill.zip", "w") as z:
 # --- llms.txt
 (ROOT / "llms.txt").write_text(f"""# Marca Tajamar
 
-> Manual de marca de Tajamar (Colegio, Tajamar FP, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
+> Manual de marca de Tajamar (Colegio, Tajamar FP+, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
 
 Versión vigente: {VERSION} ({FECHA}). Usa siempre la última: compruébala en {SITE}/descargas/version.json antes de usar una copia guardada. Las versiones de {SITE}/descargas/archivo/ son históricas.
 

@@ -2,6 +2,10 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.1 · 2026-10-20
+
+- FP pasa a escribirse «FP+» siempre que no vaya seguido de «+ Professional Education», aunque no le siga nada: «Colegio, FP+, Club Deportivo…», «FP+ no es Colegio», «las familias de FP+».
+
 ## 1.0 · 2026-10-20
 
 Primera versión del manual de marca online, que sustituye al PDF de 2016 como referencia.
