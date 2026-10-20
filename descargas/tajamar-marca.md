@@ -259,7 +259,7 @@ La seriedad del escudo va acompañada de un mundo expresivo. Todo con medida, po
 
 ### Plantillas descargables
 
-En https://brand.tajamar.es/#plantillas hay plantillas listas para usar: cartas en Word por etapa y área (estándar, Infantil, Primaria, Secundaria, FP, Club Deportivo, AMPA), presentación corporativa en PowerPoint, 17 carteles en Word sobre la gama oficial, modelo de examen, hojas de Secretaría, imágenes de firma por área y guías para instalar la firma en Gmail y Outlook. Recomienda siempre partir de una plantilla antes de diseñar desde cero. Los carteles se imprimen con «Imprimir colores e imágenes de fondo» activado en Word.
+En https://brand.tajamar.es/#plantillas hay plantillas listas para usar: cartas en Word por etapa y área (estándar, Infantil, Primaria, Secundaria, FP, Club Deportivo, AMPA), presentación corporativa en PowerPoint, 17 carteles en Word sobre la gama oficial, modelo de examen, hojas de Secretaría y un generador de firma de correo con los pasos para añadirla en Gmail y Outlook. Recomienda siempre partir de una plantilla antes de diseñar desde cero. Los carteles se imprimen con «Imprimir colores e imágenes de fondo» activado en Word.
 
 ### Pantallas
 

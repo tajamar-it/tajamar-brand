@@ -25,7 +25,7 @@ CATEGORIAS = [
     ("carteles", "Carteles", "Carteles en Word sobre fondos de la gama oficial. Antes de imprimir, en Word: Archivo › Opciones › Mostrar › activa «Imprimir colores e imágenes de fondo»; si no, sale en blanco."),
     ("examenes", "Exámenes", "Modelo de examen en Word."),
     ("secretaria", "Secretaría", "Documentos de Secretaría en Word."),
-    ("firmas", "Firmas de correo", "La imagen de cada área (escudo y dibujo) y las guías para instalar la firma en Gmail y Outlook. También puedes generar la tuya más abajo."),
+    ("firmas", "Firma de correo", "Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo tienes cómo añadirla en Gmail y en Outlook."),
     ("ejemplos", "Ejemplos aplicados", "Folletos reales hechos con la marca, como referencia. No son plantillas."),
 ]
 
@@ -54,10 +54,6 @@ CATALOGO = [
     ("Firmas Mails/Primaria/Firmas Primaria 2.0.jpg", "firmas", "firma-primaria", "Primaria", "Imagen de firma"),
     ("Firmas Mails/Secundaria/Firmas Secundaria.jpg", "firmas", "firma-secundaria", "Secundaria", "Imagen de firma"),
     ("Firmas Mails/Secretaría/Firmas Secretaría.jpg", "firmas", "firma-secretaria", "Secretaría", "Imagen de firma"),
-    ("Firmas Mails/Firma email. Tabla para copiar en GMAIL..docx", "firmas", "firma-tabla-gmail", "Tabla de firma para Gmail", "Para copiar y pegar"),
-    ("Firmas Mails/GMAIL. Cómo instalar la firma electrónica en mi correo tajamar desde gmail.docx", "firmas", "guia-firma-gmail", "Cómo instalar la firma en Gmail", "Guía"),
-    ("Firmas Mails/OUTLOOK. Cómo instalar la firma electrónica en mi correo desde outlook_.docx", "firmas", "guia-firma-outlook", "Cómo instalar la firma en Outlook", "Guía"),
-    ("Firmas Mails/Firmas mails.psd", "firmas", "firmas-fuente", "Fuente de las firmas (Photoshop)", "Para diseño"),
     ("Folletos Corporativos/Programa Tajamar.pdf", "ejemplos", "folleto-programa-tajamar", "Programa Tajamar", "Folleto"),
     ("Folletos Corporativos/Bachillerato Tajamar. Mucho más que un bachillerato.pdf", "ejemplos", "folleto-bachillerato", "Mucho más que un Bachillerato", "Folleto"),
     ("Folletos Corporativos/La guía normativa de Tajamar.pdf", "ejemplos", "folleto-guia-normativa", "La guía normativa de Tajamar", "Folleto"),
@@ -66,15 +62,7 @@ CATALOGO = [
 
 # Datos personales que no se publican: se sustituyen al copiar (el original no se toca).
 # Los folletos del COF no están en el catálogo porque llevan correos personales.
-ANONIMIZAR = {
-    "firma-tabla-gmail": [
-        (">Nombre Apellido<", ">Nombre Apellido<"),
-        (">Formación Tajamar<", ">Cargo · Área<"),
-        (">600 000 000<", ">600 000 000<"),
-        (">formación</w:t>", ">nombre</w:t>"),
-        ("mailto:formacion@tajamar.es", "mailto:nombre@tajamar.es"),
-    ],
-}
+ANONIMIZAR = {}
 
 FMT = {".docx": "Word", ".pptx": "PowerPoint", ".pdf": "PDF", ".jpg": "JPG", ".png": "PNG", ".psd": "Photoshop"}
 
@@ -158,6 +146,8 @@ def main():
                 "thumb": f"plantillas/{cat}/{slug}.thumb.jpg" if os.path.exists(thumb) else None,
                 "fmt": FMT.get(ext, ext[1:].upper()),
                 "kb": round(os.path.getsize(dst) / 1024),
+                # Las imágenes de firma no se listan: las usa el generador de firmas.
+                "asset": cat == "firmas",
             })
     data = {"categorias": [{"id": i, "h": h, "p": p} for i, h, p in CATEGORIAS], "items": items}
     with open(os.path.join(OUT, "plantillas.js"), "w", encoding="utf-8") as f:
