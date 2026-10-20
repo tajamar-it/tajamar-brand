@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://brand.tajamar.es/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Escudo de Tajamar sobre negro con el lema «Somos distintos.»">
+<meta property="og:image:alt" content="Escudo de Tajamar sobre negro con el lema «Somos distintos»">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Marca Tajamar · Somos distintos.">
 <meta name="twitter:description" content="Manual de marca de Tajamar: valores, tono de voz, logo, color, tipografía y descargas oficiales.">
@@ -117,6 +117,7 @@ button{font:inherit;cursor:pointer}
 .voz .lead{color:#dfe3ef}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.18);margin-bottom:56px}
 .quotes figure{margin:0;background:var(--cielo-1);padding:28px 22px}
+.quotes figure:last-child:nth-child(3n+2){grid-column:span 2}
 .quotes blockquote{margin:0;font-family:var(--display);font-size:clamp(26px,2.8vw,34px);line-height:1.08}
 .quotes figcaption{margin-top:12px;font-size:13px;color:#b9c1d9}
 .voz-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,64px)}
@@ -269,14 +270,24 @@ button{font:inherit;cursor:pointer}
 
 /* Manifiesto */
 .manifiesto{background:var(--cielo-2);color:var(--blanco)}
-.mani{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.mani-d > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding-block:20px}
+.mani-d > summary::-webkit-details-marker{display:none}
+.mani-d > summary .eyebrow{flex:none}
+.mani-teaser{flex:1;min-width:0;font-family:var(--display);font-weight:700;font-size:clamp(16px,1.6vw,20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#e3eaf5}
+.mani-more{flex:none;font-weight:700;font-size:14px;border:2px solid currentColor;padding:7px 12px;border-radius:2px}
+.mani-more::after{content:"Leer +"}
+.mani-d[open] .mani-more::after{content:"Cerrar −"}
+.mani-d[open] .mani-teaser{visibility:hidden}
+.mani-d > summary:hover .mani-more{background:var(--blanco);color:var(--cielo-2)}
+.mani{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,72px);align-items:start;padding:8px 0 40px}
 @media (max-width:860px){.mani{grid-template-columns:1fr}}
-.mani-list{list-style:none;margin:18px 0 28px;padding:0;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.6vw,32px);line-height:1.15;display:grid;gap:6px}
-.mani .lsp{width:min(300px,70%);height:auto;display:block}
-.mani-why{display:grid;gap:16px;font-size:17px;color:#e3eaf5}
-.mani-why h3{font-family:var(--arq);font-weight:600;font-size:20px;color:var(--blanco)}
+@media (max-width:560px){.mani-d > summary .eyebrow{display:none}}
+.mani-list{list-style:none;margin:0 0 20px;padding:0;font-family:var(--display);font-weight:700;font-size:clamp(17px,1.7vw,21px);line-height:1.2;display:grid;gap:4px}
+.mani .lsp{width:min(220px,60%);height:auto;display:block}
+.mani-why{display:grid;gap:12px;font-size:15px;color:#e3eaf5}
+.mani-why h3{font-family:var(--arq);font-weight:600;font-size:17px;color:var(--blanco)}
 .mani-why strong{color:var(--blanco)}
-.mani-why .big{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.05;color:var(--blanco)}
+.mani-why .big{font-family:var(--display);font-weight:800;font-size:clamp(20px,2vw,26px);line-height:1.1;color:var(--blanco)}
 
 /* Valores: rasgos */
 .vcard .rasgos{font-size:13px;line-height:1.5;border-top:1.5px solid rgba(0,0,0,.35);padding-top:12px}
@@ -352,6 +363,47 @@ button{font:inherit;cursor:pointer}
 .sigprev .mail{background:var(--blanco);padding:22px;max-width:560px}
 .sigbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 
+/* Logo: composición */
+.compo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:48px}
+@media (max-width:860px){.compo{grid-template-columns:1fr}}
+.compo h3{font-family:var(--arq);font-weight:600;font-size:20px;margin-bottom:12px}
+.compo-figs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.compo figure{margin:0;display:grid;gap:10px;align-content:start;font-size:14px}
+.sheet{position:relative;aspect-ratio:210/297;border:2px solid var(--negro);background:var(--blanco)}
+.sheet img{position:absolute}
+.sheet .c-esc{left:12%;top:8%;width:14%}
+.sheet .c-logo{right:10%;bottom:7%;width:32%}
+.sheet .air{position:absolute;left:28%;top:8%;width:60%;height:16.7%;background:repeating-linear-gradient(135deg,rgba(255,224,28,.55) 0 6px,rgba(255,224,28,.15) 6px 12px);display:flex;align-items:center;justify-content:center;font-family:var(--arq);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.sheet.alt .c-esc{left:54%}
+.sheet.alt .air{left:70%;width:18%}
+.sheet.alt .c-logo{right:auto;left:10%}
+
+/* Plantillas: repositorio */
+.repo-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px;position:sticky;top:56px;z-index:5;background:var(--blanco);padding:12px 0;border-bottom:2px solid var(--negro)}
+.repo-bar input{font:inherit;font-size:15px;padding:10px 12px;border:2px solid var(--negro);border-radius:2px;min-width:0;flex:1 1 220px;max-width:320px}
+.repo-chips{display:flex;flex-wrap:wrap;gap:6px}
+.repo-chips button{padding:8px 12px;border:2px solid var(--negro);background:var(--blanco);font-weight:600;font-size:14px;border-radius:2px}
+.repo-chips button[aria-pressed="true"]{background:var(--negro);color:var(--blanco)}
+.repo-group{margin-top:40px}
+.repo-group > h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,38px);margin-bottom:6px}
+.repo-group > p{font-size:15px;color:var(--gris-60);max-width:75ch;margin-bottom:16px}
+.repo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.rcard{border:2px solid var(--negro);display:flex;flex-direction:column;min-width:0;background:var(--blanco)}
+.rcard[hidden]{display:none}
+.rthumb{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;background:var(--gris-10);padding:10px;border-bottom:2px solid var(--negro)}
+.rthumb .rfmt{font-family:var(--display);font-weight:800;font-size:26px;color:var(--gris-60)}
+.rthumb img{max-width:100%;max-height:100%;box-shadow:0 1px 4px rgba(0,0,0,.18);background:var(--blanco)}
+.rmeta{padding:10px 12px 12px;display:grid;gap:6px;flex:1;align-content:space-between}
+.rmeta b{font-size:15px;line-height:1.25}
+.rmeta small{font-size:12px;color:var(--gris-60)}
+.rdl{display:block;text-align:center;text-decoration:none;padding:8px;border:2px solid var(--negro);font-weight:700;font-size:13px;border-radius:2px}
+.rdl:hover{background:var(--ladrillo-5)}
+.repo-group .sigmaker{margin-top:24px}
+.sigmaker select{font:inherit;font-weight:400;font-size:15px;padding:9px 10px;border:2px solid var(--negro);border-radius:2px;width:100%;background:var(--blanco)}
+.fichas{margin-top:56px;border-top:2px solid var(--negro);padding-top:20px}
+.fichas summary{cursor:pointer;font-family:var(--arq);font-weight:600;font-size:20px}
+.fichas summary span{font-family:var(--text);font-weight:400;font-size:14px;color:var(--gris-60);margin-left:8px}
+
 footer{background:var(--blanco);padding-block:40px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;font-size:14px}
 footer img{height:34px}
@@ -371,7 +423,7 @@ footer img{height:34px}
       <li><a href="#areas">Áreas</a></li>
       <li><a href="#fotografia">Fotografía</a></li>
       <li><a href="#lookandfeel">Look &amp; Feel</a></li>
-      <li><a href="#aplicaciones">Aplicaciones</a></li>
+      <li><a href="#plantillas">Plantillas</a></li>
     </ul>
     <a class="dl" href="#descargas">Descargas</a>
   </div>
@@ -393,31 +445,36 @@ footer img{height:34px}
   </div>
 </header>
 
-<section class="band manifiesto" id="manifiesto">
-  <div class="wrap mani">
-    <div>
-      <div class="eyebrow">Manifiesto</div>
-      <ul class="mani-list">
-        <li>A las personalidades singulares.</li>
-        <li>A los que no se sienten parte de una masa.</li>
-        <li>A los que son serios en ser espontáneos.</li>
-        <li>A los que sienten que son más de una sola cosa.</li>
-        <li>A los que rompen con lo monocorde, con lo igual.</li>
-        <li>A los que saben que su diferencia individual suma.</li>
-        <li>A los que creen que su diferencia es lo que une, no lo que separa.</li>
-        <li>A los que piensan por sí mismos.</li>
-        <li>A los que son como son.</li>
-      </ul>
-      <img class="lsp" id="mani-lsp" alt="libresypunto">
-    </div>
-    <div class="mani-why">
+<section class="manifiesto" id="manifiesto">
+  <details class="wrap mani-d">
+    <summary>
+      <span class="eyebrow">Manifiesto</span>
+      <span class="mani-teaser">A las personalidades singulares. A los que no se sienten parte de una masa. A los que son serios en ser espontáneos.…</span>
+      <span class="mani-more" aria-hidden="true"></span>
+    </summary>
+    <div class="mani">
+      <div>
+        <ul class="mani-list">
+          <li>A las personalidades singulares.</li>
+          <li>A los que no se sienten parte de una masa.</li>
+          <li>A los que son serios en ser espontáneos.</li>
+          <li>A los que sienten que son más de una sola cosa.</li>
+          <li>A los que rompen con lo monocorde, con lo igual.</li>
+          <li>A los que saben que su diferencia individual suma.</li>
+          <li>A los que creen que su diferencia es lo que une, no lo que separa.</li>
+          <li>A los que piensan por sí mismos.</li>
+          <li>A los que son como son.</li>
+        </ul>
+        <img class="lsp" id="mani-lsp" alt="libresypunto">
+      </div>
+      <div class="mani-why">
       <h3>Por qué esta marca</h3>
       <p>Para afrontar una nueva etapa con fuerza y atrevimiento, orgullosos de lo que somos, y llegar a todos nuestros públicos.</p>
       <p>No es solo un cambio de identidad visual. Es una visión estratégica: confiamos en nuestras posibilidades y nos adaptamos al futuro desde nuestra esencia.</p>
       <p class="big">Somos distintos y tenemos derecho a ser distintos. Somos libres, y punto.</p>
       <p>Es más que un escudo nuevo: es nuestro espíritu hecho visible. Una marca idealista, abierta y libre, que se entrega con valentía, sin paradigmas establecidos. <strong>La marca de un privado-público.</strong></p>
     </div>
-  </div>
+  </details>
 </section>
 
 <section class="band" id="marca">
@@ -465,7 +522,6 @@ footer img{height:34px}
       <figure><blockquote>Aquí, desde 1958, si quieres, puedes.</blockquote></figure>
       <figure><blockquote>Nos dieron la corbata de Alfonso X el Sabio. (Pero no nos la ponemos)</blockquote></figure>
       <figure><blockquote>Bienvenido al mundo real.</blockquote></figure>
-      <figure><blockquote>Achtung. Dios existe. Al menos aquí. (Por mucho que algunos alumnos se empeñen en que no)</blockquote></figure>
       <figure><blockquote>El primer centro de economía colaborativa de Madrid.</blockquote></figure>
     </div>
     <div class="voz-cols">
@@ -541,6 +597,22 @@ footer img{height:34px}
       <figure><div class="im"><img src="img/construccion/escudo-proteccion.png" alt="Área de protección del escudo" loading="lazy"></div><figcaption><b>Escudo · área de protección</b>La marca la «T» interior del escudo. Cuanto más aire, mejor.</figcaption></figure>
       <figure><div class="im"><img src="img/construccion/logotipo-construccion.png" alt="Retícula de construcción del logotipo" loading="lazy"></div><figcaption><b>Logotipo · construcción</b>Módulo X; el logotipo mide 6X de alto.</figcaption></figure>
       <figure><div class="im"><img src="img/construccion/logotipo-proteccion.png" alt="Área de protección del logotipo" loading="lazy"></div><figcaption><b>Logotipo · área de protección</b>Como mínimo, la altura de la «T» alrededor de todo el logotipo.</figcaption></figure>
+    </div>
+    <div class="compo">
+      <div class="compo-figs">
+        <figure><div class="sheet"><img class="c-esc" data-k="escudo-negro" alt="Escudo"><span class="air">aire</span><img class="c-logo" data-k="logotipo-negro" alt="Logotipo"></div><figcaption>Lo habitual: escudo arriba a la izquierda, con aire a su derecha, y el logotipo en otro punto de la pieza.</figcaption></figure>
+        <figure><div class="sheet alt"><img class="c-esc" data-k="escudo-negro" alt="Escudo"><span class="air">aire</span><img class="c-logo" data-k="logotipo-negro" alt="Logotipo"></div><figcaption>Si no puede ir a la izquierda: deja aire suficiente a su derecha y no lo pegues al margen.</figcaption></figure>
+      </div>
+      <div>
+        <h3>Espacio y aire</h3>
+        <ul class="oklist">
+          <li>El área de protección la respetan tanto las imágenes como los textos. Solo la invaden las versiones especiales.</li>
+          <li>Ese espacio es el mínimo: siempre que puedas, separa más la marca del resto.</li>
+          <li>Si el escudo no puede ir a la izquierda, deja espacio suficiente a su derecha y no lo pegues al margen.</li>
+          <li>Siempre prevalece escudo y logotipo en el mismo plano visual. El isologo y la versión vertical, solo en los casos señalados.</li>
+          <li>No existen versiones del escudo ni del logotipo en otros colores, ni se pueden crear.</li>
+        </ul>
+      </div>
     </div>
     <div class="dont">
       <div>
@@ -700,14 +772,34 @@ footer img{height:34px}
   </div>
 </section>
 
-<section class="band" id="aplicaciones">
+<section class="band" id="plantillas">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Aplicaciones</div>
-      <h2 class="h2">La marca, en cada pieza</h2>
-      <p class="lead">Cómo se aplica en papelería, pantallas, publicaciones y espacios. La regla de fondo es siempre la misma: la seriedad del escudo, acompañada de un mundo expresivo y lleno de color.</p>
+      <div class="eyebrow">Plantillas</div>
+      <h2 class="h2">Descarga, escribe y listo</h2>
+      <p class="lead">Cartas, carteles, presentaciones, exámenes y firmas con la marca ya aplicada. Parte siempre de aquí; si lo que necesitas no está, pídelo a Comunicación antes de hacerlo desde cero.</p>
     </div>
-
+    <div class="repo-bar"><input type="search" id="repo-q" placeholder="Buscar plantilla…" aria-label="Buscar plantilla"><div class="repo-chips" id="repo-chips"></div></div>
+    <div id="repo"></div>
+      <div class="sigmaker" id="firma">
+        <div>
+          <h4>Firma de correo</h4>
+          <label>Nombre y apellidos<input id="sg-n" value="Nombre Apellido Apellido"></label>
+          <label>Cargo y área<input id="sg-c" value="Cargo · Área"></label>
+          <label>Emisor<input id="sg-e" value="Colegio Tajamar"></label>
+          <label>Imagen de tu área<select id="sg-img"><option value="">Solo escudo</option></select></label>
+          <label>Teléfono<input id="sg-t" placeholder="91 000 00 00"></label>
+          <label>Otro teléfono<input id="sg-m" placeholder="600 000 000"></label>
+          <label>Correo<input id="sg-mail" placeholder="nombre@tajamar.es"></label>
+        </div>
+        <div>
+          <div class="sigprev"><div class="mail" id="sg-out"></div></div>
+          <div class="sigbtns"><button type="button" class="btn solid" id="sg-copy">Copiar firma</button><button type="button" class="btn" id="sg-html">Copiar HTML</button></div>
+          <p class="muted" style="font-size:13px;margin-top:10px">Pega la firma en Outlook o Gmail (tienes las guías arriba). Emisor: «Colegio Tajamar»; en FP, «Tajamar FP + Professional Education». Elige la imagen de tu área.</p>
+        </div>
+      </div>
+    <details class="fichas">
+      <summary>Fichas técnicas <span>Medidas y reglas para imprenta, diseño y espacios</span></summary>
     <div class="apps-group">
       <h3>Papelería</h3>
       <div class="apps">
@@ -756,24 +848,7 @@ footer img{height:34px}
           <li>La gaviota entra volando y se posa: forma el escudo y aparece el logotipo.</li>
           <li>Es una propuesta abierta a interpretación.</li></ul></article>
       </div>
-      <div class="sigmaker" id="firma">
-        <div>
-          <h4>Firma de correo</h4>
-          <label>Nombre y apellidos<input id="sg-n" value="Nombre Apellido Apellido"></label>
-          <label>Cargo (con el área si hace falta)<input id="sg-c" value="Cargo"></label>
-          <label>Emisor<input id="sg-e" value="Colegio Tajamar"></label>
-          <label>Teléfono<input id="sg-t" placeholder="91 000 00 00"></label>
-          <label>Móvil<input id="sg-m" placeholder="600 000 000"></label>
-          <label>Correo<input id="sg-mail" placeholder="nombre@tajamar.es"></label>
-        </div>
-        <div>
-          <div class="sigprev"><div class="mail" id="sg-out"></div></div>
-          <div class="sigbtns"><button type="button" class="btn solid" id="sg-copy">Copiar firma</button><button type="button" class="btn" id="sg-html">Copiar HTML</button></div>
-          <p class="muted" style="font-size:13px;margin-top:10px">Pega la firma en Outlook o Gmail. Emisor: «Colegio Tajamar»; en FP, «Tajamar FP + Professional Education».</p>
-        </div>
-      </div>
     </div>
-
     <div class="apps-group">
       <h3>Publicaciones</h3>
       <div class="apps">
@@ -814,6 +889,7 @@ footer img{height:34px}
           <li>¿Una iniciativa solidaria o para una obra social? Adelante.</li></ul></article>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -857,6 +933,7 @@ footer img{height:34px}
 
 <div class="toast" id="toast" hidden></div>
 
+<script src="plantillas/plantillas.js"></script>
 <script>
 const A = {"escudo-negro": {"file": "tajamar-escudo-negro.svg", "label": "Escudo · negro", "short": "", "group": "principal", "bg": "light", "mime": "image/svg+xml"}, "escudo-blanco": {"file": "tajamar-escudo-blanco.svg", "label": "Escudo · blanco", "short": "", "group": "principal", "bg": "dark", "mime": "image/svg+xml"}, "logotipo-negro": {"file": "tajamar-logotipo-negro.svg", "label": "Logotipo · negro", "short": "", "group": "principal", "bg": "light", "mime": "image/svg+xml"}, "logotipo-blanco": {"file": "tajamar-logotipo-blanco.svg", "label": "Logotipo · blanco", "short": "", "group": "principal", "bg": "dark", "mime": "image/svg+xml"}, "isotipo-negro": {"file": "tajamar-isologo-horizontal-negro.svg", "label": "Isologo horizontal · negro", "short": "", "group": "especial", "bg": "light", "mime": "image/svg+xml"}, "isotipo-blanco": {"file": "tajamar-isologo-horizontal-blanco.svg", "label": "Isologo horizontal · blanco", "short": "", "group": "especial", "bg": "dark", "mime": "image/svg+xml"}, "escudo-logo-vertical-negro": {"file": "tajamar-vertical-negro.svg", "label": "Versión vertical · negro", "short": "", "group": "especial", "bg": "light", "mime": "image/svg+xml"}, "escudo-logo-vertical-blanco": {"file": "tajamar-vertical-blanco.svg", "label": "Versión vertical · blanco", "short": "", "group": "especial", "bg": "dark", "mime": "image/svg+xml"}, "fp-professional-education": {"file": "tajamar-fp-professional-education.svg", "label": "FP + Professional Education", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "educacion-infantil-isologo": {"file": "tajamar-educacion-infantil-horizontal.svg", "label": "Educación Infantil · horizontal", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "educacion-infantil-vertical": {"file": "tajamar-educacion-infantil-vertical.svg", "label": "Educación Infantil · vertical", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "libresypunto-blanco": {"file": "tajamar-libresypunto-blanco.svg", "label": "libresypunto™ · blanco", "short": "", "group": "firmas", "bg": "dark", "mime": "image/svg+xml"}, "fp-professional-education-blanco": {"file": "tajamar-fp-professional-education-blanco.svg", "label": "FP + Professional Education · blanco", "short": "", "group": "firmas", "bg": "dark", "mime": "image/svg+xml"}, "fundacion-vertical-negro": {"file": "tajamar-fundacion-vertical-negro.svg", "label": "Fundación Tajamar · vertical · negro", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "fundacion-vertical-blanco": {"file": "tajamar-fundacion-vertical-blanco.svg", "label": "Fundación Tajamar · vertical · blanco", "short": "", "group": "firmas", "bg": "dark", "mime": "image/svg+xml"}, "fundacion-horizontal-negro": {"file": "tajamar-fundacion-horizontal-negro.svg", "label": "Fundación Tajamar · horizontal · negro", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "fundacion-horizontal-blanco": {"file": "tajamar-fundacion-horizontal-blanco.svg", "label": "Fundación Tajamar · horizontal · blanco", "short": "", "group": "firmas", "bg": "dark", "mime": "image/svg+xml"}, "revista-puente-negro": {"file": "tajamar-revista-puente-negro.svg", "label": "Revista Puente · firma de cabecera", "short": "", "group": "firmas", "bg": "light", "mime": "image/svg+xml"}, "escudo-libre-boli": {"file": "tajamar-escudo-libre-boli.svg", "label": "Escudo libre · boli", "short": "Boli", "group": "libres", "bg": "light", "mime": "image/svg+xml"}, "escudo-libre-brochazo": {"file": "tajamar-escudo-libre-brochazo.svg", "label": "Escudo libre · brochazo", "short": "Brochazo", "group": "libres", "bg": "light", "mime": "image/svg+xml"}, "escudo-libre-spray": {"file": "tajamar-escudo-libre-spray.png", "label": "Escudo libre · spray", "short": "Spray", "group": "libres", "bg": "light", "mime": "image/png"}, "escudo-libre-boli-blanco": {"file": "tajamar-escudo-libre-boli-blanco.png", "label": "Escudo libre · boli · blanco", "short": "", "group": "libres", "bg": "dark", "mime": "image/png"}, "escudo-libre-brochazo-blanco": {"file": "tajamar-escudo-libre-brochazo-blanco.png", "label": "Escudo libre · brochazo · blanco", "short": "", "group": "libres", "bg": "dark", "mime": "image/png"}, "escudo-libre-spray-blanco": {"file": "tajamar-escudo-libre-spray-blanco.png", "label": "Escudo libre · spray · blanco", "short": "", "group": "libres", "bg": "dark", "mime": "image/png"}};
 const PAL = [{"name": "Negro", "desc": "La firma: seguridad y elegancia sin necesidad de llamar la atención. Positivo y negativo, con tintas del 10 % al 90 %.", "colors": [{"name": "negro", "hex": "#000000", "rgb": "0, 0, 0", "pantone": "PANTONE Process Black", "cmyk": "C0 M0 Y0 K100"}, {"name": "gris-90", "hex": "#1a1a1a", "rgb": "26, 26, 26", "pantone": "", "cmyk": "K90"}, {"name": "gris-80", "hex": "#333333", "rgb": "51, 51, 51", "pantone": "", "cmyk": "K80"}, {"name": "gris-70", "hex": "#4d4d4d", "rgb": "77, 77, 77", "pantone": "", "cmyk": "K70"}, {"name": "gris-60", "hex": "#666666", "rgb": "102, 102, 102", "pantone": "", "cmyk": "K60"}, {"name": "gris-50", "hex": "#808080", "rgb": "128, 128, 128", "pantone": "", "cmyk": "K50"}, {"name": "gris-40", "hex": "#999999", "rgb": "153, 153, 153", "pantone": "", "cmyk": "K40"}, {"name": "gris-30", "hex": "#b3b3b3", "rgb": "179, 179, 179", "pantone": "", "cmyk": "K30"}, {"name": "gris-20", "hex": "#cccccc", "rgb": "204, 204, 204", "pantone": "", "cmyk": "K20"}, {"name": "gris-10", "hex": "#e6e6e6", "rgb": "230, 230, 230", "pantone": "", "cmyk": "K10"}]}, {"name": "Cielo", "desc": "Azules: el cielo y la espiritualidad.", "colors": [{"name": "cielo-1", "hex": "#212844", "rgb": "33, 40, 68", "pantone": "PANTONE 533 C", "cmyk": "C95 M80 Y45 K50"}, {"name": "cielo-2", "hex": "#1c4f90", "rgb": "28, 79, 144", "pantone": "PANTONE 7686 C", "cmyk": "C95 M70 Y5 K0"}, {"name": "cielo-3", "hex": "#446ca9", "rgb": "68, 108, 169", "pantone": "PANTONE 7683 C", "cmyk": "C80 M50 Y0 K0"}, {"name": "cielo-4", "hex": "#40b4e5", "rgb": "64, 180, 229", "pantone": "PANTONE 298 C", "cmyk": "C70 M10 Y0 K0"}, {"name": "cielo-5", "hex": "#77cae6", "rgb": "119, 202, 230", "pantone": "PANTONE Blue 0821 C", "cmyk": "C55 M0 Y0 K0"}]}, {"name": "Zona Verde", "desc": "Las zonas verdes del centro.", "colors": [{"name": "verde-1", "hex": "#005740", "rgb": "0, 87, 64", "pantone": "PANTONE 7484 C", "cmyk": "C100 M40 Y95 K30"}, {"name": "verde-2", "hex": "#2d7150", "rgb": "45, 113, 80", "pantone": "PANTONE 555 C", "cmyk": "C85 M30 Y100 K15"}, {"name": "verde-3", "hex": "#45ab34", "rgb": "69, 171, 52", "pantone": "PANTONE 361 C", "cmyk": "C75 M0 Y100 K0"}, {"name": "verde-4", "hex": "#78b72a", "rgb": "120, 183, 42", "pantone": "PANTONE 368 C", "cmyk": "C50 M0 Y100 K0"}, {"name": "verde-5", "hex": "#d8c722", "rgb": "216, 199, 34", "pantone": "PANTONE 611 C", "cmyk": "C30 M0 Y90 K0"}]}, {"name": "Ladrillo", "desc": "Rojos y naranjas: el ladrillo que construimos.", "colors": [{"name": "ladrillo-1", "hex": "#e53b2f", "rgb": "229, 59, 47", "pantone": "PANTONE 179 C", "cmyk": "C0 M90 Y85 K0"}, {"name": "ladrillo-2", "hex": "#dd6014", "rgb": "221, 96, 20", "pantone": "PANTONE 1595 C", "cmyk": "C0 M70 Y95 K0"}, {"name": "ladrillo-3", "hex": "#f18a2d", "rgb": "241, 138, 45", "pantone": "PANTONE 715 C", "cmyk": "C0 M50 Y85 K0"}, {"name": "ladrillo-4", "hex": "#f7b332", "rgb": "247, 179, 50", "pantone": "PANTONE 143 C", "cmyk": "C0 M35 Y85 K0"}, {"name": "ladrillo-5", "hex": "#ffe01c", "rgb": "255, 224, 28", "pantone": "PANTONE 107 C", "cmyk": "C0 M10 Y90 K0"}]}, {"name": "Barro", "desc": "Tierras: el barro histórico en el que crecimos.", "colors": [{"name": "barro-1", "hex": "#412020", "rgb": "65, 32, 32", "pantone": "PANTONE 4975 C", "cmyk": "C50 M80 Y70 K80"}, {"name": "barro-2", "hex": "#76391b", "rgb": "118, 57, 27", "pantone": "PANTONE 168 C", "cmyk": "C35 M75 Y95 K45"}, {"name": "barro-3", "hex": "#8f481f", "rgb": "143, 72, 31", "pantone": "PANTONE 1615 C", "cmyk": "C35 M65 Y95 K35"}, {"name": "barro-4", "hex": "#c88a3c", "rgb": "200, 138, 60", "pantone": "PANTONE 7510 C", "cmyk": "C20 M45 Y80 K5"}, {"name": "barro-5", "hex": "#dcb38d", "rgb": "220, 179, 141", "pantone": "PANTONE 727 C", "cmyk": "C15 M30 Y50 K5"}]}];
@@ -905,24 +982,70 @@ function stage(){ const k=PIECES[piece]+'-'+bg.v; $('#stage').style.background=b
 stage();
 
 
+// Composición del logo
+document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k));
+
+// Repositorio de plantillas
+(()=>{
+  const D=window.PLANTILLAS; if(!D) return;
+  const repo=$('#repo'), chips=$('#repo-chips'), q=$('#repo-q'); let cat='todas';
+  const size=kb=>kb>=1024?(kb/1024).toFixed(1).replace('.',',')+' MB':kb+' KB';
+  [{id:'todas',h:'Todas'},...D.categorias].forEach(c=>{
+    const b=document.createElement('button'); b.type='button'; b.textContent=c.h; b.setAttribute('aria-pressed',c.id==='todas');
+    b.onclick=()=>{cat=c.id; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); draw();};
+    chips.appendChild(b);
+  });
+  D.categorias.forEach(c=>{
+    const g=document.createElement('div'); g.className='repo-group'; g.dataset.cat=c.id;
+    g.innerHTML=`<h3>${c.h}</h3><p>${c.p}</p><div class="repo-grid"></div>`;
+    const grid=g.querySelector('.repo-grid');
+    D.items.filter(i=>i.cat===c.id).forEach(i=>{
+      const a=document.createElement('article'); a.className='rcard'; a.dataset.q=(i.title+' '+c.h+' '+i.note+' '+i.fmt).toLowerCase();
+      a.innerHTML=`<a class="rthumb" href="${i.file}" download aria-label="Descargar ${i.title}">${i.thumb?`<img src="${i.thumb}" alt="" loading="lazy">`:`<span class="rfmt">${i.fmt}</span>`}</a><div class="rmeta"><div><b>${i.title}</b><br><small>${[i.note,i.fmt,size(i.kb)].filter(Boolean).join(' · ')}</small></div><a class="rdl" href="${i.file}" download>Descargar</a></div>`;
+      grid.appendChild(a);
+    });
+    if(c.id==='firmas') g.appendChild($('#firma'));
+    repo.appendChild(g);
+  });
+  const sel=$('#sg-img');
+  D.items.filter(i=>i.cat==='firmas'&&/\.jpg$/.test(i.file)).forEach(i=>{ const o=document.createElement('option'); o.value=i.file; o.textContent=i.title; sel.appendChild(o); });
+  function draw(){
+    const t=q.value.trim().toLowerCase();
+    repo.querySelectorAll('.repo-group').forEach(g=>{
+      let n=0; g.querySelectorAll('.rcard').forEach(a=>{ const ok=!t||a.dataset.q.includes(t); a.hidden=!ok; if(ok) n++; });
+      g.hidden=(cat!=='todas'&&g.dataset.cat!==cat)||(!!t&&!n);
+    });
+  }
+  q.addEventListener('input',draw);
+})();
+
 // Firma de correo
 (()=>{
   const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const v=id=>document.getElementById(id).value.trim();
-  const LEGAL='El contenido de este correo electrónico, incluidos los anexos que pudiera contener, es confidencial, siendo su uso exclusivo de la/s persona/s mencionada/s. Si usted no es el destinatario del mismo, no le está permitido usarlo, copiarlo o difundirlo ni total ni parcialmente, por cualquier medio. Proceda en consecuencia a devolverlo a su remitente y a su eliminación. La publicación, uso, difusión no autorizada de este mensaje y sus anexos, en todo o en parte, está estrictamente prohibida.';
-  const LEGAL_EN='This e-mail, any attachments and the information contained therein ("this message") are confidential and intended solely for the use of the addressee(s). If you have received this message in error please send it back to the sender and delete it. Unauthorized publication, use, dissemination or disclosure of this message, either in whole or in part is strictly prohibited.';
+  const LEGAL='Este mensaje contiene información confidencial cuya divulgación está prohibida por la normativa europea vigente y se dirige exclusivamente a quien figura como su destinatario. Si usted no es el destinatario, le rogamos que nos lo comunique y destruya el mensaje y sus anexos. Si no desea seguir recibiendo comunicaciones, por favor, envíenos un mensaje a <a href="mailto:dpo@tajamar.es" style="color:#1155cc">dpo@tajamar.es</a>.';
+  const CONF='CONFIDENCIALIDAD: Este email es confidencial y para uso exclusivo de su destinatario.';
   function html(){
-    const f='font-family:Verdana,Geneva,sans-serif;font-size:12px;line-height:1.5;color:#222';
-    const tel=[v('sg-t')&&'T '+esc(v('sg-t')), v('sg-m')&&'M '+esc(v('sg-m'))].filter(Boolean).join(' · ');
-    return `<table cellpadding="0" cellspacing="0" border="0" style="${f}"><tr><td style="padding:0 0 10px"><img src="https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png" width="34" alt="Tajamar" style="display:block;width:34px;height:auto"></td></tr>`+
-      `<tr><td style="${f}">${esc(v('sg-n'))}<br>${esc(v('sg-c'))}<br><br>${esc(v('sg-e'))}<br>C/ Pío Felipe, 12 · 28038 Vallecas Madrid`+
-      (tel?`<br>${tel}`:'')+(v('sg-mail')?`<br>E <a href="mailto:${esc(v('sg-mail'))}" style="color:#222;text-decoration:none">${esc(v('sg-mail'))}</a>`:'')+
-      `<br><a href="https://tajamar.es" style="color:#000;font-weight:bold;text-decoration:none">tajamar.es</a></td></tr>`+
-      `<tr><td style="padding-top:14px;font-family:Verdana,Geneva,sans-serif;font-size:8px;line-height:1.4;color:#888">${LEGAL}<br><br>${LEGAL_EN}</td></tr></table>`;
+    const V='font-family:Verdana,Geneva,sans-serif';
+    const im=document.getElementById('sg-img').value;
+    const pic=im?`<img src="https://brand.tajamar.es/${im}" width="92" alt="Tajamar" style="display:block;width:92px;height:auto">`
+                :`<img src="https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png" width="46" alt="Tajamar" style="display:block;width:46px;height:auto">`;
+    const tel=[v('sg-t'),v('sg-m')].filter(Boolean).map(t=>`(+34) <b>${esc(t)}</b>`).join('<br>');
+    const mail=v('sg-mail')?`<a href="mailto:${esc(v('sg-mail'))}" style="color:#1155cc">${esc(v('sg-mail'))}</a>`:'';
+    const contact=[tel,mail].filter(Boolean).join('<br>');
+    return `<table cellpadding="0" cellspacing="0" border="0" style="${V};color:#000"><tr>`+
+      `<td valign="top" style="padding:0 16px 0 0">${pic}</td>`+
+      `<td valign="middle" style="${V}">`+
+        `<div style="font-size:14px;font-weight:bold;color:#333f50">${esc(v('sg-n'))}</div>`+
+        `<div style="font-size:12px;font-weight:bold;color:#666666">${esc(v('sg-c'))}</div>`+
+        (contact?`<div style="font-size:11px;color:#333f50;margin-top:12px;line-height:1.5">${contact}</div>`:'')+
+        `<div style="font-size:9px;line-height:1.45;margin-top:12px"><b>${esc(v('sg-e'))}</b><br>Calle Pío Felipe 12<br>28038 Vallecas Madrid<br><a href="https://www.tajamar.es" style="color:#0563c1">www.tajamar.es</a></div>`+
+      `</td></tr>`+
+      `<tr><td colspan="2" style="padding-top:14px;font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:1.4;color:#7f7f7f;max-width:520px"><b style="color:#999999">AVISO LEGAL</b><br><b>${LEGAL}</b><br><br><b>${CONF}</b></td></tr></table>`;
   }
   const out=document.getElementById('sg-out');
   const draw=()=>{out.innerHTML=html();};
-  ['sg-n','sg-c','sg-e','sg-t','sg-m','sg-mail'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+  ['sg-n','sg-c','sg-e','sg-t','sg-m','sg-mail','sg-img'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
   draw();
   document.getElementById('sg-copy').onclick=async()=>{
     try{ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html()],{type:'text/html'}),'text/plain':new Blob([out.innerText],{type:'text/plain'})})]); toast('Firma copiada'); }

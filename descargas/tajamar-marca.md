@@ -6,7 +6,7 @@ Esta es la versión en texto del manual de marca de Tajamar, publicado en https:
 
 Una sola marca firma todo lo que hace Tajamar: Colegio, FP + Professional Education, Club Deportivo, Fundación Tajamar y Alumni. Cada área tiene su propia expresión, pero ninguna tiene logo nuevo. Tajamar existe desde 1958 y está en Vallecas (Madrid).
 
-- **Lema:** «Somos distintos.»
+- **Lema:** «Somos distintos».
 - **Firma verbal:** libresypunto™, que también se lee «libres y punto». Hashtag: #libresypunto.
 - **Nombre:** se escribe «Tajamar». El logotipo es «tajamar.», en minúsculas y con punto final, pero eso es solo el dibujo del logotipo. En texto corrido escribe siempre «Tajamar».
 
@@ -49,12 +49,11 @@ Los tres primeros marcan el tono. El cuarto añade reto y mirada hacia fuera.
 Tajamar suena humano, claro, seguro, optimista, abierto, expresivo y distintivo. Puede ser formal cuando toca, pero nunca frío ni burocrático.
 
 Ejemplos:
-- «Bueno, no nos engañemos. En realidad este colegio es de la gente.»
-- «Aquí, desde 1958, si quieres, puedes.»
+- «Bueno, no nos engañemos. En realidad este colegio es de la gente».
+- «Aquí, desde 1958, si quieres, puedes».
 - «Nos dieron la corbata de Alfonso X el Sabio. (Pero no nos la ponemos)»
-- «Bienvenido al mundo real.»
-- «Achtung. Dios existe. Al menos aquí. (Por mucho que algunos alumnos se empeñen en que no)»
-- «El primer centro de economía colaborativa de Madrid.»
+- «Bienvenido al mundo real».
+- «El primer centro de economía colaborativa de Madrid».
 
 Si nuestro tono de voz fuese una historia, sería Gandhi; un personaje famoso, la gente; una cita, «Tenemos demasiadas cosas y no suficientes formas» (Flaubert); una marca, Coca-Cola.
 
@@ -110,7 +109,9 @@ Antes de entregar un texto, comprueba los cinco puntos. Si falla alguno, reescr�
 
 - Escudo: el área de protección la marca la «T» interior del escudo.
 - Logotipo: como mínimo, la altura de la «T» alrededor de todo el logotipo.
-- Cuanto más aire, mejor.
+- Cuanto más aire, mejor. El área de protección la respetan imágenes y textos; solo la invaden las versiones especiales.
+- Si el escudo no puede ir a la izquierda, deja espacio suficiente a su derecha y no lo pegues al margen.
+- No existen versiones del escudo ni del logotipo en otros colores, ni se pueden crear.
 
 | Pieza | Mínimo |
 |---|---|
@@ -256,10 +257,14 @@ La seriedad del escudo va acompañada de un mundo expresivo. Todo con medida, po
 - **Carpeta (24 × 32 cm cerrada):** díptico, con o sin bolsillo interior de 10 cm. Portada en color corporativo pleno con el escudo en blanco y el logotipo abajo, o en blanco con un escudo libre.
 - **Dirección institucional:** Colegio Tajamar, C/ Pío Felipe, 12 · 28038 Vallecas Madrid · tajamar.es.
 
+### Plantillas descargables
+
+En https://brand.tajamar.es/#plantillas hay plantillas listas para usar: cartas en Word por etapa y área (estándar, Infantil, Primaria, Secundaria, FP, Club Deportivo, AMPA), presentación corporativa en PowerPoint, 17 carteles en Word sobre la gama oficial, modelo de examen, hojas de Secretaría, imágenes de firma por área y guías para instalar la firma en Gmail y Outlook. Recomienda siempre partir de una plantilla antes de diseñar desde cero. Los carteles se imprimen con «Imprimir colores e imágenes de fondo» activado en Word.
+
 ### Pantallas
 
 - **Presentaciones:** portada con escudo arriba a la izquierda, título, subtítulo y fecha. Portadillas de sección a color pleno o con ilustración. Índice numerado (01_Uno, 02_Dos…). Interiores con texto y elementos gráficos, llamadas de atención (con libresypunto) y combinaciones de texto, foto y gráfico.
-- **Firma de correo:** escudo arriba; debajo, nombre, cargo, línea en blanco, emisor, dirección, teléfonos, correo y **tajamar.es** en negrita; al final, el aviso legal en español e inglés. Hay un generador en https://brand.tajamar.es/#firma.
+- **Firma de correo:** tabla de dos columnas. A la izquierda, la imagen del área (escudo y dibujo: Alumni, Bachillerato, Club Deportivo, FP, Fundación, Infantil, Primaria, Secretaría, Secundaria) o solo el escudo. A la derecha: nombre en Verdana negrita (#333F50), cargo y área en Verdana negrita gris (#666666), teléfono «(+34) 600 000 000» y correo, y después «Colegio Tajamar» en negrita, «Calle Pío Felipe 12», «28038 Vallecas Madrid» y www.tajamar.es en Verdana 9 pt. Debajo, «AVISO LEGAL» y el texto: «Este mensaje contiene información confidencial cuya divulgación está prohibida por la normativa europea vigente y se dirige exclusivamente a quien figura como su destinatario. Si usted no es el destinatario, le rogamos que nos lo comunique y destruya el mensaje y sus anexos. Si no desea seguir recibiendo comunicaciones, por favor, envíenos un mensaje a dpo@tajamar.es». y «CONFIDENCIALIDAD: Este email es confidencial y para uso exclusivo de su destinatario».. Generador en https://brand.tajamar.es/#firma.
 - **Redes sociales:** avatar con el escudo oficial solo; el emisor ya va en el nombre de la cuenta. Si hace falta el logotipo, versión vertical. El logotipo puede ir en la imagen de cabecera. Hashtag #libresypunto.
 - **Cierre audiovisual:** fondo de color corporativo pleno; la gaviota entra volando y se posa, forma el escudo y aparece el logotipo. Es una propuesta abierta a interpretación.
 

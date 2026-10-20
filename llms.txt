@@ -10,6 +10,8 @@
 
 ## Archivos
 
+- [Plantillas](https://brand.tajamar.es/#plantillas): cartas, presentación, carteles, examen, Secretaría y firmas de correo (catálogo en https://brand.tajamar.es/plantillas/plantillas.js)
+
 - [Kit de marca](https://brand.tajamar.es/descargas/tajamar-kit-de-marca.zip): logos en SVG y PNG de 2000 px
 - [Paleta](https://brand.tajamar.es/descargas/tajamar-paleta.csv): CSV con separador ;
 - Logos sueltos: https://brand.tajamar.es/logos/svg/<nombre>.svg y https://brand.tajamar.es/logos/png/<nombre>.png

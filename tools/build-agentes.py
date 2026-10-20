@@ -84,6 +84,8 @@ with zipfile.ZipFile(D / "tajamar-marca-skill.zip", "w", zipfile.ZIP_DEFLATED) a
 
 ## Archivos
 
+- [Plantillas]({SITE}/#plantillas): cartas, presentación, carteles, examen, Secretaría y firmas de correo (catálogo en {SITE}/plantillas/plantillas.js)
+
 - [Kit de marca]({SITE}/descargas/tajamar-kit-de-marca.zip): logos en SVG y PNG de 2000 px
 - [Paleta]({SITE}/descargas/tajamar-paleta.csv): CSV con separador ;
 - Logos sueltos: {SITE}/logos/svg/<nombre>.svg y {SITE}/logos/png/<nombre>.png
