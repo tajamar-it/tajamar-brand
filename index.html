@@ -805,6 +805,7 @@ footer img{height:34px}
           <label>Área<input id="sg-a" value="Área" placeholder="Primaria, FP, Secretaría…"></label>
           <label>Imagen de tu área<select id="sg-img"><option value="">Solo escudo</option></select></label>
           <label>Extensión (opcional)<input id="sg-x" inputmode="numeric" placeholder="123"></label>
+          <label>Móvil (opcional)<input id="sg-m" inputmode="tel" placeholder="600 000 000"></label>
           <label>Correo<input id="sg-mail" placeholder="nombre@tajamar.es"></label>
         </div>
         <div>
@@ -1064,7 +1065,8 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
     const L=im?{w:92,gap:16,src:`https://brand.tajamar.es/${im}`}
               :{w:40,gap:18,src:'https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png'};
     const ext=v('sg-x');
-    const tel=`(+34) <b>91 477 25 00</b>`+(ext?` | Ext.: <b>${esc(ext)}</b>`:'');
+    const mov=v('sg-m');
+    const tel=`(+34) <b>91 477 25 00</b>`+(ext?` | Ext.: <b>${esc(ext)}</b>`:'')+(mov?`<br>(+34) <b>${esc(mov)}</b>`:'');
     const mail=v('sg-mail')?`<br><a href="mailto:${esc(v('sg-mail'))}" style="color:#1155cc">${esc(v('sg-mail'))}</a>`:'';
     const T='cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse"';
     const legal=`<div style="font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:1.4;color:#7f7f7f;padding-top:16px;max-width:430px"><b style="color:#999999">AVISO LEGAL</b><br><b>${LEGAL}</b><br><br><b>${CONF}</b></div>`;
@@ -1082,7 +1084,7 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   }
   const out=document.getElementById('sg-out');
   const draw=()=>{out.innerHTML=html();};
-  ['sg-n','sg-c','sg-a','sg-x','sg-mail','sg-img'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+  ['sg-n','sg-c','sg-a','sg-x','sg-m','sg-mail','sg-img'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
   draw();
   document.getElementById('sg-copy').onclick=async()=>{
     try{ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html()],{type:'text/html'}),'text/plain':new Blob([out.innerText],{type:'text/plain'})})]); toast('Firma copiada'); }
