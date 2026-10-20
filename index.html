@@ -804,8 +804,7 @@ footer img{height:34px}
           <label>Cargo<input id="sg-c" value="Cargo"></label>
           <label>Área<input id="sg-a" value="Área" placeholder="Primaria, FP, Secretaría…"></label>
           <label>Imagen de tu área<select id="sg-img"><option value="">Solo escudo</option></select></label>
-          <label>Teléfono<input id="sg-t" placeholder="91 000 00 00"></label>
-          <label>Otro teléfono<input id="sg-m" placeholder="600 000 000"></label>
+          <label>Extensión (opcional)<input id="sg-x" inputmode="numeric" placeholder="123"></label>
           <label>Correo<input id="sg-mail" placeholder="nombre@tajamar.es"></label>
         </div>
         <div>
@@ -1060,30 +1059,30 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   function html(){
     const V='font-family:Verdana,Geneva,sans-serif';
     const im=document.getElementById('sg-img').value;
-    // Escudo solo: 40 px de ancho, alineado arriba con el nombre y con ~media anchura de aire (el área de la «T»).
-    // Imagen de área: 92 px, el texto centrado en vertical como en la firma oficial.
-    const L=im?{w:92,gap:16,va:'middle',src:`https://brand.tajamar.es/${im}`}
-              :{w:40,gap:18,va:'top',src:'https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png'};
-    const tel=[v('sg-t'),v('sg-m')].filter(Boolean).map(t=>`(+34) <b>${esc(t)}</b>`).join('<br>');
-    const mail=v('sg-mail')?`<a href="mailto:${esc(v('sg-mail'))}" style="color:#1155cc">${esc(v('sg-mail'))}</a>`:'';
-    const contact=[tel,mail].filter(Boolean).join('<br>');
+    // Escudo solo: 40 px, alineado con el nombre, ~18 px de aire; el aviso legal va debajo de todo.
+    // Imagen de área: 92 px; el texto y el aviso legal van en la columna de la derecha, alineados arriba con la imagen.
+    const L=im?{w:92,gap:16,src:`https://brand.tajamar.es/${im}`}
+              :{w:40,gap:18,src:'https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png'};
+    const ext=v('sg-x');
+    const tel=`(+34) <b>91 477 25 00</b>`+(ext?` | Ext.: <b>${esc(ext)}</b>`:'');
+    const mail=v('sg-mail')?`<br><a href="mailto:${esc(v('sg-mail'))}" style="color:#1155cc">${esc(v('sg-mail'))}</a>`:'';
     const T='cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse"';
-    return `<table ${T}><tr><td style="padding:0">`+
-      `<table ${T}><tr>`+
-        `<td width="${L.w}" valign="${L.va}" style="width:${L.w}px;padding:${im?0:2}px 0 0 0;vertical-align:${L.va}"><img src="${L.src}" width="${L.w}" alt="Tajamar" style="display:block;width:${L.w}px;height:auto;border:0"></td>`+
-        `<td width="${L.gap}" style="width:${L.gap}px;font-size:0;line-height:0">&nbsp;</td>`+
-        `<td valign="${L.va}" style="${V};vertical-align:${L.va};padding:0">`+
-          `<div style="font-size:14px;line-height:1.25;font-weight:bold;color:#333f50">${esc(v('sg-n'))}</div>`+
-          `<div style="font-size:12px;line-height:1.3;font-weight:bold;color:#666666">${[v('sg-c'),v('sg-a')].filter(Boolean).map(esc).join(' · ')}</div>`+
-          (contact?`<div style="font-size:11px;line-height:1.5;color:#333f50;padding-top:10px">${contact}</div>`:'')+
-          `<div style="font-size:9px;line-height:1.45;color:#000;padding-top:10px"><b>Colegio Tajamar</b><br>Calle Pío Felipe 12<br>28038 Vallecas Madrid<br><a href="https://www.tajamar.es" style="color:#0563c1">www.tajamar.es</a></div>`+
-        `</td></tr></table>`+
-      `</td></tr>`+
-      `<tr><td style="padding:16px 0 0;width:520px;font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:1.4;color:#7f7f7f"><b style="color:#999999">AVISO LEGAL</b><br><b>${LEGAL}</b><br><br><b>${CONF}</b></td></tr></table>`;
+    const legal=`<div style="font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:1.4;color:#7f7f7f;padding-top:16px;max-width:430px"><b style="color:#999999">AVISO LEGAL</b><br><b>${LEGAL}</b><br><br><b>${CONF}</b></div>`;
+    const text=`<div style="font-size:14px;line-height:1.25;font-weight:bold;color:#333f50">${esc(v('sg-n'))}</div>`+
+      `<div style="font-size:12px;line-height:1.3;font-weight:bold;color:#666666">${[v('sg-c'),v('sg-a')].filter(Boolean).map(esc).join(' · ')}</div>`+
+      `<div style="font-size:11px;line-height:1.5;color:#333f50;padding-top:10px">${tel}${mail}</div>`+
+      `<div style="font-size:9px;line-height:1.45;color:#000;padding-top:10px"><b>Colegio Tajamar</b><br>Calle Pío Felipe 12<br>28038 Vallecas Madrid<br><a href="https://www.tajamar.es" style="color:#0563c1">www.tajamar.es</a></div>`;
+    const row=(right)=>`<table ${T}><tr>`+
+      `<td width="${L.w}" valign="top" style="width:${L.w}px;padding:${im?0:2}px 0 0 0;vertical-align:top"><img src="${L.src}" width="${L.w}" alt="Tajamar" style="display:block;width:${L.w}px;height:auto;border:0"></td>`+
+      `<td width="${L.gap}" style="width:${L.gap}px;font-size:0;line-height:0">&nbsp;</td>`+
+      `<td valign="top" style="${V};vertical-align:top;padding:0">${right}</td></tr></table>`;
+    return im
+      ? row(text+legal)
+      : `<table ${T}><tr><td style="padding:0">${row(text)}</td></tr><tr><td style="padding:0;width:520px">${legal.replace('max-width:430px','max-width:520px')}</td></tr></table>`;
   }
   const out=document.getElementById('sg-out');
   const draw=()=>{out.innerHTML=html();};
-  ['sg-n','sg-c','sg-a','sg-t','sg-m','sg-mail','sg-img'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+  ['sg-n','sg-c','sg-a','sg-x','sg-mail','sg-img'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
   draw();
   document.getElementById('sg-copy').onclick=async()=>{
     try{ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html()],{type:'text/html'}),'text/plain':new Blob([out.innerText],{type:'text/plain'})})]); toast('Firma copiada'); }
