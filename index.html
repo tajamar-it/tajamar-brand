@@ -425,6 +425,36 @@ button{font:inherit;cursor:pointer}
 .fichas summary{cursor:pointer;font-family:var(--arq);font-weight:600;font-size:20px}
 .fichas summary span{font-family:var(--text);font-weight:400;font-size:14px;color:var(--gris-60);margin-left:8px}
 
+/* Agente tonto: busca en la página, te lleva y resalta */
+.ag-btn{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:30;width:60px;height:60px;border-radius:50%;background:var(--negro);border:2px solid var(--ladrillo-5);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;padding:0}
+.ag-btn svg{width:38px;height:38px}
+.ag-btn:hover{transform:translateY(-2px) rotate(-4deg)}
+.ag-btn[aria-expanded="true"]{display:none}
+.ag-panel{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:31;width:min(380px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--blanco);color:var(--negro);border:2px solid var(--negro);box-shadow:0 12px 40px rgba(0,0,0,.3);border-radius:2px}
+.ag-panel[hidden]{display:none}
+.ag-head{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;background:var(--negro);color:var(--blanco)}
+.ag-head svg{width:30px;height:30px;flex:none}
+.ag-head b{font-family:var(--arq);font-weight:600;font-size:15px;display:block}
+.ag-head small{font-size:11.5px;color:#bdbdbd;display:block;line-height:1.3}
+.ag-close{margin-left:auto;background:transparent;border:1.5px solid #666;color:var(--blanco);width:30px;height:30px;border-radius:2px;font-size:16px;line-height:1;flex:none}
+.ag-body{padding:14px;overflow-y:auto;display:grid;gap:10px;font-size:14px}
+.ag-msg{background:var(--gris-10);padding:10px 12px;border-radius:2px;line-height:1.45}
+.ag-msg.me{background:var(--negro);color:var(--blanco);justify-self:end;max-width:85%}
+.ag-res{display:grid;gap:6px}
+.ag-res button{text-align:left;background:var(--blanco);border:1.5px solid var(--negro);padding:8px 10px;border-radius:2px;font-size:13.5px;line-height:1.3}
+.ag-res button span{display:block;font-family:var(--arq);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-60);margin-bottom:2px}
+.ag-res button:hover{background:var(--ladrillo-5)}
+.ag-sug{display:flex;flex-wrap:wrap;gap:6px}
+.ag-sug button{background:var(--blanco);border:1.5px solid var(--negro);padding:6px 9px;border-radius:2px;font-size:12.5px}
+.ag-sug button:hover{background:var(--ladrillo-5)}
+.ag-form{display:flex;gap:6px;padding:10px;border-top:2px solid var(--negro)}
+.ag-form input{flex:1;min-width:0;font:inherit;font-size:15px;padding:9px 10px;border:2px solid var(--negro);border-radius:2px}
+.ag-form button{background:var(--ladrillo-5);border:2px solid var(--negro);font-weight:700;padding:0 12px;border-radius:2px}
+.ag-hl{outline:4px solid var(--ladrillo-5)!important;outline-offset:6px;animation:ag-pulso 1s ease-in-out 3}
+@keyframes ag-pulso{50%{outline-color:rgba(255,224,28,.15)}}
+@media (prefers-reduced-motion:reduce){.ag-hl{animation:none}}
+@media (max-width:560px){.ag-panel{left:0;right:0;bottom:0;width:100%;max-height:75vh;border-left:0;border-right:0;border-bottom:0}}
+
 footer{background:var(--blanco);padding-block:40px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;font-size:14px}
 footer .ver{color:var(--gris-60);font-size:13px}
@@ -983,6 +1013,13 @@ footer img{height:52px;width:auto;margin-right:28px}
   </div>
 </footer>
 
+<button class="ag-btn" id="ag-btn" type="button" aria-expanded="false" aria-controls="ag-panel" aria-label="Pregúntame: busco en esta página"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 15.5c0 1.6 0 2.4.1 2.8" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M26.5 15c.2.9.1 2 0 3" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M10.5 24.5c2.8 4.6 7.6 6.4 12.4 5 2.6-.8 4.6-2.6 6-5.2" stroke="#ffe01c" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></button>
+<section class="ag-panel" id="ag-panel" role="dialog" aria-label="Pregúntame" hidden>
+  <div class="ag-head"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 15.5c0 1.6 0 2.4.1 2.8" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M26.5 15c.2.9.1 2 0 3" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M10.5 24.5c2.8 4.6 7.6 6.4 12.4 5 2.6-.8 4.6-2.6 6-5.2" stroke="#ffe01c" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg><div><b>Pregúntame</b><small>No soy una IA: busco en esta página y te llevo.</small></div><button class="ag-close" id="ag-close" type="button" aria-label="Cerrar">✕</button></div>
+  <div class="ag-body" id="ag-body" aria-live="polite"></div>
+  <form class="ag-form" id="ag-form"><input id="ag-q" type="text" placeholder="¿Qué buscas?" aria-label="¿Qué buscas?" autocomplete="off"><button type="submit">Ir</button></form>
+</section>
+
 <div class="toast" id="toast" hidden></div>
 
 <script src="plantillas/plantillas.js"></script>
@@ -1185,6 +1222,123 @@ GROUPS.forEach(g=>{
   });
   dg.appendChild(s);
 });
+
+// Agente tonto: sin IA. Reconoce preguntas típicas o busca en el texto de la página, te lleva y resalta.
+(()=>{
+  const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9+ ]/g,' ').replace(/\s+/g,' ').trim();
+  const STOP=new Set('el la los las un una unos unas de del al a en y o que como cual cuales donde cuando por para con sin se me mi lo le su sus es son hay quiero puedo tengo hacer usar uso va van debo esta este esto ese esa'.split(' '));
+  const stem=w=>w.length>4?w.replace(/(es|s)$/,''):w;
+  const toks=t=>norm(t).split(' ').filter(w=>w&&!STOP.has(w)).map(stem);
+  // Preguntas típicas: [palabras clave, destino, respuesta]
+  const I=[
+    [['logo sobre','sobre azul','sobre negro','sobre rojo','sobre verde','sobre amarillo','sobre fondo','sobre foto','sobre color','que logo','fondo','azul','color de fondo','negativo','positivo','blanco o negro','sobre foto','que version'],'#stage','Sobre blanco o claro, el logo en negro. Sobre negro, color o foto, casi siempre en blanco. Prueba aquí con cada fondo.'],
+    [['tamano minimo','minimo','pequeno','mm','milimetro'],'.facts','Escudo, 5 mm. Logotipo, 23 mm de ancho. Vertical, 10 mm de ancho. Isologo, 25 mm de ancho.'],
+    [['area de proteccion','proteccion','margen','aire','espacio alrededor','construccion','reticula'],'.constr','El área de protección del escudo la marca su «T» interior; la del logotipo, la altura de la «T». Imágenes y textos la respetan.'],
+    [['donde va el escudo','colocar','posicion','izquierda','composicion','esquina'],'.compo','Escudo arriba a la izquierda con aire a su derecha, y el logotipo en otro punto de la pieza. Si no cabe a la izquierda, no lo pegues al margen.'],
+    [['escudo solo','sin logotipo','redes','avatar'],'.dont','El escudo puede ir solo en papelería, redes y comunicación interna. En comunicación externa, siempre con el logotipo en el mismo plano.'],
+    [['isologo','vertical','patrocinio','tercero','convivir','otras marcas'],'.dont','Isologo y versión vertical, solo para terceros, patrocinios, convivencia con otras marcas o cuando el tamaño obliga.'],
+    [['prohibido','nunca','no se puede','deformar','girar','recolorear','cortar'],'.dont','Nunca: redibujar, deformar, girar, recolorear ni cortar el escudo o el logotipo, ni ponerlo en otro color que negro o blanco.'],
+    [['escudo libre','boli','brochazo','spray'],'#libres','Escudos libres (boli, brochazo, spray): solo comunicación interna, nunca en lugar del oficial.'],
+    [['color','colores','paleta','hex','pantone','cmyk','rgb','gama'],'#gamas','Negro y cuatro gamas: Cielo, Zona Verde, Ladrillo y Barro. Pulsa un color para copiar su HEX.'],
+    [['colores para texto','color para texto','para texto','texto sobre','texto en color','contraste','legible','que color para texto'],'.colnote','Para texto sobre blanco, solo los tonos marcados «Aa texto». Los claros y vivos son campos de color con texto negro encima.'],
+    [['tipografia','fuente','letra','rockwell','avenir','montserrat','rokkitt','franklin'],'#tipografia','Rockwell para titulares expresivos, Avenir para todo lo demás y Franklin Gothic para los nombres de área. En web: Rokkitt y Montserrat.'],
+    [['descargar fuente','licencia','instalar fuente'],'.fonts-note','Las fuentes corporativas tienen licencia: pídelas a Comunicación. En web, usa Montserrat y Rokkitt.'],
+    [['libresypunto','libres y punto','hashtag'],'#tipo-lsp','libresypunto va siempre en Rockwell, minúsculas y todo junto. Usa el archivo oficial.'],
+    [['tono','como escribir','escribir','redactar','texto','copy'],'#voz','Humano, claro, seguro y optimista. Empieza por lo útil y escribe para quien lee.'],
+    [['cliche','evitar','frase','trampa','palabras prohibidas','palabras que no','no debo usar','no usar','expresiones'],'.traps','Fuera clichés como «una experiencia única e inolvidable» o «el futuro empieza aquí».'],
+    [['prueba','revisar texto','checklist','comprobar texto'],'#test','Pasa tu texto por la prueba «libres y punto»: cinco comprobaciones.'],
+    [['valores','idealistas','abiertos','libres','fronterizos'],'#valores','Cuatro territorios: Idealistas, Abiertos, Libres y Fronterizos.'],
+    [['manifiesto','por que esta marca','distintos'],'#manifiesto','«Somos distintos y tenemos derecho a ser distintos. Somos libres, y punto».'],
+    [['arquitectura','niveles','areas','como firma'],'.niveles','Una sola marca. Fundación, Colegio y FP+ tienen su nivel; el resto de áreas, en texto junto a la marca.'],
+    [['firma fp','como firma fp','fp','fp+','formacion profesional','grafica','tech','deporte'],'.fpbox','FP+ no es Colegio: emite siempre «Tajamar». Sus familias son Gráfica, Tech y Deporte.'],
+    [['infantil'],'#arq','Educación Infantil es la única área que firma bajo el logotipo.'],
+    [['fundacion'],'#arq','Fundación Tajamar no usa el logotipo: escudo y «Fundación Tajamar» en Franklin Gothic Demi.'],
+    [['club deportivo','alumni','escuela de musica','descriptor'],'#arq','Escudo arriba a la izquierda de la pieza y el nombre del área arriba a la derecha, cada uno en su extremo. El logotipo, en otro punto.'],
+    [['foto','fotografia','imagen','imagenes'],'#fotografia','Momentos reales, no posados. Solo fotos con derechos y permisos, con especial cuidado con menores.'],
+    [['mano alzada','look','dibujo','garabato','manchon'],'#lookandfeel','Trazos a mano, dibujos de alumnos, esquemas de pizarra. En blanco sobre color, y con medida.'],
+    [['firma','firma de correo','email','correo','gmail','outlook'],'#firma','Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo, cómo ponerla en Gmail y en Outlook.'],
+    [['carta','papel de carta','membrete'],'.repo-group[data-cat="cartas"]','Cartas en Word por etapa y área, con escudo, márgenes y pie ya colocados.'],
+    [['cartel','poster','imprimir cartel'],'.repo-group[data-cat="carteles"]','Carteles en Word sobre la gama oficial. Al imprimir, activa «Imprimir colores e imágenes de fondo».'],
+    [['presentacion','powerpoint','ppt','diapositiva'],'.repo-group[data-cat="presentaciones"]','Plantilla de PowerPoint con portada, portadillas, índice e interiores.'],
+    [['examen','plantilla de examen','modelo de examen'],'.repo-group[data-cat="examenes"]','Modelo de examen en Word.'],
+    [['plantilla','plantillas','word'],'#plantillas','Cartas, carteles, presentación, examen y Secretaría, listos para descargar.'],
+    [['medida','ficha tecnica','imprenta','tarjeta','sobre americano','sobres','senaletica','uniforme','merchandising'],'.fichas','Medidas y reglas para imprenta y espacios: carta, sobre, tarjeta, señalética, uniforme y más.'],
+    [['descargar logo','logo','logotipo','escudo','svg','png','kit'],'#descargas','Escudo, logotipo y versiones en SVG y PNG. Usa siempre estos archivos.'],
+    [['ia','agente','chatgpt','claude','skill','tokens','markdown'],'#agentes','Guía en Markdown, skill de Claude y tokens para que cualquier IA trabaje con la marca.'],
+    [['duda','contacto','comunicacion','quien'],'footer','Para dudas: Dirección y Departamento de Comunicación de Tajamar.'],
+  ].map(([k,sel,a])=>({k:k.map(norm),sel,a}));
+  const SUG=['¿Qué logo uso sobre azul?','Tamaño mínimo','Colores para texto','Cómo firma FP+','Firma de correo','Descargar el logo'];
+  const $b=document.getElementById('ag-body'), btn=document.getElementById('ag-btn'), panel=document.getElementById('ag-panel'), q=document.getElementById('ag-q');
+  const add=(html,cls='')=>{const d=document.createElement('div');d.className='ag-msg '+cls;d.innerHTML=html;$b.appendChild(d);$b.scrollTop=$b.scrollHeight;return d};
+  const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function where(el){const sec=el.closest('section,footer,header');const eb=sec&&sec.querySelector('.eyebrow');return eb?eb.textContent.trim():(sec&&sec.id==='manifiesto'?'Manifiesto':'Página')}
+  function go(el){
+    if(!el) return;
+    let d=el.closest('details'); while(d){d.open=true;d=d.parentElement.closest('details')}
+    if(el.matches('details')) el.open=true;
+    document.querySelectorAll('.ag-hl').forEach(x=>x.classList.remove('ag-hl'));
+    el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    el.classList.add('ag-hl'); setTimeout(()=>el.classList.remove('ag-hl'),3600);
+    if(innerWidth<=560) close();
+  }
+  // Índice de texto de la página para lo que no reconozca
+  let IDX=null;
+  function index(){
+    IDX=[...document.querySelectorAll('main section h2, section h2, section h3, section p, section li, section dd, .vcard, .niveles>div, .sig, .app, .rcard, .dcard, footer span')]
+      .filter(e=>!e.closest('#ag-panel')&&e.textContent.trim().length>3)
+      .map(e=>({e,t:toks(e.textContent),raw:e.textContent.trim().replace(/\s+/g,' ')}));
+  }
+  function search(text){
+    const nq=norm(text), qt=toks(text);
+    const hits=I.map(x=>({x,s:x.k.reduce((a,k)=>a+(nq.includes(k)?k.length+3:0),0)})).filter(h=>h.s>0).sort((a,b)=>b.s-a.s);
+    if(!IDX) index();
+    const free=qt.length?IDX.map(o=>({o,s:qt.reduce((a,w)=>a+(o.t.some(t=>t.startsWith(w)||w.startsWith(t)&&t.length>3)?1:0),0)/qt.length})).filter(r=>r.s>=.5).sort((a,b)=>b.s-a.s||a.o.raw.length-b.o.raw.length):[];
+    return {hits,free};
+  }
+  function ask(text){
+    if(!text.trim()) return;
+    add(esc(text),'me');
+    const nq=norm(text);
+    if(/^(hola|buenas|hey|ey)\b/.test(nq)){add('¡Hola! Dime qué buscas y te llevo: logo, colores, fuentes, plantillas, firma de correo…');return}
+    if(/^(gracias|genial|perfecto|ok|vale)\b/.test(nq)){add('A ti. Aquí sigo si necesitas algo más.');return}
+    const {hits,free}=search(text);
+    if(hits.length){
+      const h=hits[0].x, el=document.querySelector(h.sel);
+      add(esc(h.a)+(el?'':' (No encuentro esa parte en pantalla.)'));
+      go(el);
+      const otras=hits.slice(1,3).map(o=>o.x).filter(o=>o.sel!==h.sel);
+      if(otras.length) offer('¿O buscabas…?',otras.map(o=>({label:o.a.split('. ')[0],ctx:where(document.querySelector(o.sel)||document.body),el:document.querySelector(o.sel),a:o.a})));
+      return;
+    }
+    if(free.length){
+      const seen=new Set(), list=[];
+      for(const r of free){const key=r.o.e.closest('section')||r.o.e; if(seen.has(key)) continue; seen.add(key); list.push(r.o); if(list.length===3) break}
+      offer('No tengo una respuesta hecha, pero esto se parece:',list.map(o=>({label:o.raw.length>110?o.raw.slice(0,107)+'…':o.raw,ctx:where(o.e),el:o.e})));
+      return;
+    }
+    add('No lo encuentro en esta página. Prueba con otras palabras, o pregunta a Comunicación.');
+  }
+  function offer(intro,items){
+    const d=add(esc(intro)); const r=document.createElement('div'); r.className='ag-res';
+    items.forEach(it=>{const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${esc(it.ctx)}</span>${esc(it.label)}`;b.onclick=()=>{if(it.a) add(esc(it.a));go(it.el)};r.appendChild(b)});
+    d.appendChild(r);
+  }
+  function open(){
+    panel.hidden=false; btn.setAttribute('aria-expanded','true');
+    if(!$b.childElementCount){
+      const d=add('Hola. Busco en esta página y te llevo a lo que necesitas. Prueba con:');
+      const s=document.createElement('div'); s.className='ag-sug';
+      SUG.forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=()=>ask(t);s.appendChild(b)});
+      d.appendChild(s);
+    }
+    q.focus();
+  }
+  function close(){panel.hidden=true; btn.setAttribute('aria-expanded','false'); btn.focus()}
+  btn.addEventListener('click',open);
+  document.getElementById('ag-close').addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden) close()});
+  document.getElementById('ag-form').addEventListener('submit',e=>{e.preventDefault(); ask(q.value); q.value=''});
+})();
 
 // Nav activa
 const navEl=$('.nav'), menuBtn=$('.nav .menu');
