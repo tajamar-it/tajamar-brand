@@ -72,7 +72,17 @@ button{font:inherit;cursor:pointer}
 .nav li a{display:block;padding:8px 10px;text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;color:#cfcfcf;border-radius:2px}
 .nav li a:hover,.nav li a.on{color:var(--blanco);background:var(--gris-80)}
 .nav .dl{flex:none;background:var(--ladrillo-5);color:var(--negro);padding:8px 14px;text-decoration:none;font-weight:700;font-size:14px;border-radius:2px}
-@media (max-width:640px){.nav .dl{display:none}}
+.nav .menu{display:none;flex:none;margin-left:auto;background:transparent;color:var(--blanco);border:2px solid var(--blanco);padding:7px 14px;font-weight:700;font-size:14px;border-radius:2px}
+.nav .only-m{display:none}
+@media (max-width:960px){
+  .nav .dl{display:none}
+  .nav .menu{display:block}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:56px;flex-direction:column;gap:0;background:var(--negro);padding:8px var(--gutter-r) 16px var(--gutter);border-top:1px solid var(--gris-80);max-height:calc(100vh - 56px);overflow-y:auto}
+  .nav.open ul{display:flex}
+  .nav li a{padding:12px 8px;font-size:16px;border-bottom:1px solid #222}
+  .nav .only-m{display:block}
+  .nav .only-m a{color:var(--ladrillo-5);font-weight:700;border-bottom:0}
+}
 
 /* Hero */
 .hero{background:var(--negro);color:var(--blanco);overflow:hidden}
@@ -414,7 +424,7 @@ footer img{height:34px}
 <nav class="nav" aria-label="Secciones">
   <div class="wrap">
     <a class="mark" href="#inicio" aria-label="Inicio"><img id="nav-logo" alt="tajamar."></a>
-    <ul>
+    <ul id="nav-list">
       <li><a href="#valores">Valores</a></li>
       <li><a href="#voz">Voz</a></li>
       <li><a href="#logo">Logo</a></li>
@@ -424,7 +434,9 @@ footer img{height:34px}
       <li><a href="#fotografia">Fotografía</a></li>
       <li><a href="#lookandfeel">Look &amp; Feel</a></li>
       <li><a href="#plantillas">Plantillas</a></li>
+      <li class="only-m"><a href="#descargas">Descargas</a></li>
     </ul>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav-list">Menú</button>
     <a class="dl" href="#descargas">Descargas</a>
   </div>
 </nav>
@@ -1120,6 +1132,11 @@ GROUPS.forEach(g=>{
 });
 
 // Nav activa
+const navEl=$('.nav'), menuBtn=$('.nav .menu');
+const setMenu=o=>{ navEl.classList.toggle('open',o); menuBtn.setAttribute('aria-expanded',o); menuBtn.textContent=o?'Cerrar':'Menú'; };
+menuBtn.addEventListener('click',()=>setMenu(!navEl.classList.contains('open')));
+document.querySelectorAll('.nav li a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') setMenu(false); });
 const links=[...document.querySelectorAll('.nav li a')];
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } }),{rootMargin:'-45% 0px -50% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
