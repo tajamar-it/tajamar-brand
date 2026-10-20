@@ -215,9 +215,14 @@ button{font:inherit;cursor:pointer}
 .sig .pv{height:180px;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--blanco)}
 .sig .pv.dark{background:var(--negro)}
 .sig .pv img{max-height:120px;max-width:100%}
-.sig .formula{display:flex;align-items:flex-start;gap:16px;width:100%;max-width:280px}
-.sig .formula img{height:96px;width:auto}
-.sig .formula span{font-family:var(--arq);font-weight:500;font-size:19px;line-height:1.15}
+.sig .hoja{position:relative;height:150px;aspect-ratio:210/297;background:var(--blanco);border:1.5px solid var(--negro)}
+.sig .hoja .e{position:absolute;left:9%;top:7%;width:17%}
+.sig .hoja .d{position:absolute;right:9%;top:7%;font-family:var(--arq);font-weight:500;font-size:8px;line-height:1.15;text-align:right;max-width:55%}
+.sig .hoja .l{position:absolute;right:9%;bottom:6%;width:34%}
+.sig .hoja .m{position:absolute;left:9%;right:9%;top:38%;display:grid;gap:5px}
+.sig .hoja .m i{display:block;height:4px;background:var(--gris-20)}
+.sig .hoja .m i:first-child{height:9px;width:70%;background:var(--gris-60)}
+.sig .hoja .m i:last-child{width:60%}
 .sig .formula.vert{flex-direction:column;align-items:center;text-align:center;gap:8px}
 .sig .formula.vert img{height:80px}
 .sig .formula.demi span{font-weight:600}
@@ -1138,16 +1143,16 @@ PAL.forEach(g=>{
 
 // Arquitectura
 const ARQ=[
-  {pv:'formula', name:'Club Deportivo Tajamar', h:'Club Deportivo · Alumni · Escuela de Música', t:'Fórmula de área: escudo arriba a la izquierda y descriptor a la derecha, separado y alineado con su parte superior, en Franklin Gothic Medium negro. El logotipo firma en otro lugar (contraportada, abajo a la derecha). Los productos, como «500 km», en Rockwell.', pill:'Esquema'},
+  {pv:'formula', name:'Club Deportivo Tajamar', h:'Club Deportivo · Alumni · Escuela de Música', t:'Fórmula de área: el escudo arriba a la izquierda de la pieza y el descriptor arriba a la derecha de la pieza, alineado con la parte superior del escudo y bien separado, en Franklin Gothic Medium negro. No forman un bloque: cada uno en su extremo. El logotipo firma en otro lugar (contraportada, abajo a la derecha). Los productos, como «500 km», en Rockwell.', pill:'Esquema'},
   {pv:'fp', h:'FP + Professional Education', t:'Descriptor oficial sobre pastilla negra en portadas y piezas destacadas; en el resto, negro o blanco sobre foto o color. Nunca en color y nunca junto al logotipo: emite siempre Tajamar (escudo y logotipo, o isologo). Productos como IMPRE o PREDI, en Avenir Black y nunca logotipados.', pill:'Archivo oficial'},
   {pv:'infantil', h:'Educación Infantil', t:'La única área que puede firmar bajo el logotipo, con «Educación Infantil» en Franklin Gothic, también con las versiones especiales. Mejor sobre color o foto. Admite ilustraciones y piezas más divertidas.', pill:'Archivo oficial'},
   {pv:'fund', h:'Fundación Tajamar', t:'No usa el logotipo: escudo y «Fundación Tajamar» en Franklin Gothic Demi, vertical (bajo el escudo) u horizontal (a la derecha). Comunicación más formal, con fotos reales. Proyectos como Jornadas Humanísticas: nombre en Franklin Gothic Medium y titular en Avenir.', pill:'Archivo oficial'},
   {pv:'logo', h:'Colegio Tajamar', t:'Marca Tajamar. Infantil, Primaria, Secundaria y Bachillerato firman como Colegio Tajamar. FP no es Colegio: firma como Tajamar.', pill:'Archivo oficial'},
-  {pv:'formula', name:'Alumni Tajamar', h:'Alumni Tajamar', t:'Misma fórmula de área. Prefiere las gamas más nobles: tierras y oscuros.', pill:'Esquema'},
+  {pv:'formula', name:'Alumni Tajamar', h:'Alumni Tajamar', t:'Misma fórmula de área: escudo y descriptor en extremos opuestos de la pieza. Prefiere las gamas más nobles: tierras y oscuros.', pill:'Esquema'},
 ];
 ARQ.forEach(a=>{
   const d=document.createElement('article'); d.className='sig'; let pv='';
-  if(a.pv==='formula') pv=`<div class="pv"><div class="formula"><img data-k="escudo-negro" alt="Escudo"><span>${a.name}</span></div></div>`;
+  if(a.pv==='formula') pv=`<div class="pv"><div class="hoja" role="img" aria-label="Escudo arriba a la izquierda, ${a.name} arriba a la derecha y logotipo abajo"><img class="e" data-k="escudo-negro" alt=""><span class="d">${a.name}</span><div class="m"><i></i><i></i><i></i></div><img class="l" data-k="logotipo-negro" alt=""></div></div>`;
   if(a.pv==='fund') pv=`<div class="pv"><img data-k="fundacion-vertical-negro" alt="Fundación Tajamar"></div>`;
   if(a.pv==='fp') pv=`<div class="pv"><img data-k="fp-professional-education" alt="FP + Professional Education"></div>`;
   if(a.pv==='infantil') pv=`<div class="pv"><img data-k="educacion-infantil-isologo" alt="Educación Infantil"></div>`;
