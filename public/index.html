@@ -874,7 +874,7 @@ footer img{height:52px;width:auto;margin-right:28px}
       <div class="sigmaker" id="firma">
         <div>
           <label>Nombre y apellidos<input id="sg-n" value="Nombre Apellido Apellido"></label>
-          <label>Cargo<input id="sg-c" value="Cargo"></label>
+          <label>Cargo (opcional)<input id="sg-c" placeholder="Coordinadora de Primaria, Profesor…"></label>
           <label>Área<input id="sg-a" value="Área" placeholder="Primaria, FP+, Secretaría…"></label>
           <label>Vertical<select id="sg-v">
             <option>Colegio Tajamar</option>
@@ -1158,16 +1158,16 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   function html(){
     const V='font-family:Verdana,Geneva,sans-serif';
     const im=document.getElementById('sg-img').value;
-    // Escudo solo: 40 px, alineado con el nombre, ~18 px de aire; el aviso legal va debajo de todo.
+    // Escudo solo: 40 px, alineado con el nombre, 28 px de aire; el aviso legal va debajo de todo.
     // Imagen de área: 92 px; el texto y el aviso legal van en la columna de la derecha, alineados arriba con la imagen.
     const L=im?{w:92,gap:16,src:`https://brand.tajamar.es/${im}`}
-              :{w:40,gap:18,src:'https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png'};
+              :{w:40,gap:28,src:'https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png'};
     const ext=v('sg-x');
     const mov=v('sg-m');
     const tel=`(+34) <b>91 477 25 00</b>`+(ext?` | Ext.: <b>${esc(ext)}</b>`:'')+(mov?`<br>(+34) <b>${esc(mov)}</b>`:'');
     const mail=v('sg-mail')?`<br><a href="mailto:${esc(v('sg-mail'))}" style="color:#000000">${esc(v('sg-mail'))}</a>`:'';
     const T='cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse"';
-    const legal=`<div style="font-family:Verdana,Geneva,sans-serif;font-size:8px;line-height:1.45;color:#666666;padding-top:16px;max-width:430px"><b>AVISO LEGAL</b><br>${LEGAL}<br><br>${CONF}</div>`;
+    const legal=`<div style="font-family:Verdana,Geneva,sans-serif;font-size:8px;line-height:1.45;color:#666666;padding-top:20px;max-width:430px"><b>AVISO LEGAL</b><br>${LEGAL}<br><br>${CONF}</div>`;
     const text=`<div style="font-size:14px;line-height:1.25;font-weight:bold;color:#000000">${esc(v('sg-n'))}</div>`+
       `<div style="font-size:12px;line-height:1.3;font-weight:bold;color:#666666">${[v('sg-c'),v('sg-a')].filter(Boolean).map(esc).join(' · ')}</div>`+
       `<div style="font-size:11px;line-height:1.5;color:#333333;padding-top:10px">${tel}${mail}</div>`+
