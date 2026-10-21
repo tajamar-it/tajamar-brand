@@ -1043,7 +1043,7 @@ footer img{height:52px;width:auto;margin-right:28px}
   <div class="wrap">
     <img id="foot-logo" alt="Escudo de Tajamar">
     <span>Dudas sobre la marca: Dirección y Departamento de Comunicación de Tajamar.</span>
-    <!--version--><span class="ver">Versión 1.3 · 21 de octubre de 2026 · <a href="CAMBIOS.md">historial</a></span><!--/version-->
+    <!--version--><span class="ver">Versión 1.4 · 21 de octubre de 2026 · <a href="CAMBIOS.md">historial</a></span><!--/version-->
     <a href="#inicio">Volver arriba</a>
   </div>
 </footer>
@@ -1153,7 +1153,7 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
 (()=>{
   const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const v=id=>document.getElementById(id).value.trim();
-  const LEGAL='Este mensaje contiene información confidencial cuya divulgación está prohibida por la normativa europea vigente y se dirige exclusivamente a quien figura como su destinatario. Si usted no es el destinatario, le rogamos que nos lo comunique y destruya el mensaje y sus anexos. Si no desea seguir recibiendo comunicaciones, por favor, envíenos un mensaje a <a href="mailto:dpo@tajamar.es" style="color:#1155cc">dpo@tajamar.es</a>.';
+  const LEGAL='Este mensaje contiene información confidencial cuya divulgación está prohibida por la normativa europea vigente y se dirige exclusivamente a quien figura como su destinatario. Si usted no es el destinatario, le rogamos que nos lo comunique y destruya el mensaje y sus anexos. Si no desea seguir recibiendo comunicaciones, por favor, envíenos un mensaje a <a href="mailto:dpo@tajamar.es" style="color:#666666">dpo@tajamar.es</a>.';
   const CONF='CONFIDENCIALIDAD: Este email es confidencial y para uso exclusivo de su destinatario.';
   function html(){
     const V='font-family:Verdana,Geneva,sans-serif';
@@ -1165,13 +1165,13 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
     const ext=v('sg-x');
     const mov=v('sg-m');
     const tel=`(+34) <b>91 477 25 00</b>`+(ext?` | Ext.: <b>${esc(ext)}</b>`:'')+(mov?`<br>(+34) <b>${esc(mov)}</b>`:'');
-    const mail=v('sg-mail')?`<br><a href="mailto:${esc(v('sg-mail'))}" style="color:#1155cc">${esc(v('sg-mail'))}</a>`:'';
+    const mail=v('sg-mail')?`<br><a href="mailto:${esc(v('sg-mail'))}" style="color:#000000">${esc(v('sg-mail'))}</a>`:'';
     const T='cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse"';
-    const legal=`<div style="font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:1.4;color:#7f7f7f;padding-top:16px;max-width:430px"><b style="color:#999999">AVISO LEGAL</b><br><b>${LEGAL}</b><br><br><b>${CONF}</b></div>`;
-    const text=`<div style="font-size:14px;line-height:1.25;font-weight:bold;color:#333f50">${esc(v('sg-n'))}</div>`+
+    const legal=`<div style="font-family:Verdana,Geneva,sans-serif;font-size:8px;line-height:1.45;color:#666666;padding-top:16px;max-width:430px"><b>AVISO LEGAL</b><br>${LEGAL}<br><br>${CONF}</div>`;
+    const text=`<div style="font-size:14px;line-height:1.25;font-weight:bold;color:#000000">${esc(v('sg-n'))}</div>`+
       `<div style="font-size:12px;line-height:1.3;font-weight:bold;color:#666666">${[v('sg-c'),v('sg-a')].filter(Boolean).map(esc).join(' · ')}</div>`+
-      `<div style="font-size:11px;line-height:1.5;color:#333f50;padding-top:10px">${tel}${mail}</div>`+
-      `<div style="font-size:9px;line-height:1.45;color:#000;padding-top:10px"><b>${esc(document.getElementById('sg-v').value)}</b><br>Calle Pío Felipe 12<br>28038 Vallecas Madrid<br><a href="https://www.tajamar.es" style="color:#0563c1">www.tajamar.es</a></div>`;
+      `<div style="font-size:11px;line-height:1.5;color:#333333;padding-top:10px">${tel}${mail}</div>`+
+      `<div style="font-size:9px;line-height:1.45;color:#000;padding-top:10px"><b>${esc(document.getElementById('sg-v').value)}</b><br>Calle Pío Felipe 12<br>28038 Vallecas Madrid<br><a href="https://www.tajamar.es" style="color:#000000">www.tajamar.es</a></div>`;
     const row=(right)=>`<table ${T}><tr>`+
       `<td width="${L.w}" valign="top" style="width:${L.w}px;padding:${im?0:2}px 0 0 0;vertical-align:top"><img src="${L.src}" width="${L.w}" alt="Tajamar" style="display:block;width:${L.w}px;height:auto;border:0"></td>`+
       `<td width="${L.gap}" style="width:${L.gap}px;font-size:0;line-height:0">&nbsp;</td>`+
@@ -1193,7 +1193,7 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   ['sg-n','sg-c','sg-a','sg-x','sg-m','sg-mail','sg-img','sg-v'].forEach(id=>{ const e=document.getElementById(id); e.addEventListener('input',draw); e.addEventListener('change',draw); });
   draw();
   document.getElementById('sg-copy').onclick=async()=>{
-    try{ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html()],{type:'text/html'}),'text/plain':new Blob([out.innerText],{type:'text/plain'})})]); toast('Firma copiada'); }
+    try{ await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob(['<div><br></div><div><br></div>'+html()],{type:'text/html'}),'text/plain':new Blob(['\n\n'+out.innerText],{type:'text/plain'})})]); toast('Firma copiada'); }
     catch(e){ const r=document.createRange(); r.selectNodeContents(out); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('Pulsa Ctrl+C para copiar'); }
   };
   document.getElementById('sg-html').onclick=async()=>{ try{ await navigator.clipboard.writeText(html()); toast('HTML copiado'); }catch(e){ toast('No se pudo copiar'); } };

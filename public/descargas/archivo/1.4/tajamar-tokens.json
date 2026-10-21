@@ -1,0 +1,443 @@
+{
+  "$description": "Tokens de marca Tajamar · versión 1.4 (2026-10-21). Usa siempre la última: https://brand.tajamar.es/descargas/version.json. Reglas completas: https://brand.tajamar.es/descargas/tajamar-marca.md",
+  "$extensions": {
+    "tajamar": {
+      "version": "1.4",
+      "fecha": "2026-10-21"
+    }
+  },
+  "color": {
+    "negro": {
+      "negro": {
+        "$type": "color",
+        "$value": "#000000",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "0, 0, 0",
+            "pantone": "PANTONE Process Black",
+            "cmyk": "C0 M0 Y0 K100",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-90": {
+        "$type": "color",
+        "$value": "#1A1A1A",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "26, 26, 26",
+            "pantone": null,
+            "cmyk": "K90",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-80": {
+        "$type": "color",
+        "$value": "#333333",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "51, 51, 51",
+            "pantone": null,
+            "cmyk": "K80",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-70": {
+        "$type": "color",
+        "$value": "#4D4D4D",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "77, 77, 77",
+            "pantone": null,
+            "cmyk": "K70",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-60": {
+        "$type": "color",
+        "$value": "#666666",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "102, 102, 102",
+            "pantone": null,
+            "cmyk": "K60",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "gris-50": {
+        "$type": "color",
+        "$value": "#808080",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "128, 128, 128",
+            "pantone": null,
+            "cmyk": "K50",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "gris-40": {
+        "$type": "color",
+        "$value": "#999999",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "153, 153, 153",
+            "pantone": null,
+            "cmyk": "K40",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "gris-30": {
+        "$type": "color",
+        "$value": "#B3B3B3",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "179, 179, 179",
+            "pantone": null,
+            "cmyk": "K30",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "gris-20": {
+        "$type": "color",
+        "$value": "#CCCCCC",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "204, 204, 204",
+            "pantone": null,
+            "cmyk": "K20",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "gris-10": {
+        "$type": "color",
+        "$value": "#E6E6E6",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "230, 230, 230",
+            "pantone": null,
+            "cmyk": "K10",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      }
+    },
+    "cielo": {
+      "cielo-1": {
+        "$type": "color",
+        "$value": "#212844",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "33, 40, 68",
+            "pantone": "PANTONE 533 C",
+            "cmyk": "C95 M80 Y45 K50",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "cielo-2": {
+        "$type": "color",
+        "$value": "#1C4F90",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "28, 79, 144",
+            "pantone": "PANTONE 7686 C",
+            "cmyk": "C95 M70 Y5 K0",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "cielo-3": {
+        "$type": "color",
+        "$value": "#446CA9",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "68, 108, 169",
+            "pantone": "PANTONE 7683 C",
+            "cmyk": "C80 M50 Y0 K0",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "cielo-4": {
+        "$type": "color",
+        "$value": "#40B4E5",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "64, 180, 229",
+            "pantone": "PANTONE 298 C",
+            "cmyk": "C70 M10 Y0 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "cielo-5": {
+        "$type": "color",
+        "$value": "#77CAE6",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "119, 202, 230",
+            "pantone": "PANTONE Blue 0821 C",
+            "cmyk": "C55 M0 Y0 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      }
+    },
+    "zona-verde": {
+      "verde-1": {
+        "$type": "color",
+        "$value": "#005740",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "0, 87, 64",
+            "pantone": "PANTONE 7484 C",
+            "cmyk": "C100 M40 Y95 K30",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "verde-2": {
+        "$type": "color",
+        "$value": "#2D7150",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "45, 113, 80",
+            "pantone": "PANTONE 555 C",
+            "cmyk": "C85 M30 Y100 K15",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "verde-3": {
+        "$type": "color",
+        "$value": "#45AB34",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "69, 171, 52",
+            "pantone": "PANTONE 361 C",
+            "cmyk": "C75 M0 Y100 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "verde-4": {
+        "$type": "color",
+        "$value": "#78B72A",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "120, 183, 42",
+            "pantone": "PANTONE 368 C",
+            "cmyk": "C50 M0 Y100 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "verde-5": {
+        "$type": "color",
+        "$value": "#D8C722",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "216, 199, 34",
+            "pantone": "PANTONE 611 C",
+            "cmyk": "C30 M0 Y90 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      }
+    },
+    "ladrillo": {
+      "ladrillo-1": {
+        "$type": "color",
+        "$value": "#E53B2F",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "229, 59, 47",
+            "pantone": "PANTONE 179 C",
+            "cmyk": "C0 M90 Y85 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "ladrillo-2": {
+        "$type": "color",
+        "$value": "#DD6014",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "221, 96, 20",
+            "pantone": "PANTONE 1595 C",
+            "cmyk": "C0 M70 Y95 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "ladrillo-3": {
+        "$type": "color",
+        "$value": "#F18A2D",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "241, 138, 45",
+            "pantone": "PANTONE 715 C",
+            "cmyk": "C0 M50 Y85 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "ladrillo-4": {
+        "$type": "color",
+        "$value": "#F7B332",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "247, 179, 50",
+            "pantone": "PANTONE 143 C",
+            "cmyk": "C0 M35 Y85 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "ladrillo-5": {
+        "$type": "color",
+        "$value": "#FFE01C",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "255, 224, 28",
+            "pantone": "PANTONE 107 C",
+            "cmyk": "C0 M10 Y90 K0",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      }
+    },
+    "barro": {
+      "barro-1": {
+        "$type": "color",
+        "$value": "#412020",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "65, 32, 32",
+            "pantone": "PANTONE 4975 C",
+            "cmyk": "C50 M80 Y70 K80",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "barro-2": {
+        "$type": "color",
+        "$value": "#76391B",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "118, 57, 27",
+            "pantone": "PANTONE 168 C",
+            "cmyk": "C35 M75 Y95 K45",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "barro-3": {
+        "$type": "color",
+        "$value": "#8F481F",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "143, 72, 31",
+            "pantone": "PANTONE 1615 C",
+            "cmyk": "C35 M65 Y95 K35",
+            "textoSobreBlanco": true,
+            "textoEncima": "#FFFFFF"
+          }
+        }
+      },
+      "barro-4": {
+        "$type": "color",
+        "$value": "#C88A3C",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "200, 138, 60",
+            "pantone": "PANTONE 7510 C",
+            "cmyk": "C20 M45 Y80 K5",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      },
+      "barro-5": {
+        "$type": "color",
+        "$value": "#DCB38D",
+        "$extensions": {
+          "tajamar": {
+            "rgb": "220, 179, 141",
+            "pantone": "PANTONE 727 C",
+            "cmyk": "C15 M30 Y50 K5",
+            "textoSobreBlanco": false,
+            "textoEncima": "#000000"
+          }
+        }
+      }
+    }
+  },
+  "font": {
+    "display": {
+      "$type": "fontFamily",
+      "$value": [
+        "Rockwell",
+        "Rokkitt",
+        "Courier",
+        "serif"
+      ],
+      "$description": "Titulares de gran formato y frases aspiracionales. Nunca cursiva."
+    },
+    "text": {
+      "$type": "fontFamily",
+      "$value": [
+        "Avenir",
+        "Montserrat",
+        "Verdana",
+        "sans-serif"
+      ],
+      "$description": "Principal: titulares informativos y texto corrido."
+    },
+    "architecture": {
+      "$type": "fontFamily",
+      "$value": [
+        "ITC Franklin Gothic",
+        "Libre Franklin",
+        "Arial",
+        "sans-serif"
+      ],
+      "$description": "Descriptores de área (Medium); Fundación en Demi."
+    }
+  }
+}

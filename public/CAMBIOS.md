@@ -2,6 +2,10 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.4 · 2026-10-21
+
+- Firma de correo con los colores de la paleta: nombre en negro (antes #333F50, que no es de la marca), teléfonos en gris-80, correo y web en negro subrayado y aviso legal en Verdana gris-60, sin negrita salvo «AVISO LEGAL».
+
 ## 1.3 · 2026-10-21
 
 - Fórmula de área: el descriptor es solo el nombre del área («Club Deportivo», «Alumni», «Escuela de Música»), sin «Tajamar», porque la pieza ya lleva el escudo y el logotipo.
