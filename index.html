@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
 <title>Marca Tajamar</title>
 <meta name="description" content="Manual de marca de Tajamar: valores, tono de voz, logo, color, tipografía, arquitectura de marca y descargas oficiales.">
 <link rel="canonical" href="https://brand.tajamar.es/">
@@ -44,7 +44,7 @@
   --wrap:1180px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{background:var(--blanco);color:var(--negro);font-family:var(--text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--negro)}
@@ -370,16 +370,19 @@ button{font:inherit;cursor:pointer}
 .app ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14.5px}
 .swatches{display:flex;flex-wrap:wrap;gap:6px}
 .swatches span{font-size:12px;padding:6px 8px;color:var(--blanco);font-weight:700}
-.sigmaker{display:grid;grid-template-columns:300px 1fr;gap:28px;border:2px solid var(--negro);padding:clamp(18px,3vw,28px);margin-top:20px}
-@media (max-width:820px){.sigmaker{grid-template-columns:1fr}}
+.sigmaker{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;border:2px solid var(--negro);padding:clamp(18px,3vw,28px);margin-top:20px}
+@media (max-width:820px){.sigmaker{grid-template-columns:minmax(0,1fr)}}
+.sigmaker>div,.sigguide>div,.repo-group,.rmeta{min-width:0}
+.sigmaker input,.sigmaker select{min-width:0;max-width:100%}
+#plantillas{overflow-wrap:break-word}
 .sigmaker h4{margin:0 0 12px;font-family:var(--arq);font-weight:600;font-size:19px}
 .sigmaker label{display:grid;gap:4px;font-size:13px;font-weight:700;margin-bottom:10px}
 .sigmaker input{font:inherit;font-weight:400;font-size:15px;padding:9px 10px;border:2px solid var(--negro);border-radius:2px;width:100%}
 .sigprev{background:var(--gris-10);padding:clamp(12px,2vw,22px);min-width:0;overflow-x:auto}
 .sigprev .mail{background:var(--blanco);padding:22px;max-width:560px}
 .sigbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.sigguide{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;font-size:14px}
-@media (max-width:640px){.sigguide{grid-template-columns:1fr}}
+.sigguide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:24px;font-size:14px}
+@media (max-width:640px){.sigguide{grid-template-columns:minmax(0,1fr)}}
 .sigguide h5{margin:0 0 8px;font-family:var(--arq);font-weight:600;font-size:16px}
 .sigguide ol{margin:0;padding-left:20px;display:grid;gap:5px}
 .repo-grid:empty{display:none}
@@ -405,6 +408,13 @@ button{font:inherit;cursor:pointer}
 .repo-chips{display:flex;flex-wrap:wrap;gap:6px}
 .repo-chips button{padding:8px 12px;border:2px solid var(--negro);background:var(--blanco);font-weight:600;font-size:14px;border-radius:2px}
 .repo-chips button[aria-pressed="true"]{background:var(--negro);color:var(--blanco)}
+@media (max-width:640px){
+  .repo-bar{gap:10px;padding:10px 0}
+  .repo-bar input{flex:1 1 100%;max-width:none}
+  .repo-chips{flex:1 1 100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin-left:calc(-1*var(--gutter));margin-right:calc(-1*var(--gutter-r));padding-left:var(--gutter);padding-right:var(--gutter-r);scroll-padding-inline:var(--gutter)}
+  .repo-chips::-webkit-scrollbar{display:none}
+  .repo-chips button{flex:none;white-space:nowrap;padding:7px 11px;font-size:13.5px}
+}
 .repo-group{margin-top:40px}
 .repo-group > h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,38px);margin-bottom:6px}
 .repo-group > p{font-size:15px;color:var(--gris-60);max-width:75ch;margin-bottom:16px}
@@ -426,18 +436,19 @@ button{font:inherit;cursor:pointer}
 .fichas summary span{font-family:var(--text);font-weight:400;font-size:14px;color:var(--gris-60);margin-left:8px}
 
 /* Agente tonto: busca en la página, te lleva y resalta */
-.ag-btn{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:30;width:60px;height:60px;border-radius:50%;background:var(--negro);border:2px solid var(--ladrillo-5);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;padding:0}
-.ag-btn svg{width:38px;height:38px}
+.ag-btn{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:30;width:48px;height:48px;border-radius:50%;background:var(--negro);border:2px solid var(--ladrillo-5);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;padding:0}
+.ag-burro{display:block;width:32px;height:32px;flex:none;background:var(--ladrillo-5);-webkit-mask:url(img/burrito.png) center/contain no-repeat;mask:url(img/burrito.png) center/contain no-repeat}
 .ag-btn:hover{transform:translateY(-2px) rotate(-4deg)}
 .ag-btn[aria-expanded="true"]{display:none}
 .ag-panel{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:31;width:min(380px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 100px));display:flex;flex-direction:column;background:var(--blanco);color:var(--negro);border:2px solid var(--negro);box-shadow:0 12px 40px rgba(0,0,0,.3);border-radius:2px}
 .ag-panel[hidden]{display:none}
 .ag-head{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;background:var(--negro);color:var(--blanco)}
-.ag-head svg{width:30px;height:30px;flex:none}
+.ag-head .ag-burro{width:30px;height:30px}
 .ag-head b{font-family:var(--arq);font-weight:600;font-size:15px;display:block}
 .ag-head small{font-size:11.5px;color:#bdbdbd;display:block;line-height:1.3}
 .ag-close{margin-left:auto;background:transparent;border:1.5px solid #666;color:var(--blanco);width:30px;height:30px;border-radius:2px;font-size:16px;line-height:1;flex:none}
-.ag-body{padding:14px;overflow-y:auto;display:grid;gap:10px;font-size:14px}
+.ag-body{padding:14px;overflow-y:auto;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:10px;font-size:14px}
+.ag-msg{min-width:0}
 .ag-msg{background:var(--gris-10);padding:10px 12px;border-radius:2px;line-height:1.45}
 .ag-msg.me{background:var(--negro);color:var(--blanco);justify-self:end;max-width:85%}
 .ag-res{display:grid;gap:6px}
@@ -453,7 +464,20 @@ button{font:inherit;cursor:pointer}
 .ag-hl{outline:4px solid var(--ladrillo-5)!important;outline-offset:6px;animation:ag-pulso 1s ease-in-out 3}
 @keyframes ag-pulso{50%{outline-color:rgba(255,224,28,.15)}}
 @media (prefers-reduced-motion:reduce){.ag-hl{animation:none}}
-@media (max-width:560px){.ag-panel{left:0;right:0;bottom:0;width:100%;max-height:75vh;border-left:0;border-right:0;border-bottom:0}}
+@media (max-width:560px){
+  .ag-panel{left:0;right:0;bottom:var(--ag-kb,0px);width:100%;max-height:min(62dvh,var(--ag-vh,62dvh));border-left:0;border-right:0;border-bottom:0}
+  .ag-head{padding:8px 10px 8px 12px;gap:8px}
+  .ag-head small{display:none}
+  .ag-close{width:28px;height:28px}
+  .ag-body{padding:10px 12px;gap:8px;font-size:13.5px}
+  .ag-msg{padding:8px 10px}
+  .ag-sug,.ag-res{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;margin:8px -10px 0;padding:0 10px 2px}
+  .ag-sug::-webkit-scrollbar,.ag-res::-webkit-scrollbar{display:none}
+  .ag-sug button{flex:none;white-space:nowrap}
+  .ag-res button{flex:none;width:min(240px,72vw);font-size:12.5px;padding:7px 9px}
+  .ag-form{padding:8px;gap:6px}
+  .ag-form input{font-size:16px;padding:7px 9px}
+}
 
 footer{background:var(--blanco);padding-block:40px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;font-size:14px}
@@ -1020,9 +1044,9 @@ footer img{height:52px;width:auto;margin-right:28px}
   </div>
 </footer>
 
-<button class="ag-btn" id="ag-btn" type="button" aria-expanded="false" aria-controls="ag-panel" aria-label="Pregúntame: busco en esta página"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 15.5c0 1.6 0 2.4.1 2.8" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M26.5 15c.2.9.1 2 0 3" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M10.5 24.5c2.8 4.6 7.6 6.4 12.4 5 2.6-.8 4.6-2.6 6-5.2" stroke="#ffe01c" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></button>
+<button class="ag-btn" id="ag-btn" type="button" aria-expanded="false" aria-controls="ag-panel" aria-label="Pregúntame: busco en esta página"><i class="ag-burro" aria-hidden="true"></i></button>
 <section class="ag-panel" id="ag-panel" role="dialog" aria-label="Pregúntame" hidden>
-  <div class="ag-head"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 15.5c0 1.6 0 2.4.1 2.8" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M26.5 15c.2.9.1 2 0 3" stroke="#ffe01c" stroke-width="3.2" stroke-linecap="round" fill="none"/><path d="M10.5 24.5c2.8 4.6 7.6 6.4 12.4 5 2.6-.8 4.6-2.6 6-5.2" stroke="#ffe01c" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg><div><b>Pregúntame</b><small>No soy una IA: busco en esta página y te llevo.</small></div><button class="ag-close" id="ag-close" type="button" aria-label="Cerrar">✕</button></div>
+  <div class="ag-head"><i class="ag-burro" aria-hidden="true"></i><div><b>Pregúntame</b><small>No soy una IA: busco en esta página y te llevo.</small></div><button class="ag-close" id="ag-close" type="button" aria-label="Cerrar">✕</button></div>
   <div class="ag-body" id="ag-body" aria-live="polite"></div>
   <form class="ag-form" id="ag-form"><input id="ag-q" type="text" placeholder="¿Qué buscas?" aria-label="¿Qué buscas?" autocomplete="off"><button type="submit">Ir</button></form>
 </section>
@@ -1086,12 +1110,13 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   const D=window.PLANTILLAS; if(!D) return;
   const repo=$('#repo'), chips=$('#repo-chips'), q=$('#repo-q'); let cat='todas';
   const size=kb=>kb>=1024?(kb/1024).toFixed(1).replace('.',',')+' MB':kb+' KB';
-  [{id:'todas',h:'Todas'},...D.categorias].forEach(c=>{
+  const CATS=[...D.categorias].sort((a,b)=>(b.id==='firmas')-(a.id==='firmas'));
+  [{id:'todas',h:'Todas'},...CATS].forEach(c=>{
     const b=document.createElement('button'); b.type='button'; b.textContent=c.h; b.setAttribute('aria-pressed',c.id==='todas');
-    b.onclick=()=>{cat=c.id; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); draw();};
+    b.onclick=()=>{cat=c.id; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); b.scrollIntoView({block:'nearest',inline:'nearest'}); draw();};
     chips.appendChild(b);
   });
-  D.categorias.forEach(c=>{
+  CATS.forEach(c=>{
     const g=document.createElement('div'); g.className='repo-group'; g.dataset.cat=c.id;
     g.innerHTML=`<h3>${c.h}</h3><p>${c.p}</p><div class="repo-grid"></div>`;
     const grid=g.querySelector('.repo-grid');
@@ -1338,8 +1363,17 @@ GROUPS.forEach(g=>{
       SUG.forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=()=>ask(t);s.appendChild(b)});
       d.appendChild(s);
     }
-    q.focus();
+    if(!matchMedia('(pointer:coarse)').matches) q.focus();
+    fit();
   }
+  const vv=window.visualViewport;
+  function fit(){
+    if(!vv||panel.hidden) return;
+    const kb=Math.max(0,innerHeight-vv.height-vv.offsetTop);
+    panel.style.setProperty('--ag-kb',kb+'px');
+    panel.style.setProperty('--ag-vh',Math.round(vv.height*.9)+'px');
+  }
+  if(vv){vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit)}
   function close(){panel.hidden=true; btn.setAttribute('aria-expanded','false'); btn.focus()}
   btn.addEventListener('click',open);
   document.getElementById('ag-close').addEventListener('click',close);
