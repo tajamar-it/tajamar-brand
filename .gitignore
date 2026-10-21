@@ -1,5 +1,5 @@
-# Origen de las plantillas: contiene fuentes con licencia. No se versiona ni se publica.
-marca-tajamar/
+# Material de origen (plantillas Office, firmas, folletos y tipografías con licencia).
+# No se versiona ni se publica: pídelo a Comunicación (comunicacion@tajamar.es).
+origen/
+# Configuración local de Claude Code
 .claude/
-# Estudios internos: no se publican
-estudios/

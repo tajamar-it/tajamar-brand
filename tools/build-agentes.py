@@ -1,10 +1,10 @@
-"""Genera los archivos para agentes de IA a partir de descargas/tajamar-marca.md y la paleta.
+"""Genera los archivos para agentes de IA a partir de public/descargas/tajamar-marca.md y la paleta.
 
 Uso (desde la raíz del repo):  python tools/build-agentes.py
 
 La versión vigente es la primera entrada de CAMBIOS.md («## X.Y · AAAA-MM-DD»).
 
-Salida:
+Salida (en public/, la carpeta que publica Netlify):
   descargas/tajamar-marca.md         se le añade/actualiza la cabecera de versión y el aviso para agentes
   descargas/tajamar-tokens.json      tokens de diseño (formato W3C Design Tokens)
   descargas/tajamar-marca-skill.zip  skill para Claude (SKILL.md + tokens + logos), reproducible byte a byte
@@ -12,12 +12,14 @@ Salida:
   descargas/archivo/X.Y/             copia congelada de la versión (no se sobrescribe nunca)
   llms.txt                           índice para agentes en la raíz del sitio
   index.html                         versión vigente en el pie de página
+  CAMBIOS.md                         copia del historial de la raíz, para servirlo en la web
 """
 import csv, hashlib, json, re, shutil, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-D = ROOT / "descargas"
+PUB = ROOT / "public"
+D = PUB / "descargas"
 SITE = "https://brand.tajamar.es"
 MESES = "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split()
 
@@ -112,11 +114,11 @@ with zipfile.ZipFile(D / "tajamar-marca-skill.zip", "w") as z:
     zadd(z, "tajamar-marca/SKILL.md", skill.encode("utf-8"))
     zadd(z, "tajamar-marca/tajamar-tokens.json", tokens_json.encode("utf-8"))
     for sub in ("svg", "png"):
-        for f in sorted((ROOT / "logos" / sub).iterdir()):
+        for f in sorted((PUB / "logos" / sub).iterdir()):
             zadd(z, f"tajamar-marca/logos/{sub}/{f.name}", f.read_bytes())
 
 # --- llms.txt
-(ROOT / "llms.txt").write_text(f"""# Marca Tajamar
+(PUB / "llms.txt").write_text(f"""# Marca Tajamar
 
 > Manual de marca de Tajamar (Colegio, Tajamar FP+, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
 
@@ -163,7 +165,7 @@ info = {
 (D / "version.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 # --- Pie de página de la web
-idx = ROOT / "index.html"
+idx = PUB / "index.html"
 html = idx.read_text(encoding="utf-8")
 pie = f'<!--version--><span class="ver">Versión {VERSION} · {FECHA_LARGA} · <a href="CAMBIOS.md">historial</a></span><!--/version-->'
 if "<!--version-->" in html:
@@ -173,5 +175,8 @@ else:
     assert a in html, "no encuentro el pie de página"
     html = html.replace(a, a + "\n    " + pie, 1)
 idx.write_text(html, encoding="utf-8", newline="")
+
+# --- Historial publicado (el original vive en la raíz del repo)
+shutil.copyfile(ROOT / "CAMBIOS.md", PUB / "CAMBIOS.md")
 
 print(f"OK · versión {VERSION} ({FECHA})")

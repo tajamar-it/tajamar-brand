@@ -2,6 +2,11 @@
 window.PLANTILLAS = {
  "categorias": [
   {
+   "id": "firmas",
+   "h": "Firma de correo",
+   "p": "Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo tienes cómo añadirla en Gmail y en Outlook."
+  },
+  {
    "id": "cartas",
    "h": "Cartas",
    "p": "Papel de carta en Word, una versión por etapa y área. Escribe sobre la plantilla: márgenes, escudo y pie ya están en su sitio."
@@ -25,11 +30,6 @@ window.PLANTILLAS = {
    "id": "secretaria",
    "h": "Secretaría",
    "p": "Documentos de Secretaría en Word."
-  },
-  {
-   "id": "firmas",
-   "h": "Firma de correo",
-   "p": "Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo tienes cómo añadirla en Gmail y en Outlook."
   },
   {
    "id": "ejemplos",

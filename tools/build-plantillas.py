@@ -1,63 +1,69 @@
-"""Monta el repositorio de plantillas a partir de la carpeta marca-tajamar/.
+"""Monta el repositorio de plantillas (public/plantillas/) a partir de la carpeta origen/.
 
 Uso (desde la raíz del repo, en Windows con Office):  python tools/build-plantillas.py
 
-- Copia cada archivo de la lista CATALOGO a plantillas/<categoría>/<slug>.<ext>.
+- Copia cada archivo de la lista CATALOGO a public/plantillas/<categoría>/<slug>.<ext>.
 - Genera una miniatura .jpg de la primera página (Word/PowerPoint exportan a PDF y PyMuPDF la rasteriza).
   Si la miniatura ya existe y el original no ha cambiado, no la regenera.
-- Escribe plantillas/plantillas.js con el catálogo que pinta la web.
+- Escribe public/plantillas/plantillas.js con el catálogo que pinta la web.
 
-marca-tajamar/ no se versiona (contiene fuentes con licencia): es solo el origen.
+origen/ no se versiona (tipografías con licencia y documentos internos): pídelo a Comunicación.
 """
 import json, os, shutil, subprocess, sys, tempfile
 import pymupdf
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "marca-tajamar")
-OUT = os.path.join(ROOT, "plantillas")
+SRC = os.path.join(ROOT, "origen")
+OUT = os.path.join(ROOT, "public", "plantillas")
 PS = os.path.join(ROOT, "tools", "office-a-pdf.ps1")
 THUMB_W = 640
 
 CATEGORIAS = [
+    ("firmas", "Firma de correo", "Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo tienes cómo añadirla en Gmail y en Outlook."),
     ("cartas", "Cartas", "Papel de carta en Word, una versión por etapa y área. Escribe sobre la plantilla: márgenes, escudo y pie ya están en su sitio."),
     ("presentaciones", "Presentaciones", "Plantilla de PowerPoint con portada, portadillas, índice e interiores."),
     ("carteles", "Carteles", "Carteles en Word sobre fondos de la gama oficial. Antes de imprimir, en Word: Archivo › Opciones › Mostrar › activa «Imprimir colores e imágenes de fondo»; si no, sale en blanco."),
     ("examenes", "Exámenes", "Modelo de examen en Word."),
     ("secretaria", "Secretaría", "Documentos de Secretaría en Word."),
-    ("firmas", "Firma de correo", "Rellena tus datos, elige la imagen de tu área y copia la firma. Debajo tienes cómo añadirla en Gmail y en Outlook."),
     ("ejemplos", "Ejemplos aplicados", "Folletos reales hechos con la marca, como referencia. No son plantillas."),
 ]
 
-# (origen relativo a marca-tajamar, categoría, slug, título, nota)
+# (origen relativo a origen/, categoría, slug, título, nota). El archivo de origen se llama como su slug.
 CATALOGO = [
-    ("Plantillas/Cartas/Carta estándar. Plantilla.docx", "cartas", "carta-estandar", "Carta estándar", "Colegio Tajamar"),
-    ("Plantillas/Cartas/Carta Infantil. Plantilla.docx", "cartas", "carta-infantil", "Carta Infantil", ""),
-    ("Plantillas/Cartas/Carta Primaria. Plantilla.docx", "cartas", "carta-primaria", "Carta Primaria", ""),
-    ("Plantillas/Cartas/Carta Secundaria. Plantilla.docx", "cartas", "carta-secundaria", "Carta Secundaria", ""),
-    ("Plantillas/Cartas/Carta FP Professional Education. Plantilla.docx", "cartas", "carta-fp", "Carta FP + Professional Education", ""),
-    ("Plantillas/Cartas/Carta Club Deportivo Tajamar. Plantilla.docx", "cartas", "carta-club-deportivo", "Carta Club Deportivo", ""),
-    ("Plantillas/Cartas/Carta AMPA. Plantilla.docx", "cartas", "carta-ampa", "Carta AMPA", ""),
-    ("Plantillas/Power Points/Presentación de Microsoft PowerPoint.pptx", "presentaciones", "presentacion-corporativa", "Presentación corporativa", ""),
-    *[(f"Plantillas/Carteles/Plantilla Cartel Tajamar {i:02d}.docx", "carteles", f"cartel-{i:02d}", f"Cartel {i:02d}", "") for i in range(1, 18)],
-    ("Plantillas/Carteles/Aforo máximo en los baños.docx", "carteles", "cartel-aforo-banos", "Aforo máximo en los baños", "Ejemplo terminado"),
-    ("Plantillas/Exámenes/Examen.docx", "examenes", "examen", "Modelo de examen", ""),
-    ("Plantillas/Secretaría/Secretaría.docx", "secretaria", "secretaria", "Hoja de Secretaría", "Con pie de contacto"),
-    ("Plantillas/Secretaría/Secretaría 2.docx", "secretaria", "secretaria-2", "Hoja de Secretaría, sin pie", ""),
-    ("Firmas Mails/Alumni/Firmas Alumni.jpg", "firmas", "firma-alumni", "Alumni", "Imagen de firma"),
-    ("Firmas Mails/Bachillerato/Firmas Bachillerato.jpg", "firmas", "firma-bachillerato", "Bachillerato", "Imagen de firma"),
-    ("Firmas Mails/Club Deportivo/Firmas Club Deportivo.jpg", "firmas", "firma-club-deportivo", "Club Deportivo", "Imagen de firma"),
-    ("Firmas Mails/FP+/Firmas FP+Professional Education.jpg", "firmas", "firma-fp", "FP + Professional Education", "Imagen de firma"),
-    ("Firmas Mails/Fundación/Firmas Fundación.jpg", "firmas", "firma-fundacion", "Fundación Tajamar", "Imagen de firma"),
-    ("Firmas Mails/Fundación/Firmas Fundación. Sin dibujo.jpg", "firmas", "firma-fundacion-sin-dibujo", "Fundación Tajamar, sin dibujo", "Imagen de firma"),
-    ("Firmas Mails/Infantil/Firmas Infantil.jpg", "firmas", "firma-infantil", "Infantil", "Imagen de firma"),
-    ("Firmas Mails/Primaria/Firmas Primaria 2.0.jpg", "firmas", "firma-primaria", "Primaria", "Imagen de firma"),
-    ("Firmas Mails/Secundaria/Firmas Secundaria.jpg", "firmas", "firma-secundaria", "Secundaria", "Imagen de firma"),
-    ("Firmas Mails/Secretaría/Firmas Secretaría.jpg", "firmas", "firma-secretaria", "Secretaría", "Imagen de firma"),
-    ("Folletos Corporativos/Programa Tajamar.pdf", "ejemplos", "folleto-programa-tajamar", "Programa Tajamar", "Folleto"),
-    ("Folletos Corporativos/Bachillerato Tajamar. Mucho más que un bachillerato.pdf", "ejemplos", "folleto-bachillerato", "Mucho más que un Bachillerato", "Folleto"),
-    ("Folletos Corporativos/La guía normativa de Tajamar.pdf", "ejemplos", "folleto-guia-normativa", "La guía normativa de Tajamar", "Folleto"),
-    ("Folletos Corporativos/Folleto. Buenos modales. Comedor Tajamar 2018. 2.0.pdf", "ejemplos", "folleto-buenos-modales", "Buenos modales en el comedor", "Folleto"),
+    *[(f"plantillas/cartas/{s}.docx", "cartas", s, t, n) for s, t, n in [
+        ("carta-estandar", "Carta estándar", "Colegio Tajamar"),
+        ("carta-infantil", "Carta Infantil", ""),
+        ("carta-primaria", "Carta Primaria", ""),
+        ("carta-secundaria", "Carta Secundaria", ""),
+        ("carta-fp", "Carta FP + Professional Education", ""),
+        ("carta-club-deportivo", "Carta Club Deportivo", ""),
+        ("carta-ampa", "Carta AMPA", ""),
+    ]],
+    ("plantillas/presentaciones/presentacion-corporativa.pptx", "presentaciones", "presentacion-corporativa", "Presentación corporativa", ""),
+    *[(f"plantillas/carteles/cartel-{i:02d}.docx", "carteles", f"cartel-{i:02d}", f"Cartel {i:02d}", "") for i in range(1, 18)],
+    ("plantillas/carteles/cartel-aforo-banos.docx", "carteles", "cartel-aforo-banos", "Aforo máximo en los baños", "Ejemplo terminado"),
+    ("plantillas/examenes/examen.docx", "examenes", "examen", "Modelo de examen", ""),
+    ("plantillas/secretaria/secretaria.docx", "secretaria", "secretaria", "Hoja de Secretaría", "Con pie de contacto"),
+    ("plantillas/secretaria/secretaria-2.docx", "secretaria", "secretaria-2", "Hoja de Secretaría, sin pie", ""),
+    *[(f"firmas-correo/{s}.jpg", "firmas", s, t, "Imagen de firma") for s, t in [
+        ("firma-alumni", "Alumni"),
+        ("firma-bachillerato", "Bachillerato"),
+        ("firma-club-deportivo", "Club Deportivo"),
+        ("firma-fp", "FP + Professional Education"),
+        ("firma-fundacion", "Fundación Tajamar"),
+        ("firma-fundacion-sin-dibujo", "Fundación Tajamar, sin dibujo"),
+        ("firma-infantil", "Infantil"),
+        ("firma-primaria", "Primaria"),
+        ("firma-secundaria", "Secundaria"),
+        ("firma-secretaria", "Secretaría"),
+    ]],
+    *[(f"folletos/{s}.pdf", "ejemplos", s, t, "Folleto") for s, t in [
+        ("folleto-programa-tajamar", "Programa Tajamar"),
+        ("folleto-bachillerato", "Mucho más que un Bachillerato"),
+        ("folleto-guia-normativa", "La guía normativa de Tajamar"),
+        ("folleto-buenos-modales", "Buenos modales en el comedor"),
+    ]],
 ]
 
 # Datos personales que no se publican: se sustituyen al copiar (el original no se toca).
