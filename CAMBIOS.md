@@ -2,6 +2,10 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.3 · 2026-10-21
+
+- Fórmula de área: el descriptor es solo el nombre del área («Club Deportivo», «Alumni», «Escuela de Música»), sin «Tajamar», porque la pieza ya lleva el escudo y el logotipo.
+
 ## 1.2 · 2026-10-21
 
 - «Antes de empezar»: procedimiento para cualquier pieza. En las piezas de Tajamar manda su marca aunque el encargo traiga logos o colores de otras marcas; los logos se obtienen de los archivos oficiales (también leyendo el SVG como texto) y nunca se recrean.
