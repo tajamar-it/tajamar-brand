@@ -1010,7 +1010,7 @@ footer img{height:52px;width:auto;margin-right:28px}
     <div class="sec-head">
       <div class="eyebrow">Descargas</div>
       <h2 class="h2">Los archivos oficiales</h2>
-      <p class="lead">SVG para imprenta y diseño; PNG transparente de 2000 px para Office, presentaciones y redes. No redibujes nada: usa siempre estos archivos.</p>
+      <p class="lead">SVG para imprenta y diseño; PNG transparente de 2000 px para Office, presentaciones y redes; y <a href="#agentes">la guía y la skill para agentes de IA</a>, para que ChatGPT, Claude o Copilot trabajen con la marca. No redibujes nada: usa siempre estos archivos.</p>
     </div>
     <div class="kitbar">
       <a class="btn solid" href="descargas/tajamar-kit-de-marca.zip" download>Descargar el kit completo (.zip)</a>
@@ -1113,7 +1113,7 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
   const CATS=[...D.categorias].sort((a,b)=>(b.id==='firmas')-(a.id==='firmas'));
   [{id:'todas',h:'Todas'},...CATS].forEach(c=>{
     const b=document.createElement('button'); b.type='button'; b.textContent=c.h; b.setAttribute('aria-pressed',c.id==='todas');
-    b.onclick=()=>{cat=c.id; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); b.scrollIntoView({block:'nearest',inline:'nearest'}); draw();};
+    b.onclick=()=>{cat=c.id; chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); draw(); toTop(); chips.scrollTo({left:b.offsetLeft-chips.offsetLeft-(chips.clientWidth-b.offsetWidth)/2});};
     chips.appendChild(b);
   });
   CATS.forEach(c=>{
@@ -1137,7 +1137,12 @@ document.querySelectorAll('.compo img[data-k]').forEach(i=>i.src=uri(i.dataset.k
       g.hidden=(cat!=='todas'&&g.dataset.cat!==cat)||(!!t&&!n);
     });
   }
-  q.addEventListener('input',draw);
+  // Al cambiar el filtro con la barra fija, vuelve al principio del listado
+  function toTop(){
+    const bar=$('.repo-bar'), top=repo.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(bar).top)-bar.offsetHeight;
+    if(scrollY>top) window.scrollTo({top,behavior:'instant'});
+  }
+  q.addEventListener('input',()=>{draw(); toTop();});
 })();
 
 // Firma de correo
