@@ -1,10 +1,25 @@
 # Marca Tajamar: guía para agentes
 
 <!-- version -->
-> **Versión 1.1 · 20 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.1, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
+> **Versión 1.2 · 21 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.2, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
 <!-- /version -->
 
 Esta es la versión en texto del manual de marca de Tajamar, publicado en https://brand.tajamar.es. Sirve para que un asistente o agente de IA escriba, diseñe o revise piezas de Tajamar. Si algo no está aquí, no lo inventes: indica que hay que consultarlo con la Dirección o el Departamento de Comunicación.
+
+## Antes de empezar
+
+Sigue estos pasos en cualquier pieza de Tajamar (cartel, folleto, post, web, presentación, texto):
+
+1. **Quién emite la pieza.** Si trata de una actividad de Tajamar, el emisor es Tajamar (o su área: Colegio, FP+, Fundación, Club Deportivo…), aunque haya patrocinadores o colaboradores.
+2. **En sus piezas manda la marca de Tajamar:** colores, tipografías, composición y tono de esta guía, aunque el encargo traiga logos, colores o materiales de otras marcas. Esos materiales son contenido que hay que colocar, no una referencia de estilo. Ver «Piezas con otras marcas».
+3. **Consigue los archivos oficiales antes de componer,** por este orden:
+   1. Los archivos incluidos junto a esta guía (por ejemplo, en `logos/svg/` y `logos/png/` de la skill).
+   2. Si no puedes abrir los PNG, abre el SVG equivalente **como texto** e insértalo tal cual: es el archivo oficial, no lo redibujes ni lo modifiques.
+   3. Si no tienes los archivos, descárgalos de su dirección pública (tabla de «Archivos oficiales»).
+   4. Si nada de lo anterior funciona, **no recrees el logo** con IA, con texto ni con formas: deja un hueco marcado («Logotipo oficial de Tajamar») del tamaño y en la posición correctos, y avisa a quien te lo pide de que hay que insertarlo.
+4. **No inventes datos.** Si falta algo esencial (fecha, hora, lugar, inscripción), pregunta o deja un marcador visible.
+5. **Si el encargo choca con una regla de esta guía,** dilo y propón una alternativa que la cumpla.
+6. **Antes de entregar, pasa la «Revisión antes de entregar»** del final.
 
 ## Qué es Tajamar
 
@@ -136,6 +151,21 @@ Antes de entregar un texto, comprueba los cinco puntos. Si falla alguno, reescr�
 ### Escudos libres
 
 Hay tres: boli, brochazo (en masa o «descascarillado») y spray. Son solo para comunicación **interna** (ambientación, decoración, presentaciones, cartelería, señalética). No sustituyen al escudo oficial en comunicación externa y no se usan de forma masiva. Las versiones nuevas se acuerdan con la Dirección del centro.
+
+## Piezas con otras marcas
+
+**Cuando Tajamar organiza o emite** (por ejemplo, un evento de Tajamar con patrocinadores o colaboradores):
+
+- La pieza es de Tajamar: colores, tipografías, composición y tono de Tajamar. **No se usan los colores, tipografías ni el estilo del patrocinador.**
+- Tajamar firma como siempre: escudo y logotipo. Con varias marcas o poco espacio, isologo horizontal o versión vertical, que existen precisamente para convivir con otras marcas.
+- Los logos de terceros van juntos en una zona propia, normalmente abajo, con un rótulo en Avenir (Montserrat en web): «Patrocina», «Colabora» o «Con el apoyo de».
+- Siempre su archivo original, sin recolorear ni deformar. Si no se lee bien sobre el fondo, va sobre una banda blanca o en su versión oficial en negro o blanco.
+- Ningún logo de tercero es más grande ni más visible que la marca de Tajamar: como referencia, no más alto que el logotipo de Tajamar.
+- Nunca forman un bloque con la marca de Tajamar.
+
+**Cuando Tajamar patrocina o colabora en la pieza de otro:** la pieza es del tercero. Tajamar aparece con su isologo horizontal o su versión vertical oficial, en negro o blanco, en el espacio que le reserven.
+
+**Si se organiza a medias o hay dudas,** consulta con el Departamento de Comunicación antes de decidir qué marca pesa más.
 
 ## Color
 
@@ -291,20 +321,47 @@ En https://brand.tajamar.es/#plantillas hay plantillas listas para usar: cartas 
 Todos están en https://brand.tajamar.es/#descargas:
 
 - Kit completo, con SVG y PNG transparente de 2000 px: https://brand.tajamar.es/descargas/tajamar-kit-de-marca.zip
-- Logos sueltos: `https://brand.tajamar.es/logos/svg/<archivo>.svg` y `https://brand.tajamar.es/logos/png/<archivo>.png`
-  - tajamar-escudo-negro, tajamar-escudo-blanco
-  - tajamar-logotipo-negro, tajamar-logotipo-blanco
-  - tajamar-isologo-horizontal-negro, tajamar-isologo-horizontal-blanco
-  - tajamar-vertical-negro, tajamar-vertical-blanco
-  - tajamar-fp-professional-education
-  - tajamar-educacion-infantil-horizontal, tajamar-educacion-infantil-vertical
-  - tajamar-libresypunto-blanco
-  - tajamar-fp-professional-education-blanco
-  - tajamar-fundacion-vertical-negro, tajamar-fundacion-vertical-blanco, tajamar-fundacion-horizontal-negro, tajamar-fundacion-horizontal-blanco
-  - tajamar-revista-puente-negro (firma de cabecera de Revista Puente)
-  - tajamar-escudo-libre-boli, tajamar-escudo-libre-brochazo (escudo libre spray: solo en PNG)
-  - Escudos libres en blanco, solo en PNG: tajamar-escudo-libre-boli-blanco, tajamar-escudo-libre-brochazo-blanco, tajamar-escudo-libre-spray-blanco
+- Logos sueltos, con su dirección completa:
+
+| Archivo | SVG (vector, también legible como texto) | PNG transparente de 2000 px |
+|---|---|---|
+| tajamar-educacion-infantil-horizontal | https://brand.tajamar.es/logos/svg/tajamar-educacion-infantil-horizontal.svg | https://brand.tajamar.es/logos/png/tajamar-educacion-infantil-horizontal.png |
+| tajamar-educacion-infantil-vertical | https://brand.tajamar.es/logos/svg/tajamar-educacion-infantil-vertical.svg | https://brand.tajamar.es/logos/png/tajamar-educacion-infantil-vertical.png |
+| tajamar-escudo-blanco | https://brand.tajamar.es/logos/svg/tajamar-escudo-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-escudo-blanco.png |
+| tajamar-escudo-libre-boli | https://brand.tajamar.es/logos/svg/tajamar-escudo-libre-boli.svg | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-boli.png |
+| tajamar-escudo-libre-boli-blanco | — | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-boli-blanco.png |
+| tajamar-escudo-libre-brochazo | https://brand.tajamar.es/logos/svg/tajamar-escudo-libre-brochazo.svg | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-brochazo.png |
+| tajamar-escudo-libre-brochazo-blanco | — | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-brochazo-blanco.png |
+| tajamar-escudo-libre-spray | — | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-spray.png |
+| tajamar-escudo-libre-spray-blanco | — | https://brand.tajamar.es/logos/png/tajamar-escudo-libre-spray-blanco.png |
+| tajamar-escudo-negro | https://brand.tajamar.es/logos/svg/tajamar-escudo-negro.svg | https://brand.tajamar.es/logos/png/tajamar-escudo-negro.png |
+| tajamar-fp-professional-education | https://brand.tajamar.es/logos/svg/tajamar-fp-professional-education.svg | https://brand.tajamar.es/logos/png/tajamar-fp-professional-education.png |
+| tajamar-fp-professional-education-blanco | https://brand.tajamar.es/logos/svg/tajamar-fp-professional-education-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-fp-professional-education-blanco.png |
+| tajamar-fundacion-horizontal-blanco | https://brand.tajamar.es/logos/svg/tajamar-fundacion-horizontal-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-fundacion-horizontal-blanco.png |
+| tajamar-fundacion-horizontal-negro | https://brand.tajamar.es/logos/svg/tajamar-fundacion-horizontal-negro.svg | https://brand.tajamar.es/logos/png/tajamar-fundacion-horizontal-negro.png |
+| tajamar-fundacion-vertical-blanco | https://brand.tajamar.es/logos/svg/tajamar-fundacion-vertical-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-fundacion-vertical-blanco.png |
+| tajamar-fundacion-vertical-negro | https://brand.tajamar.es/logos/svg/tajamar-fundacion-vertical-negro.svg | https://brand.tajamar.es/logos/png/tajamar-fundacion-vertical-negro.png |
+| tajamar-isologo-horizontal-blanco | https://brand.tajamar.es/logos/svg/tajamar-isologo-horizontal-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-isologo-horizontal-blanco.png |
+| tajamar-isologo-horizontal-negro | https://brand.tajamar.es/logos/svg/tajamar-isologo-horizontal-negro.svg | https://brand.tajamar.es/logos/png/tajamar-isologo-horizontal-negro.png |
+| tajamar-libresypunto-blanco | https://brand.tajamar.es/logos/svg/tajamar-libresypunto-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-libresypunto-blanco.png |
+| tajamar-logotipo-blanco | https://brand.tajamar.es/logos/svg/tajamar-logotipo-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-logotipo-blanco.png |
+| tajamar-logotipo-negro | https://brand.tajamar.es/logos/svg/tajamar-logotipo-negro.svg | https://brand.tajamar.es/logos/png/tajamar-logotipo-negro.png |
+| tajamar-revista-puente-negro | https://brand.tajamar.es/logos/svg/tajamar-revista-puente-negro.svg | https://brand.tajamar.es/logos/png/tajamar-revista-puente-negro.png |
+| tajamar-vertical-blanco | https://brand.tajamar.es/logos/svg/tajamar-vertical-blanco.svg | https://brand.tajamar.es/logos/png/tajamar-vertical-blanco.png |
+| tajamar-vertical-negro | https://brand.tajamar.es/logos/svg/tajamar-vertical-negro.svg | https://brand.tajamar.es/logos/png/tajamar-vertical-negro.png |
+
 - Tokens de diseño (JSON): https://brand.tajamar.es/descargas/tajamar-tokens.json
 - Paleta (CSV): https://brand.tajamar.es/descargas/tajamar-paleta.csv
 
 Para cualquier duda, el contacto es la Dirección o el Departamento de Comunicación.
+
+## Revisión antes de entregar
+
+- **Emisor y marca:** la pieza es de Tajamar con sus colores, tipografías y composición; los logos de terceros, en su zona y sin mandar.
+- **Logos:** archivos oficiales, sin redibujar, deformar ni recolorear; versión correcta para el fondo; con aire alrededor; escudo y logotipo por separado o la versión especial que toque.
+- **Arquitectura:** la firma del área es la correcta; FP+ nunca como Colegio; ningún área con logo propio inventado.
+- **Color y texto:** texto sobre blanco solo en tonos «texto»; sobre tonos «campo», texto negro.
+- **Tipografía:** Rockwell/Rokkitt para titulares expresivos, Avenir/Montserrat para el resto.
+- **Datos:** cada fecha, hora, lugar, cifra y dirección viene del encargo; lo que falte está marcado.
+- **Voz:** empieza por lo útil, sin clichés; pasa la prueba «libres y punto».
+- **Fotos:** reales y con permisos; ninguna generada con IA presentada como real.
