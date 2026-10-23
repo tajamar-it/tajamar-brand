@@ -874,8 +874,7 @@ footer img{height:52px;width:auto;margin-right:28px}
       <div class="sigmaker" id="firma">
         <div>
           <label>Nombre y apellidos<input id="sg-n" value="Nombre Apellido Apellido"></label>
-          <label>Cargo (opcional)<input id="sg-c" placeholder="Coordinadora de Primaria, Profesor…"></label>
-          <label>Área<input id="sg-a" value="Área" placeholder="Primaria, FP+, Secretaría…"></label>
+          <label>Cargo (opcional)<input id="sg-c" placeholder="Coordinador, Profesora, Director…"></label>
           <label>Vertical<select id="sg-v">
             <option>Colegio Tajamar</option>
             <option>Tajamar FP + Professional Education</option>
@@ -884,6 +883,15 @@ footer img{height:52px;width:auto;margin-right:28px}
             <option>Alumni Tajamar</option>
             <option>Tajamar</option>
           </select></label>
+          <label>Área<input id="sg-a" list="sg-areas" placeholder="Elige de la lista o escribe la tuya"></label>
+          <datalist id="sg-areas">
+            <option value="Infantil"></option>
+            <option value="Primaria"></option>
+            <option value="Secundaria"></option>
+            <option value="Bachillerato"></option>
+            <option value="Grado Medio"></option>
+            <option value="Grado Superior"></option>
+          </datalist>
           <label>Imagen de tu área<select id="sg-img"><option value="">Solo escudo</option></select></label>
           <p class="muted" id="sg-note" style="font-size:12.5px;margin:-4px 0 10px" hidden>Las imágenes de Fundación solo pueden usarse con la vertical Fundación Tajamar.</p>
           <p class="muted" id="sg-solo" style="font-size:12.5px;margin:-4px 0 10px" hidden>Solo «Tajamar» dice poco de quién escribe. Si encaja alguna vertical, mejor elige esa; si no, adelante.</p>
