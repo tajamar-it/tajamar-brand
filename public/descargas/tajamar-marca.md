@@ -1,7 +1,7 @@
 # Marca Tajamar: guía para agentes
 
 <!-- version -->
-> **Versión 1.4 · 21 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.4, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
+> **Versión 1.5 · 28 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.5, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
 <!-- /version -->
 
 Esta es la versión en texto del manual de marca de Tajamar, publicado en https://brand.tajamar.es. Sirve para que un asistente o agente de IA escriba, diseñe o revise piezas de Tajamar. Si algo no está aquí, no lo inventes: indica que hay que consultarlo con la Dirección o el Departamento de Comunicación.
@@ -272,6 +272,8 @@ Antes de elegir una foto, pregúntate:
 - ¿Es tan normal y espontánea como la vida?
 
 Usa solo imágenes con derechos y permisos, con especial cuidado con los menores. Nunca fotos sacadas de internet. No generes con IA fotos que se presenten como reales del centro.
+
+Las fotos de Tajamar (el reportaje de 2026 y el archivo histórico, de los años 50 a los 90) las custodia Comunicación: pídelas a comunicacion@tajamar.es indicando qué buscas y para qué pieza. La web de marca solo enseña una muestra y no sirve para descargarlas.
 
 ## Look & feel
 

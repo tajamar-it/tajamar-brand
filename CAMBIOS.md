@@ -2,6 +2,10 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.5 · 2026-10-28
+
+- Fotografía: muestra de fotos del reportaje de 2026 y del archivo histórico (años 50 a 90). Las fotos de Tajamar se piden a Comunicación (comunicacion@tajamar.es), con botón que prepara la petición; la web no sirve para descargarlas.
+
 ## 1.4 · 2026-10-21
 
 - Firma de correo con los colores de la paleta: nombre en negro (antes #333F50, que no es de la marca), teléfonos en gris-80, correo y web en negro subrayado y aviso legal en Verdana gris-60, sin negrita salvo «AVISO LEGAL».
