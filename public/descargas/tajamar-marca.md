@@ -1,7 +1,7 @@
 # Marca Tajamar: guía para agentes
 
 <!-- version -->
-> **Versión 1.5 · 28 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.5, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
+> **Versión 1.6 · 30 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.6, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
 <!-- /version -->
 
 Esta es la versión en texto del manual de marca de Tajamar, publicado en https://brand.tajamar.es. Sirve para que un asistente o agente de IA escriba, diseñe o revise piezas de Tajamar. Si algo no está aquí, no lo inventes: indica que hay que consultarlo con la Dirección o el Departamento de Comunicación.
@@ -17,9 +17,13 @@ Sigue estos pasos en cualquier pieza de Tajamar (cartel, folleto, post, web, pre
    2. Si no puedes abrir los PNG, abre el SVG equivalente **como texto** e insértalo tal cual: es el archivo oficial, no lo redibujes ni lo modifiques.
    3. Si no tienes los archivos, descárgalos de su dirección pública (tabla de «Archivos oficiales»).
    4. Si nada de lo anterior funciona, **no recrees el logo** con IA, con texto ni con formas: deja un hueco marcado («Logotipo oficial de Tajamar») del tamaño y en la posición correctos, y avisa a quien te lo pide de que hay que insertarlo.
-4. **No inventes datos.** Si falta algo esencial (fecha, hora, lugar, inscripción), pregunta o deja un marcador visible.
-5. **Si el encargo choca con una regla de esta guía,** dilo y propón una alternativa que la cumpla.
-6. **Antes de entregar, pasa la «Revisión antes de entregar»** del final.
+4. **Si usas un generador de imágenes, los logos no pasan por él.** Un generador redibuja cualquier logo que recibe, aunque se le pida conservarlo exactamente, así que el resultado nunca es el oficial. Por eso:
+   1. Genera solo el fondo o la ilustración, **sin texto, logos, escudos ni firmas**, y deja libre la zona donde irán.
+   2. Inserta después los archivos oficiales con una herramienta de composición (por ejemplo, Python con PIL, HTML o un editor de diseño). Solo se escalan, manteniendo la proporción: nada de recortar, recolorear, deformar ni aplicar efectos. Los titulares y el descriptor de área son texto y se escriben en este mismo paso, con la tipografía de la marca.
+   3. Una vez insertado el logo, la pieza no vuelve a pasar por el generador. Si hay que cambiar algo, cambia el fondo y compón de nuevo.
+5. **No inventes datos.** Si falta algo esencial (fecha, hora, lugar, inscripción), pregunta o deja un marcador visible.
+6. **Si el encargo choca con una regla de esta guía,** dilo y propón una alternativa que la cumpla.
+7. **Antes de entregar, pasa la «Revisión antes de entregar»** del final.
 
 ## Qué es Tajamar
 
@@ -238,7 +242,7 @@ Tajamar es una marca única: toda la organización se presenta bajo ella y sus �
 | Áreas | Club Deportivo, Alumni, AMPA | Marca Tajamar más el nombre del área en texto, nunca logotipado. |
 
 - **Colegio Tajamar:** es la marca Tajamar. Infantil, Primaria, Secundaria y Bachillerato firman como Colegio Tajamar. FP+ no es Colegio, nunca: firma como «Tajamar» con su descriptor.
-- **Club Deportivo, Alumni y Escuela de Música:** usan la fórmula de área. El escudo va arriba a la izquierda de la pieza y el descriptor arriba a la derecha de la pieza, alineado con la parte superior del escudo y bien separado de él, en Franklin Gothic Medium negro. El descriptor es solo el nombre del área («Club Deportivo», «Alumni», «Escuela de Música»), sin «Tajamar»: ya lo dicen el escudo y el logotipo. No forman un bloque ni una firma conjunta: cada uno va en su extremo (en un díptico, el escudo en el margen izquierdo y «Club Deportivo» en el derecho). El logotipo firma en otro lugar de la pieza (contraportada, abajo a la derecha). Los productos, como «500 km», en Rockwell. Alumni prefiere las gamas más nobles: tierras y oscuros.
+- **Club Deportivo, Alumni y Escuela de Música:** usan la fórmula de área. El escudo va arriba a la izquierda de la pieza y el descriptor arriba a la derecha de la pieza, alineado con la parte superior del escudo y bien separado de él, en Franklin Gothic Medium negro. El descriptor es solo el nombre del área («Club Deportivo», «Alumni», «Escuela de Música»), sin «Tajamar»: ya lo dicen el escudo y el logotipo. **No forman un bloque ni una firma conjunta: cada uno va en su extremo** (en un díptico, el escudo en el margen izquierdo y «Club Deportivo» en el derecho). El logotipo firma en otro lugar de la pieza (contraportada, abajo a la derecha). Los productos, como «500 km», en Rockwell. Alumni prefiere las gamas más nobles: tierras y oscuros.
 - **FP + Professional Education:** descriptor oficial en ITC Franklin Gothic Medium, con un «+» dibujado a medida con la base constructiva del escudo; la pastilla deja 2X a los lados y 1,5X arriba y abajo. Sobre pastilla negra en portadas y piezas destacadas; en el resto, negro o blanco sobre foto o color. Nunca en color y nunca junto al logotipo: emite siempre Tajamar (escudo y logotipo, o isologo). Look propio, más adulto y profesional, con el negro como base. Tiene tres familias, que se escriben siempre así y en este orden: Gráfica, Tech y Deporte (no «Informática» ni «Deportiva»); cada una puede tomar un color. Productos como IMPRE o PREDI, en Avenir Black y nunca logotipados.
 - **Educación Infantil:** es la única área que puede firmar bajo el logotipo, con «Educación Infantil» en Franklin Gothic, también con las versiones especiales. Queda mejor sobre color o foto. Admite ilustraciones y piezas más divertidas.
 - **Fundación Tajamar:** no usa el logotipo. Firma con el escudo y «Fundación Tajamar» en Franklin Gothic Demi, en vertical (bajo el escudo) u horizontal (a la derecha). Comunicación más formal, con fotos reales. Proyectos como Jornadas Humanísticas: nombre en Franklin Gothic Medium y titular en Avenir.
@@ -359,9 +363,11 @@ Para cualquier duda, el contacto es la Dirección o el Departamento de Comunicac
 
 ## Revisión antes de entregar
 
+Si falla un punto, rehaz la pieza.
+
 - **Emisor y marca:** la pieza es de Tajamar con sus colores, tipografías y composición; los logos de terceros, en su zona y sin mandar.
-- **Logos:** archivos oficiales, sin redibujar, deformar ni recolorear; versión correcta para el fondo; con aire alrededor; escudo y logotipo por separado o la versión especial que toque.
-- **Arquitectura:** la firma del área es la correcta; FP+ nunca como Colegio; ningún área con logo propio inventado.
+- **Logos:** el escudo y el logotipo se insertaron desde los archivos oficiales con una herramienta de composición y la pieza no volvió a pasar por un generador de imágenes. Que un logo se parezca al original no prueba que sea el oficial: cuenta cómo se insertó. Solo escalados en proporción, sin redibujar, deformar ni recolorear; versión correcta para el fondo; con su área de protección y por encima de los tamaños mínimos; escudo y logotipo por separado o la versión especial que toque; en comunicación externa, los dos en la misma pieza.
+- **Arquitectura:** la firma del área es la correcta; FP+ nunca como Colegio; ningún área con logo propio inventado. En Club Deportivo, Alumni y Escuela de Música: escudo arriba a la izquierda, descriptor arriba a la derecha alineado con él, sin formar bloque, y el logotipo en otro lugar de la pieza.
 - **Color y texto:** texto sobre blanco solo en tonos «texto»; sobre tonos «campo», texto negro.
 - **Tipografía:** Rockwell/Rokkitt para titulares expresivos, Avenir/Montserrat para el resto.
 - **Datos:** cada fecha, hora, lugar, cifra y dirección viene del encargo; lo que falte está marcado.

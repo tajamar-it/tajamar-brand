@@ -2,7 +2,7 @@
 
 > Manual de marca de Tajamar (Colegio, Tajamar FP+, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
 
-Versión vigente: 1.5 (2026-10-28). Usa siempre la última: compruébala en https://brand.tajamar.es/descargas/version.json antes de usar una copia guardada. Las versiones de https://brand.tajamar.es/descargas/archivo/ son históricas.
+Versión vigente: 1.6 (2026-10-30). Usa siempre la última: compruébala en https://brand.tajamar.es/descargas/version.json antes de usar una copia guardada. Las versiones de https://brand.tajamar.es/descargas/archivo/ son históricas.
 
 ## Para agentes
 

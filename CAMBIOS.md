@@ -2,6 +2,11 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.6 · 2026-10-30
+
+- «Antes de empezar»: los logos nunca pasan por un generador de imágenes. Se genera el fondo sin texto ni marcas, los archivos oficiales se insertan después al componer (solo escalados en proporción) y la pieza ya firmada no vuelve al generador.
+- «Revisión antes de entregar»: si falla un punto, se rehace la pieza. La comprobación de logos mira cómo se insertaron, no si se parecen al original, e incluye área de protección, tamaños mínimos y la colocación de la fórmula de área.
+
 ## 1.5 · 2026-10-28
 
 - Fotografía: muestra de fotos del reportaje de 2026 y del archivo histórico (años 50 a 90). Las fotos de Tajamar se piden a Comunicación (comunicacion@tajamar.es), con botón que prepara la petición; la web no sirve para descargarlas.

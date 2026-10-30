@@ -98,7 +98,7 @@ description: Marca Tajamar (colegio, FP+, Club Deportivo, Fundación, Alumni). �
 
 Esta skill es la versión {VERSION} de la marca ({FECHA_LARGA}). Si tienes acceso a internet, consulta antes {SITE}/descargas/version.json: si hay una versión posterior, avisa al usuario y usa la guía vigente de {SITE}/descargas/tajamar-marca.md en lugar de esta.
 
-Antes de componer cualquier pieza, sigue «Antes de empezar» (al principio de la guía): en las piezas de Tajamar manda su marca aunque el encargo traiga logos o colores de otras marcas, y los logos se obtienen de los archivos oficiales, nunca se recrean. Los logos están en `logos/svg/` y `logos/png/` dentro de esta skill: si no puedes abrir un PNG, lee el SVG como texto e insértalo tal cual; si tampoco, usa su dirección pública (tabla de «Archivos oficiales»); si nada funciona, deja un hueco marcado y avísalo. Los tokens de color y fuente están en `tajamar-tokens.json`. Antes de entregar, pasa la «Revisión antes de entregar».
+Antes de componer cualquier pieza, sigue «Antes de empezar» (al principio de la guía): en las piezas de Tajamar manda su marca aunque el encargo traiga logos o colores de otras marcas, y los logos se obtienen de los archivos oficiales, nunca se recrean. Los logos están en `logos/svg/` y `logos/png/` dentro de esta skill: si no puedes abrir un PNG, lee el SVG como texto e insértalo tal cual; si tampoco, usa su dirección pública (tabla de «Archivos oficiales»); si nada funciona, deja un hueco marcado y avísalo. Los logos nunca pasan por un generador de imágenes: genera el fondo sin marcas y añade los archivos oficiales después, al componer. Los tokens de color y fuente están en `tajamar-tokens.json`. Antes de entregar, pasa la «Revisión antes de entregar».
 
 {guia}"""
 
