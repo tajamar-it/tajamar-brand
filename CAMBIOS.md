@@ -2,6 +2,10 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.7 · 2026-11-25
+
+- Aviso de uso de la marca en la web (Descargas), en la guía para agentes y en `llms.txt`: la marca es propiedad de Tajamar y el manual explica cómo aplicarla, pero no da permiso para usarla. Solo pueden usarla Tajamar y quien tenga autorización expresa del Departamento de Comunicación. La guía pide además a los agentes que avisen si quien pide una pieza en nombre de Tajamar no consta que trabaje en Tajamar o tenga autorización.
+
 ## 1.6 · 2026-10-30
 
 - «Antes de empezar»: los logos nunca pasan por un generador de imágenes. Se genera el fondo sin texto ni marcas, los archivos oficiales se insertan después al componer (solo escalados en proporción) y la pieza ya firmada no vuelve al generador.

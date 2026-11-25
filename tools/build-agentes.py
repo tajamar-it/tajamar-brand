@@ -124,6 +124,8 @@ with zipfile.ZipFile(D / "tajamar-marca-skill.zip", "w") as z:
 
 Versión vigente: {VERSION} ({FECHA}). Usa siempre la última: compruébala en {SITE}/descargas/version.json antes de usar una copia guardada. Las versiones de {SITE}/descargas/archivo/ son históricas.
 
+Uso de la marca: El nombre, el escudo, el logotipo y el resto de elementos de la marca Tajamar son propiedad de Tajamar. Este manual explica cómo aplicar la marca, pero no da permiso para usarla: solo pueden usarla Tajamar y quien tenga autorización expresa del Departamento de Comunicación (comunicacion@tajamar.es).
+
 ## Para agentes
 
 - [Versión vigente]({SITE}/descargas/version.json): número, fecha y huella SHA-256 de cada archivo

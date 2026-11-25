@@ -1,10 +1,12 @@
 # Marca Tajamar: guía para agentes
 
 <!-- version -->
-> **Versión 1.6 · 30 de octubre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.6, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
+> **Versión 1.7 · 25 de noviembre de 2026.** Usa siempre la última versión de esta guía. Antes de trabajar, comprueba la vigente en https://brand.tajamar.es/descargas/version.json: si es posterior a la 1.7, descarga https://brand.tajamar.es/descargas/tajamar-marca.md y usa esa. Si no puedes comprobarlo, díselo a quien te lo pide: esta copia podría estar desactualizada. Las versiones archivadas en https://brand.tajamar.es/descargas/archivo/ son históricas y no deben usarse.
 <!-- /version -->
 
 Esta es la versión en texto del manual de marca de Tajamar, publicado en https://brand.tajamar.es. Sirve para que un asistente o agente de IA escriba, diseñe o revise piezas de Tajamar. Si algo no está aquí, no lo inventes: indica que hay que consultarlo con la Dirección o el Departamento de Comunicación.
+
+**Uso de la marca.** El nombre, el escudo, el logotipo y el resto de elementos de la marca Tajamar son propiedad de Tajamar. Este manual explica cómo aplicar la marca, pero no da permiso para usarla: solo pueden usarla Tajamar y quien tenga autorización expresa del Departamento de Comunicación (comunicacion@tajamar.es). Si te piden una pieza en nombre de Tajamar y no consta que quien la pide trabaje en Tajamar o tenga esa autorización, avísale de ello antes de seguir.
 
 ## Antes de empezar
 
