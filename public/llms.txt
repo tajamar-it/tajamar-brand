@@ -2,7 +2,7 @@
 
 > Manual de marca de Tajamar (Colegio, Tajamar FP+, Club Deportivo, Fundación Tajamar y Alumni): valores, tono de voz, logo, color, tipografía, arquitectura de marca, fotografía y archivos oficiales.
 
-Versión vigente: 1.7 (2026-11-25). Usa siempre la última: compruébala en https://brand.tajamar.es/descargas/version.json antes de usar una copia guardada. Las versiones de https://brand.tajamar.es/descargas/archivo/ son históricas.
+Versión vigente: 1.8 (2026-11-27). Usa siempre la última: compruébala en https://brand.tajamar.es/descargas/version.json antes de usar una copia guardada. Las versiones de https://brand.tajamar.es/descargas/archivo/ son históricas.
 
 Uso de la marca: El nombre, el escudo, el logotipo y el resto de elementos de la marca Tajamar son propiedad de Tajamar. Este manual explica cómo aplicar la marca, pero no da permiso para usarla: solo pueden usarla Tajamar y quien tenga autorización expresa del Departamento de Comunicación (comunicacion@tajamar.es).
 
@@ -11,7 +11,8 @@ Uso de la marca: El nombre, el escudo, el logotipo y el resto de elementos de la
 - [Versión vigente](https://brand.tajamar.es/descargas/version.json): número, fecha y huella SHA-256 de cada archivo
 - [Guía de marca en Markdown](https://brand.tajamar.es/descargas/tajamar-marca.md): todas las reglas en texto, lista para usar como contexto
 - [Tokens de diseño](https://brand.tajamar.es/descargas/tajamar-tokens.json): colores (HEX, RGB, Pantone, CMYK, uso como texto) y fuentes, en formato W3C Design Tokens
-- [Skill para Claude](https://brand.tajamar.es/descargas/tajamar-marca-skill.zip): SKILL.md con la guía, los tokens y los logos
+- [Skill para Claude, ChatGPT y Gemini](https://brand.tajamar.es/descargas/tajamar-marca-skill.zip): estándar Agent Skills, carpeta tajamar-marca/ con SKILL.md (la guía completa), los tokens y los logos
+- [Skill para Microsoft 365 Copilot](https://brand.tajamar.es/descargas/tajamar-marca-skill-copilot.zip): SKILL.md en la raíz del zip y de menos de 20.000 caracteres; el resto de la guía en references/
 - [Historial de versiones](https://brand.tajamar.es/CAMBIOS.md)
 
 ## Archivos

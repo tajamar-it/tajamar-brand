@@ -7,7 +7,10 @@ La versión vigente es la primera entrada de CAMBIOS.md («## X.Y · AAAA-MM-DD�
 Salida (en public/, la carpeta que publica Netlify):
   descargas/tajamar-marca.md         se le añade/actualiza la cabecera de versión y el aviso para agentes
   descargas/tajamar-tokens.json      tokens de diseño (formato W3C Design Tokens)
-  descargas/tajamar-marca-skill.zip  skill para Claude (SKILL.md + tokens + logos), reproducible byte a byte
+  descargas/tajamar-marca-skill.zip  skill en el estándar Agent Skills (Claude, ChatGPT, Gemini): carpeta
+                                     tajamar-marca/ con SKILL.md, tokens y logos; reproducible byte a byte
+  descargas/tajamar-marca-skill-copilot.zip  la misma skill para Microsoft 365 Copilot: SKILL.md en la raíz del zip
+                                     y de menos de 20.000 caracteres; el resto de la guía en references/
   descargas/version.json             versión vigente y huella SHA-256 de cada archivo para agentes
   descargas/archivo/X.Y/             copia congelada de la versión (no se sobrescribe nunca)
   llms.txt                           índice para agentes en la raíz del sitio
@@ -90,17 +93,56 @@ tokens = {
 tokens_json = json.dumps(tokens, ensure_ascii=False, indent=2) + "\n"
 (D / "tajamar-tokens.json").write_text(tokens_json, encoding="utf-8", newline="\n")
 
-# --- Skill para Claude (zip reproducible: fechas fijas y orden estable)
-skill = f"""---
-name: tajamar-marca
-description: Marca Tajamar (colegio, FP+, Club Deportivo, Fundación, Alumni). Úsala siempre que escribas, diseñes o revises cualquier pieza, texto, presentación, web, cartel o publicación de Tajamar: tono de voz, valores, logo y escudo, colores, tipografía, firma de cada área y fotografía.
----
+# --- Skills (zip reproducible: fechas fijas y orden estable)
+# La descripción va entre comillas: lleva «:» y sin comillas el YAML no es válido (Copilot lo rechaza).
+DESCRIPCION = ("Marca Tajamar (colegio, FP+, Club Deportivo, Fundación, Alumni). Úsala siempre que escribas, diseñes o revises "
+               "cualquier pieza, texto, presentación, web, cartel o publicación de Tajamar: tono de voz, valores, logo y escudo, "
+               "colores, tipografía, firma de cada área y fotografía.")
+CABECERA = f"---\nname: tajamar-marca\ndescription: {json.dumps(DESCRIPCION, ensure_ascii=False)}\n---\n\n"
+INTRO_VERSION = (f"Esta skill es la versión {VERSION} de la marca ({FECHA_LARGA}). Si tienes acceso a internet, consulta antes "
+                 f"{SITE}/descargas/version.json: si hay una versión posterior, avisa al usuario y usa la guía vigente de "
+                 f"{SITE}/descargas/tajamar-marca.md en lugar de esta.")
+INTRO_REGLAS = ("Antes de componer cualquier pieza, sigue «Antes de empezar» (al principio de la guía): en las piezas de Tajamar manda su "
+                "marca aunque el encargo traiga logos o colores de otras marcas, y los logos se obtienen de los archivos oficiales, nunca "
+                "se recrean. Los logos están en `logos/svg/` y `logos/png/` dentro de esta skill: si no puedes abrir un PNG, lee el SVG "
+                "como texto e insértalo tal cual; si tampoco, usa su dirección pública (tabla de «Archivos oficiales»{donde}); si nada "
+                "funciona, deja un hueco marcado y avísalo. Los logos nunca pasan por un generador de imágenes: genera el fondo sin marcas "
+                "y añade los archivos oficiales después, al componer. Los tokens de color y fuente están en `tajamar-tokens.json`. Antes "
+                "de entregar, pasa la «Revisión antes de entregar».")
 
-Esta skill es la versión {VERSION} de la marca ({FECHA_LARGA}). Si tienes acceso a internet, consulta antes {SITE}/descargas/version.json: si hay una versión posterior, avisa al usuario y usa la guía vigente de {SITE}/descargas/tajamar-marca.md en lugar de esta.
+# Claude: la guía completa en SKILL.md
+skill = CABECERA + INTRO_VERSION + "\n\n" + INTRO_REGLAS.format(donde="") + "\n\n" + guia
 
-Antes de componer cualquier pieza, sigue «Antes de empezar» (al principio de la guía): en las piezas de Tajamar manda su marca aunque el encargo traiga logos o colores de otras marcas, y los logos se obtienen de los archivos oficiales, nunca se recrean. Los logos están en `logos/svg/` y `logos/png/` dentro de esta skill: si no puedes abrir un PNG, lee el SVG como texto e insértalo tal cual; si tampoco, usa su dirección pública (tabla de «Archivos oficiales»); si nada funciona, deja un hueco marcado y avísalo. Los logos nunca pasan por un generador de imágenes: genera el fondo sin marcas y añade los archivos oficiales después, al componer. Los tokens de color y fuente están en `tajamar-tokens.json`. Antes de entregar, pasa la «Revisión antes de entregar».
+# Copilot: Microsoft pide SKILL.md en la raíz del zip (sin carpeta que lo envuelva) y de menos de 20.000 caracteres
+# (por encima de 30.000 lo rechaza). Las secciones menos generales pasan a references/, en este orden, hasta caber.
+LIMITE_COPILOT = 20000
+REF_COPILOT = "references/guia-complementaria.md"
+MOVIBLES = ["## Archivos oficiales", "## Aplicaciones", "## Manifiesto", "## Look & feel", "## Fotografía", "## Color"]
+secciones = re.split(r"(?m)^(?=## )", guia)
+assert all(any(x.startswith(t) for x in secciones) for t in MOVIBLES), "falta alguna sección movible en la guía"
 
-{guia}"""
+
+def armar_copilot(fuera):
+    titulos = [t[3:] for t in MOVIBLES if t in fuera]
+    principal = "".join(x for x in secciones if not x.startswith(tuple(fuera))).rstrip("\n") + "\n"
+    puntero = ("Por límite de tamaño, estas secciones de la guía están en `" + REF_COPILOT + "`: " + ", ".join(f"«{t}»" for t in titulos)
+               + ". Consúltalo cuando las necesites (por ejemplo, la tabla de colores o la dirección de un logo).")
+    md = (CABECERA + INTRO_VERSION + "\n\n" + INTRO_REGLAS.format(donde=f", en `{REF_COPILOT}`") + "\n\n" + puntero + "\n\n" + principal)
+    ref = (f"# Marca Tajamar: guía complementaria\n\nComplemento de la skill tajamar-marca para Microsoft 365 Copilot, versión {VERSION} "
+           f"({FECHA_LARGA}). Las reglas generales están en SKILL.md.\n\n"
+           + "".join(x for x in secciones if x.startswith(tuple(fuera))).rstrip("\n") + "\n")
+    return md, ref
+
+
+fuera = []
+skill_copilot, referencias_copilot = armar_copilot(fuera)
+for t in MOVIBLES:
+    if len(skill_copilot) <= LIMITE_COPILOT:
+        break
+    fuera.append(t)
+    skill_copilot, referencias_copilot = armar_copilot(fuera)
+if len(skill_copilot) > LIMITE_COPILOT:
+    sys.exit(f"El SKILL.md para Copilot tiene {len(skill_copilot)} caracteres y el límite es {LIMITE_COPILOT}. Añade secciones a MOVIBLES.")
 
 
 def zadd(z, name, data):
@@ -110,12 +152,33 @@ def zadd(z, name, data):
     z.writestr(zi, data)
 
 
-with zipfile.ZipFile(D / "tajamar-marca-skill.zip", "w") as z:
-    zadd(z, "tajamar-marca/SKILL.md", skill.encode("utf-8"))
-    zadd(z, "tajamar-marca/tajamar-tokens.json", tokens_json.encode("utf-8"))
-    for sub in ("svg", "png"):
-        for f in sorted((PUB / "logos" / sub).iterdir()):
-            zadd(z, f"tajamar-marca/logos/{sub}/{f.name}", f.read_bytes())
+def zdir(z, name):
+    # Entradas de carpeta explícitas: sin ellas claude.ai dice que el zip no tiene SKILL.md
+    zi = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+    zi.external_attr = (0o40755 << 16) | 0x10
+    z.writestr(zi, b"")
+
+
+def skill_zip(nombre, skill_md, extra=None, carpeta="tajamar-marca/"):
+    """carpeta="tajamar-marca/": estándar Agent Skills (Claude, ChatGPT, Gemini). carpeta="": SKILL.md en la raíz (Copilot)."""
+    extra = extra or {}
+    with zipfile.ZipFile(D / nombre, "w") as z:
+        carpetas = {"logos/", "logos/svg/", "logos/png/"} | {f"{Path(n).parent.as_posix()}/" for n in extra}
+        if carpeta:
+            zdir(z, carpeta)
+        for c in sorted(carpetas):
+            zdir(z, carpeta + c)
+        zadd(z, carpeta + "SKILL.md", skill_md.encode("utf-8"))
+        zadd(z, carpeta + "tajamar-tokens.json", tokens_json.encode("utf-8"))
+        for n, texto in sorted(extra.items()):
+            zadd(z, carpeta + n, texto.encode("utf-8"))
+        for sub in ("svg", "png"):
+            for f in sorted((PUB / "logos" / sub).iterdir()):
+                zadd(z, f"{carpeta}logos/{sub}/{f.name}", f.read_bytes())
+
+
+skill_zip("tajamar-marca-skill.zip", skill)
+skill_zip("tajamar-marca-skill-copilot.zip", skill_copilot, {REF_COPILOT: referencias_copilot}, carpeta="")
 
 # --- llms.txt
 (PUB / "llms.txt").write_text(f"""# Marca Tajamar
@@ -131,7 +194,8 @@ Uso de la marca: El nombre, el escudo, el logotipo y el resto de elementos de la
 - [Versión vigente]({SITE}/descargas/version.json): número, fecha y huella SHA-256 de cada archivo
 - [Guía de marca en Markdown]({SITE}/descargas/tajamar-marca.md): todas las reglas en texto, lista para usar como contexto
 - [Tokens de diseño]({SITE}/descargas/tajamar-tokens.json): colores (HEX, RGB, Pantone, CMYK, uso como texto) y fuentes, en formato W3C Design Tokens
-- [Skill para Claude]({SITE}/descargas/tajamar-marca-skill.zip): SKILL.md con la guía, los tokens y los logos
+- [Skill para Claude, ChatGPT y Gemini]({SITE}/descargas/tajamar-marca-skill.zip): estándar Agent Skills, carpeta tajamar-marca/ con SKILL.md (la guía completa), los tokens y los logos
+- [Skill para Microsoft 365 Copilot]({SITE}/descargas/tajamar-marca-skill-copilot.zip): SKILL.md en la raíz del zip y de menos de 20.000 caracteres; el resto de la guía en references/
 - [Historial de versiones]({SITE}/CAMBIOS.md)
 
 ## Archivos
@@ -143,7 +207,7 @@ Uso de la marca: El nombre, el escudo, el logotipo y el resto de elementos de la
 """, encoding="utf-8", newline="\n")
 
 # --- Archivo de la versión (inmutable) y version.json
-ARCH = ["tajamar-marca.md", "tajamar-tokens.json", "tajamar-marca-skill.zip"]
+ARCH = ["tajamar-marca.md", "tajamar-tokens.json", "tajamar-marca-skill.zip", "tajamar-marca-skill-copilot.zip"]
 dest = D / "archivo" / VERSION
 if dest.exists():
     cambiados = [n for n in ARCH if not (dest / n).exists() or sha(dest / n) != sha(D / n)]
@@ -181,4 +245,4 @@ idx.write_text(html, encoding="utf-8", newline="")
 # --- Historial publicado (el original vive en la raíz del repo)
 shutil.copyfile(ROOT / "CAMBIOS.md", PUB / "CAMBIOS.md")
 
-print(f"OK · versión {VERSION} ({FECHA})")
+print(f"OK · versión {VERSION} ({FECHA}) · SKILL.md para Copilot: {len(skill_copilot)} caracteres")

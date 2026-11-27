@@ -2,6 +2,13 @@
 
 La primera entrada es la versión vigente. Para publicar una nueva, añade una entrada arriba con el formato `## X.Y · AAAA-MM-DD`, ejecuta `python tools/build-agentes.py` y crea la etiqueta `marca-vX.Y` en git. Las versiones anteriores quedan archivadas en `descargas/archivo/` y no deben usarse.
 
+## 1.8 · 2026-11-27
+
+- Skill para cada asistente, con un desplegable en Descargas. Claude, ChatGPT y Gemini usan el estándar Agent Skills (carpeta `tajamar-marca/` con `SKILL.md`, tokens y logos). Microsoft 365 Copilot tiene su propio paquete: `SKILL.md` en la raíz del zip y de menos de 20.000 caracteres; las secciones que no caben pasan a `references/guia-complementaria.md`.
+- La descripción de la skill va entre comillas: tenía «:» y el YAML no era válido (Copilot la rechazaba).
+- El zip incluye las carpetas como entradas propias, que claude.ai necesita para encontrar el `SKILL.md`.
+- Las reglas de la marca no cambian.
+
 ## 1.7 · 2026-11-25
 
 - Aviso de uso de la marca en la web (Descargas), en la guía para agentes y en `llms.txt`: la marca es propiedad de Tajamar y el manual explica cómo aplicarla, pero no da permiso para usarla. Solo pueden usarla Tajamar y quien tenga autorización expresa del Departamento de Comunicación. La guía pide además a los agentes que avisen si quien pide una pieza en nombre de Tajamar no consta que trabaje en Tajamar o tenga autorización.

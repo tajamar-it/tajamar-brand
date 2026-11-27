@@ -1,25 +1,30 @@
 {
-  "version": "1.7",
-  "fecha": "2026-11-25",
+  "version": "1.8",
+  "fecha": "2026-11-27",
   "aviso": "Usa siempre esta versión. Si tu copia es anterior, descarga la vigente.",
   "guia": "https://brand.tajamar.es/descargas/tajamar-marca.md",
   "historial": "https://brand.tajamar.es/CAMBIOS.md",
-  "archivo": "https://brand.tajamar.es/descargas/archivo/1.7/",
+  "archivo": "https://brand.tajamar.es/descargas/archivo/1.8/",
   "archivos": {
     "tajamar-marca.md": {
       "url": "https://brand.tajamar.es/descargas/tajamar-marca.md",
-      "sha256": "e4b1bd2e3c7d5050eb37bbda1abb8a818895a93ecb44f4391b3b929cac1873f1",
+      "sha256": "38aebaef3317c7dc999e80c9579ea7567e56cb0aa5fc9155e83f71aad7fde500",
       "bytes": 36460
     },
     "tajamar-tokens.json": {
       "url": "https://brand.tajamar.es/descargas/tajamar-tokens.json",
-      "sha256": "5294cf51ba3ff2f0e6db4e897c35d3c27c09f2342ba4fdfc1da39d55cf7e7720",
+      "sha256": "753211163f25416b15f2ef67a9e0e3806b1efd69285a24713ca378ff52c0ee4c",
       "bytes": 11260
     },
     "tajamar-marca-skill.zip": {
       "url": "https://brand.tajamar.es/descargas/tajamar-marca-skill.zip",
-      "sha256": "15227e6d5004a8e9ae3011cd7fe59f5d0a2a424f543236b8a58fab681895e30e",
-      "bytes": 3700484
+      "sha256": "1d0d9b77a5ce4c29b2404bee4b0ed27eb38acad28b2c02ebc90b1123b8b4867c",
+      "bytes": 3700956
+    },
+    "tajamar-marca-skill-copilot.zip": {
+      "url": "https://brand.tajamar.es/descargas/tajamar-marca-skill-copilot.zip",
+      "sha256": "cf617b3a9c241a289c638071fa121ed2a18eba53732e98abe9d494f4567dcb22",
+      "bytes": 3700609
     }
   }
 }

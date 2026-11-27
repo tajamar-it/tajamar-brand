@@ -291,6 +291,8 @@ button{font:inherit;cursor:pointer}
 .dcard .acts a{text-align:center;text-decoration:none;flex:1;padding:9px 8px;border:1.5px solid #5a5a5a;background:transparent;color:var(--blanco);font-weight:700;font-size:13px;border-radius:2px}
 .dcard .acts a:hover{border-color:var(--ladrillo-5);color:var(--ladrillo-5)}
 .dcard .acts button:disabled{opacity:.4;cursor:not-allowed}
+.skillsel{display:grid;gap:4px;font-size:12.5px;color:#a8a8a8}
+.skillsel select{font:inherit;font-size:14px;color:var(--blanco);background:#141414;border:1.5px solid #5a5a5a;border-radius:2px;padding:8px;width:100%}
 .fonts-note{border:1.5px solid #3a3a3a;padding:22px;display:grid;gap:12px;max-width:820px}
 .fonts-note a{color:var(--ladrillo-5)}
 .status{font-size:14px;color:#cfcfcf;min-height:1.4em}
@@ -1060,7 +1062,15 @@ footer img{height:52px;width:auto;margin-right:28px}
       <p>Para que ChatGPT, Claude, Copilot o cualquier agente escriba y diseñe con la marca. Súbelos como contexto o instálalos como skill.</p>
       <div class="dgrid">
         <article class="dcard"><div class="meta"><div><b>Guía de marca (.md)</b><small>Todas las reglas en texto: tono, valores, logo, color, tipografía y áreas. Pégala o adjúntala en cualquier asistente.</small></div><div class="acts"><a href="descargas/tajamar-marca.md" download>Descargar</a></div></div></article>
-        <article class="dcard"><div class="meta"><div><b>Skill para Claude (.zip)</b><small>Guía, tokens y logos en un paquete. En Claude: Ajustes → Capacidades → Skills → Subir.</small></div><div class="acts"><a href="descargas/tajamar-marca-skill.zip" download>Descargar</a></div></div></article>
+        <article class="dcard" id="skillcard"><div class="meta"><div><b>Skill (.zip)</b><small>Guía, tokens y logos en un paquete, en el formato que pide cada asistente.</small></div>
+          <label class="skillsel">Asistente<select id="skill-ia">
+            <option value="claude">Claude</option>
+            <option value="chatgpt">ChatGPT</option>
+            <option value="gemini">Gemini</option>
+            <option value="copilot">Microsoft 365 Copilot</option>
+          </select></label>
+          <small id="skill-como">En Claude: Ajustes → Capacidades → Skills → Subir.</small>
+          <div class="acts"><a id="skill-dl" href="descargas/tajamar-marca-skill.zip" download>Descargar</a></div></div></article>
         <article class="dcard"><div class="meta"><div><b>Tokens de diseño (.json)</b><small>Colores con HEX, RGB, Pantone, CMYK y uso como texto, más las fuentes. Formato W3C Design Tokens.</small></div><div class="acts"><a href="descargas/tajamar-tokens.json" download>Descargar</a></div></div></article>
       </div>
       <p style="margin-top:14px">Los agentes que navegan encuentran todo en <a href="llms.txt">/llms.txt</a>.</p>
@@ -1078,7 +1088,7 @@ footer img{height:52px;width:auto;margin-right:28px}
   <div class="wrap">
     <img id="foot-logo" alt="Escudo de Tajamar">
     <span>Dudas sobre la marca: Dirección y Departamento de Comunicación de Tajamar.</span>
-    <!--version--><span class="ver">Versión 1.7 · 25 de noviembre de 2026 · <a href="CAMBIOS.md">historial</a></span><!--/version-->
+    <!--version--><span class="ver">Versión 1.8 · 27 de noviembre de 2026 · <a href="CAMBIOS.md">historial</a></span><!--/version-->
     <a href="#inicio">Volver arriba</a>
   </div>
 </footer>
@@ -1340,7 +1350,7 @@ GROUPS.forEach(g=>{
     [['plantilla','plantillas','word'],'#plantillas','Cartas, carteles, presentación, examen y Secretaría, listos para descargar.'],
     [['medida','ficha tecnica','imprenta','tarjeta','sobre americano','sobres','senaletica','uniforme','merchandising'],'.fichas','Medidas y reglas para imprenta y espacios: carta, sobre, tarjeta, señalética, uniforme y más.'],
     [['descargar logo','logo','logotipo','escudo','svg','png','kit'],'#descargas','Escudo, logotipo y versiones en SVG y PNG. Usa siempre estos archivos.'],
-    [['ia','agente','chatgpt','claude','skill','tokens','markdown'],'#agentes','Guía en Markdown, skill de Claude y tokens para que cualquier IA trabaje con la marca.'],
+    [['ia','agente','chatgpt','claude','gemini','copilot','skill','tokens','markdown'],'#agentes','Guía en Markdown, skill para Claude, ChatGPT, Gemini y Copilot, y tokens para que cualquier IA trabaje con la marca.'],
     [['duda','contacto','comunicacion','quien'],'footer','Para dudas: Dirección y Departamento de Comunicación de Tajamar.'],
   ].map(([k,sel,a])=>({k:k.map(norm),sel,a}));
   const SUG=['¿Qué logo uso sobre azul?','Tamaño mínimo','Colores para texto','Cómo firma FP+','Firma de correo','Descargar el logo'];
@@ -1435,6 +1445,19 @@ const links=[...document.querySelectorAll('.nav li a')];
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } }),{rootMargin:'-45% 0px -50% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
 
+</script>
+<script>
+(()=>{
+  const IA={
+    claude:['tajamar-marca-skill.zip','En Claude: Ajustes → Capacidades → Skills → Subir.'],
+    chatgpt:['tajamar-marca-skill.zip','En ChatGPT (cuentas Business, Enterprise o Edu, si tu espacio lo permite): Skills → Crear y sube el .zip.'],
+    gemini:['tajamar-marca-skill.zip','En Gemini (web o app de Mac): Skills → Importar y sube el .zip.'],
+    copilot:['tajamar-marca-skill-copilot.zip','En Microsoft 365 Copilot o en Agent Builder: añade una skill y sube el .zip. Versión adaptada: SKILL.md en la raíz y de menos de 20.000 caracteres.']
+  };
+  const sel=document.getElementById('skill-ia'),dl=document.getElementById('skill-dl'),como=document.getElementById('skill-como');
+  if(!sel)return;
+  sel.addEventListener('change',()=>{const [f,t]=IA[sel.value];dl.href='descargas/'+f;como.textContent=t;});
+})();
 </script>
 </body>
 </html>
